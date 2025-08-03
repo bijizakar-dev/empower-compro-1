@@ -61,11 +61,17 @@ class Masterdata extends BaseController
 
     public function getItem() {
         $data['title'] = "Barang";
-        $data['warehouses'] = $this->m_warehouse->get_all_warehouse();
         $data['units'] = $this->m_unit->get_all_unit();
 
         $data['permissions'] = $this->m_permission->get_permission_rules($this->id_role_session, 'masterdata/item'); 
         
         return view('masterdata/item', $data);
+    }
+
+    public function getFactory() {
+        $data['title'] = "Pabrik";
+        $data['permissions'] = $this->m_permission->get_permission_rules($this->id_role_session, 'masterdata/factory'); 
+
+        return view('masterdata/factory', $data);
     }
 }

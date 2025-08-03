@@ -19212,6 +19212,7 @@ body {
 
 .datatable-top {
   padding: 0 0 1rem;
+  display: none;
 }
 
 .datatable-bottom {
@@ -19242,6 +19243,7 @@ body {
 
 .datatable-info {
   margin: 7px 0;
+  display: none;
 }
 
 /* PAGER */

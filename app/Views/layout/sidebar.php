@@ -13,7 +13,7 @@ function generateSidebar($menuItems) {
 
     $categories = [
         'Core'              => ['Dashboard'],
-        'Data & Layanan'    => ['Masterdata', 'Layanan'],
+        'Data & Layanan'    => ['Masterdata', 'Layanan', 'Inventory'],
         'Sistem'            => ['Pengaturan', 'Akun'],
     ];
 

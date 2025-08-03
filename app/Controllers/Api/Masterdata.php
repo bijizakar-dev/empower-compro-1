@@ -4,6 +4,7 @@ namespace App\Controllers\Api;
 
 use App\Models\Masterdata\Department;
 use App\Models\Masterdata\Employee;
+use App\Models\Masterdata\Factory;
 use App\Models\Masterdata\Supplier;
 use App\Models\Masterdata\SupplierContact;
 use App\Models\Masterdata\Unit;
@@ -14,6 +15,16 @@ use CodeIgniter\RESTful\ResourceController;
 
 class Masterdata extends ResourceController
 {
+    private $limit;
+    private $m_department;
+    private $m_warehouse;
+    private $m_unit;
+    private $m_supplier;
+    private $m_supplier_contact;
+    private $m_employee;
+    private $m_item;
+    private $m_factory;
+
     function __construct() {
         $this->limit = 10;
         $this->m_department = new Department();
@@ -23,6 +34,7 @@ class Masterdata extends ResourceController
         $this->m_supplier_contact = new SupplierContact();
         $this->m_employee = new Employee();
         $this->m_item = new Item();
+        $this->m_factory = new Factory();
     }
 
     private function start($page){
@@ -175,9 +187,9 @@ class Masterdata extends ResourceController
 
     /* UNIT */
     public function getListUnit(): ResponseInterface {
-        // if(!$this->request->getVar('page')){
-        //     return $this->respond(NULL, 400);
-        // }
+        if(!$this->request->getVar('page')){
+            return $this->respond(NULL, 400);
+        }
         
         $search = array(
             'search' => $this->request->getVar('search')
@@ -505,29 +517,28 @@ class Masterdata extends ResourceController
     /* ITEMS */
     public function getListItem(): ResponseInterface {
         // if(!$this->request->getVar('page')){
-       //     return $this->respond(NULL, 400);
-       // }
+        //     return $this->respond(NULL, 400);
+        // }
 
-       $search = array(
-           'search'           => $this->request->getVar('search'),
-           'name'             => $this->request->getVar('name'),
-           'code'             => $this->request->getVar('code'),
-           'id_warehouse'     => $this->request->getVar('id_warehouse'),
-           'id_unit'          => $this->request->getVar('id_unit'),
-           'active'           => $this->request->getVar('active'),
-       );
+        $search = array(
+            'search'           => $this->request->getVar('search'),
+            'name'             => $this->request->getVar('name'),
+            'code'             => $this->request->getVar('code'),
+            'id_unit'          => $this->request->getVar('id_unit'),
+            'active'           => $this->request->getVar('active'),
+        );
 
-       $start = $this->start($this->request->getVar('page'));
+        $start = $this->start($this->request->getVar('page'));
 
-       $data = $this->m_item->get_list_item($this->limit, $start, $search);
-       $data['page'] = (int)$this->request->getVar('page');
-       $data['limit'] = $this->limit;
+        $data = $this->m_item->get_list_item($this->limit, $start, $search);
+        $data['page'] = (int)$this->request->getVar('page');
+        $data['limit'] = $this->limit;
 
-       if($data){
-           return $this->respond($data, 200); 
-       }else{
-           return $this->respond(array('error' => 'Data tidak ditemukan'), 404);
-       }
+        if($data){
+            return $this->respond($data, 200); 
+        }else{
+            return $this->respond(array('error' => 'Data tidak ditemukan'), 404);
+        }
     }
 
     public function getItem(): ResponseInterface {
@@ -546,11 +557,11 @@ class Masterdata extends ResourceController
         }
     }
 
-    private function generateCodeItem($seq, $idWarehouse, $joinYear): String {
+    private function generateCodeItem($seq,  $joinYear): String {
         $seq = str_pad($seq, 3, '0', STR_PAD_LEFT);
-        $idWarehouse = str_pad($idWarehouse, 2, '0', STR_PAD_LEFT);
+        $randBy = bin2hex(random_bytes(4));
 
-        $code = $idWarehouse.'/'.$joinYear.'-'.$seq;
+        $code = $randBy.'/'.$joinYear.'-'.$seq;
 
         return $code;
     }
@@ -563,7 +574,6 @@ class Masterdata extends ResourceController
 
         $add = array (
             'id' => $id,
-            'id_warehouse' => $this->request->getPost('id_warehouse'),
             'id_unit' => $this->request->getPost('id_unit'),
             'code' => $this->request->getPost('code'),
             'name' => $this->request->getPost('name'),
@@ -578,7 +588,7 @@ class Masterdata extends ResourceController
         if($this->request->getPost('code') == '' || $this->request->getPost('code') == null) {
             if($insItem) {
                 $createYear = date('Y-m-d');
-                $code = $this->generateCodeItem($insItem['id'], $this->request->getPost('id_warehouse'), date('Y', strtotime($createYear)));
+                $code = $this->generateCodeItem($insItem['id'], date('Y', strtotime($createYear)));
                 $addCode = array (
                     'id' => $insItem['id'],
                     'code' => $code,
@@ -604,5 +614,78 @@ class Masterdata extends ResourceController
         }
     }
     /* ITEMS */
+
+    /* FACTORY */
+    public function getListFactory(): ResponseInterface {
+        if(!$this->request->getVar('page')){
+            return $this->respond(NULL, 400);
+        }
+        
+        $search = array(
+            'search' => $this->request->getVar('search')
+        );
+
+        $start = $this->start($this->request->getVar('page'));
+
+        $data = $this->m_factory->get_list_factory($this->limit, $start, $search);
+        $data['page'] = (int)$this->request->getVar('page');
+        $data['limit'] = $this->limit;
+        
+        if($data){
+            return $this->respond($data, 200); 
+        }else{
+            return $this->respond(array('error' => 'Data tidak ditemukan'), 404);
+        }
+    }
+
+    public function getFactory(): ResponseInterface {
+        if(!$this->request->getVar('id')){
+            return $this->respond(NULL, 400);
+        }
+
+        $data['data'] = $this->m_factory->get_factory($this->request->getVar('id'));
+        $data['page'] = 1;
+        $data['limit'] = $this->limit;
+
+        if($data){
+            return $this->respond($data, 200); 
+        }else{
+            return $this->respond(array('error' => 'Data tidak ditemukan'), 404);
+        }
+    }
+
+    public function postFactory(): ResponseInterface {
+        $id = null;
+        if($this->request->getPost('id')){
+            $id = $this->request->getPost('id');
+        }
+
+        $add = array (
+            'id' => $id,
+            'name' => $this->request->getPost('name'),
+            'address' => $this->request->getPost('address'),
+            'phone' => $this->request->getPost('phone'),
+            'active' => $this->request->getPost('active')
+        );
+
+        $data = $this->m_factory->update_factory($add);
+
+        return $this->respond($data, 200);
+    }
+
+    public function deleteFactory(): ResponseInterface {
+        if(!$this->request->getVar('id')){
+            return $this->respond(NULL, 400);
+        }
+
+        $result = $this->m_factory ->delete_factory($this->request->getVar('id'));
+
+        if($result){
+            return $this->respond(array('status' => $result), 200); 
+        }else{
+            return $this->respond(array('status' => false), 200);
+        }
+    }
+    /* FACTORY */
 
 }

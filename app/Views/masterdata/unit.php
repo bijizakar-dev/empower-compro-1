@@ -10,12 +10,12 @@
         var dataTable1;
 
         $(function() {
-            get_list_unit();
+            get_list_unit(1);
             reset_form();
 
             $('#reload').click(function(){
                 reset_form();
-                get_list_unit();
+                get_list_unit(1);
             });
 
             $('#add').click(function() {
@@ -29,7 +29,7 @@
             $('.add_dep').val('');
         }
 
-        function get_list_unit() {
+        function get_list_unit(page) {
             if (dataTable1) {
                 dataTable1.destroy();
             }
@@ -39,6 +39,9 @@
             $.ajax({
                 url: '<?= base_url('api/masterdata/listUnit') ?>',
                 type: 'GET',
+                data: {
+                    page: page
+                },
                 dataType: 'json',
                 beforeSend: function() {
                     showLoading();
@@ -46,6 +49,10 @@
                 },
                 success: function(response) {
                     let str = ''; let status = ''; let badgeStatus = '';
+
+                    let data = response;
+                    $('#pagination').html(pagination(data.jumlah, data.limit, data.page, 1));
+                    $('.page_summary').html(page_summary(data.jumlah, data.data.length, data.limit, data.page));
 
                     if(response.data.jumlah != 0) {
                         $.each(response.data, function(i, v) {
@@ -69,15 +76,15 @@
                             $('.table-unit tbody').append(str);
                         });
                     } else {
-                        console.log('KOSONG')
-
                         str = '<tr><td class="datatable-empty" colspan="5">No entries found</td></tr>';
                         $('.table-unit tbody').append(str);
                     }
 
                     feather.replace();
 
-                    dataTable = new simpleDatatables.DataTable("#datatablesSimple");
+                    dataTable1 = new simpleDatatables.DataTable("#datatablesSimple", {
+                        sortable: false
+                    });
                 },
                 error: function(xhr, status, error) {
                     Swal.fire({
@@ -106,7 +113,7 @@
                 },
                 success: function(data) {
                     $('#add_modal').modal('hide');
-                    get_list_unit()
+                    get_list_unit(1)
 
                     Swal.fire({
                         title: "Berhasil",
@@ -151,7 +158,7 @@
                         },
                         success: function(data) {
                             $('#add_modal').modal('hide');
-                            get_list_unit()
+                            get_list_unit(1)
 
                             Swal.fire("Berhasil", "Data Berhasil Hapus", "success");
                         },
@@ -209,6 +216,10 @@
             });
         }
 
+        function paging(p){
+            get_list_unit(p);
+        }
+
     </script>
     
     <main>
@@ -249,16 +260,12 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Nama Unit</th>
-                                <th>Deskripsi</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </tfoot>
                         <tbody></tbody>
                     </table>
+
+                    <div id="pagination"></div>
+                    <div class="page_summary"></div>
+
                 </div>
             </div>
         </div>

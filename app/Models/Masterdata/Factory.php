@@ -4,43 +4,42 @@ namespace App\Models\Masterdata;
 
 use CodeIgniter\Model;
 
-class Unit extends Model
+class Factory extends Model
 {
-    protected $table            = 'units';
+    protected $table            = 'factories';
     protected $primaryKey       = 'id';
     protected $returnType       = 'object';
-    protected $allowedFields    = ['name', 'description', 'active', 'deleted_at'];
+    protected $allowedFields    = ['name', 'address', 'phone', 'active', 'deleted_at'];
     protected $useTimestamps    = true;
     protected $useSoftDeletes   = true;
 
-    function get_list_unit($limit, $start, $search) {
+    function get_list_factory($limit, $start, $search) {
         $q = '';
         $limit = " limit $start , $limit";
 
         if ($search['search'] != '') {
-            $q .= "AND name LIKE '%".$search['search']."%' OR name LIKE '%".$search['search']."%'";
+            $q .= "AND name LIKE '%".$search['search']."%'";
         }
 
         $count = "SELECT COUNT(id) as count ";
         $select = "SELECT *";
-        $sql = " FROM units 
+        $sql = " FROM factories 
                 WHERE deleted_at is null  
-                $q
-                order by name asc ";
+                $q order by name asc ";
 
-        $query = $this->query($select.$sql.$limit);
+        $query = $this->query($select.$sql);
         $result['data'] = $query->getResult();
-        $result['jumlah'] = $this->query($count.$sql)->getRow()->count;
+        $result['jumlah'] = intval($this->query($count.$sql)->getRow()->count);
 
         return $result;
     }
 
-    function get_unit($id) {
-        $sql = "SELECT * FROM units WHERE id = $id ";
+    function get_factory($id) {
+        $sql = "SELECT * FROM factories WHERE id = $id ";
         return $this->query($sql)->getRow();
     }
 
-    function update_unit($data) {
+    function update_factory($data) {
         $data['success'] = false;
         $data['message'] = '';
 
@@ -60,7 +59,7 @@ class Unit extends Model
         return $data;
     }
 
-    function delete_unit($id) {
+    function delete_factory($id) {
         $data = array('deleted_at' => date('Y-m-d H:i:s'));
         
         $res = $this->where('id', $id)->update($id, $data);
@@ -68,11 +67,12 @@ class Unit extends Model
         return $res;
     }
 
-    function get_all_unit(){
-        $sql = "SELECT * FROM units
-                WHERE deleted_at IS NULL
-                    AND active = 1 
-                ORDER BY name ASC ";
+    function get_all_factory(){
+        $sql = "SELECT f.*
+                FROM factories f
+                WHERE f.deleted_at is null 
+                    AND f.active = 1 
+                ORDER BY f.name asc ";
 
         $query = $this->query($sql)->getResult();
         $data =  array();

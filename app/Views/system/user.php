@@ -105,6 +105,7 @@
                                         '<button type="button" class="btn btn-datatable btn-icon btn-transparent-dark dropdown-toggle" id="dropdownFadeIn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>'+
                                         '<div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownFadeIn">'+
                                             '<a class="dropdown-item" onclick=change_password('+v.id+')><i data-feather="key"></i> &nbsp;Ubah Password</a>'+
+                                            '<a class="dropdown-item" onclick=reset_password('+v.id+')><i data-feather="refresh-cw"></i> &nbsp;Reset Password</a>'+
                                         '</div>'+
                                     '</td>'+
                                 '</tr>';
@@ -416,6 +417,57 @@
                 },
                 complete: function() {
                     hideLoading();
+                }
+            });
+        }
+
+        function reset_password(id) {
+            let changePw = {
+                "id" : id,
+                "conf_new_pw": "123456"
+            }
+
+            Swal.fire({
+                title: "Konfirmasi Reset Password",
+                text: "Apakah anda yakin ingin reset password anda ?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya",
+                cancelButtonText: "Tidak"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type : 'POST',
+                        url: '<?= base_url("api/system/changePasswordUser") ?>',
+                        data: changePw,
+                        cache: false,
+                        dataType : 'json',
+                        beforeSend: function() {
+                            showLoading();
+                        },
+                        success: function(data) {
+                            $('#change_password_modal').modal('hide');
+                            get_list_user()
+
+                            Swal.fire({
+                                title: "Berhasil!",
+                                text: "Berhasil Reset Password!",
+                                icon: "success"
+                            });
+                        },
+                        error: function(e){
+                            Swal.fire({
+                                title: "Access Failed",
+                                text: "Internal Server Error",
+                                icon: "error"
+                            });
+                        },
+                        complete: function() {
+                            hideLoading();
+                        }
+                    });
                 }
             });
         }

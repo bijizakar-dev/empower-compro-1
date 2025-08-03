@@ -11,9 +11,11 @@
         <link rel="stylesheet" href="<?= base_url()?>/assets/css/simple-datatables.min.css"  />
         <link rel="stylesheet" href="<?= base_url()?>/assets/css/jquery-ui.css"">
         <link rel="stylesheet" href="<?= base_url()?>/template/css/styles.css"  />
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/style.css"  />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
         <link rel="stylesheet" href="<?= base_url()?>/assets/css/jquery-ui-timepicker-addon.min.css">
         <link rel="icon" type="image/x-icon" href="<?= base_url()?>/template/assets/img/favicon.png" />
+        <link rel="stylesheet" href="<?= base_url()?>/assets/css/jquery.dataTables.min.css"></link>
         <style>
             /* Loading Style */
             .loadingOverlay-custom {
@@ -43,6 +45,7 @@
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
         <script src="<?= base_url()?>/assets/js/feather.min.js"></script>
         <script src="<?= base_url()?>/assets/js/jquery.min.js"></script>
+        <script src="<?= base_url()?>/assets/js/jquery.dataTables.min.js"></script>
         <script src="<?= base_url()?>/assets/js/sweetalert2.all.min.js"></script>
         <script src="<?= base_url()?>/template/js/scripts.js"></script>
         <script src="<?= base_url()?>/assets/js/helper_lib.js""></script>

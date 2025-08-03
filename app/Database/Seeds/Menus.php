@@ -28,6 +28,12 @@ class Menus extends Seeder
                 'active'    => 1
             ],
             [
+                'name'      => 'Inventory',
+                'path'      => 'inventory',
+                'icon'      => 'package',
+                'active'    => 1
+            ],
+            [
                 'name'      => 'Pengaturan',
                 'path'      => 'system',
                 'icon'      => 'tool',

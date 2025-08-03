@@ -10,7 +10,7 @@ class Item extends Model
     protected $table            = 'items';
     protected $primaryKey       = 'id';
     protected $returnType       = 'object';
-    protected $allowedFields    = ['id_warehouse', 'id_unit', 'name', 'code', 'active', 'deleted_at'];
+    protected $allowedFields    = ['id_unit', 'name', 'code', 'active', 'deleted_at'];
     protected $useTimestamps    = true;
     protected $useSoftDeletes   = true;
 
@@ -21,7 +21,6 @@ class Item extends Model
         if ($search['search'] != '') {
             $q .= "AND ( i.name LIKE '%".$search['search']."%' 
                 OR i.code LIKE '%".$search['search']."%'
-                OR w.name LIKE '%".$search['search']."%' 
                 OR u.name LIKE '%".$search['search']."%' ) ";
         }
 
@@ -31,9 +30,6 @@ class Item extends Model
         if ($search['name'] != '') {
             $q .= "AND i.name LIKE '%".$search['name']."%' ";
         }
-        if ($search['id_warehouse'] != '') {
-            $q .= "AND i.id_warehouse LIKE '%".$search['id_warehouse']."%' ";
-        }
         if ($search['id_unit'] != '') {
             $q .= "AND i.id_unit LIKE '%".$search['id_unit']."%' ";
         }
@@ -41,9 +37,8 @@ class Item extends Model
             $q .= "AND i.active LIKE '%".$search['active']."%' ";
         }
 
-        $select = "SELECT i.* , w.name as warehouse_name, u.name as unit_name ";
+        $select = "SELECT i.*, u.name as unit_name ";
         $sql = " FROM items i  
-                JOIN warehouses w ON (i.id_warehouse = w.id)
                 JOIN units u ON (i.id_unit = u.id)
                 WHERE i.deleted_at is null 
                 $q order by i.name asc ";
@@ -58,9 +53,8 @@ class Item extends Model
     }
     
     function get_item($id) {
-        $sql = "SELECT i.* , w.name as warehouse_name, u.name as unit_name 
+        $sql = "SELECT i.*, u.name as unit_name 
                 FROM items i  
-                JOIN warehouses w ON (i.id_warehouse = w.id)
                 JOIN units u ON (i.id_unit = u.id)
                 WHERE i.deleted_at is null 
                     AND i.id = $id 
@@ -112,10 +106,8 @@ class Item extends Model
     }
 
     function get_all_item(){
-        $sql = "SELECT i.* , w.name as warehouse_name, u.name as unit_name 
-                FROM employees e  
+        $sql = "SELECT i.* , u.name as unit_name
                 FROM items i  
-                JOIN warehouses w ON (i.id_warehouse = w.id)
                 JOIN units u ON (i.id_unit = u.id)
                 WHERE i.deleted_at is null 
                     AND i.active = 1 
@@ -125,7 +117,7 @@ class Item extends Model
         $data =  array();
 
         foreach ($query as $key => $value) {
-            $data[$value->id] = $value->name;
+            $data[$value->id] = $value->name . ' | ' . $value->code . ' | '. $value->unit_name;
         }
 
         return $data;
