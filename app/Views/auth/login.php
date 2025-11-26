@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Login &mdash; Empower Biz</title>
+    <title>Login &mdash; Empower Compro</title>
     <link href="<?= base_url()?>/template/css/styles.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="<?= base_url()?>/template/assets/img/favicon.png" />
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -143,7 +143,7 @@
     <div class="left-section"></div>
     <div class="right-section">
         <div class="container">
-            <h1>Empower Biz</h1>
+            <h1>Empower Compro</h1>
             <p class="welcome-message">Silahkan login terlebih dahulu.</p>
             <div class="card-body">
                 <?php if (isset($error)): ?>
@@ -174,7 +174,7 @@
                 </form>
             </div>
             <div class="card-footer text-center mt-5">
-                <div class="small" style="font-size: 12px; opacity: 50%">Copyright © Empower Biz 2024</div>
+                <div class="small" style="font-size: 12px; opacity: 50%">Copyright © Empower Compro 2024</div>
             </div>
         </div>
     </div>

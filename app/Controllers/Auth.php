@@ -35,16 +35,10 @@ class Auth extends BaseController
                 'token' => $token,
                 'isLoggedIn' => true,
                 'username' => $user->response->username,
-                'email' => $user->response->email,
-                'name' => $user->response->name,
-                'role' => $user->response->name_role,
-                'department' => $user->response->name_department,
-                'id_role' => $user->response->id_role,
-                'id_department' => $user->response->id_department,
-                'photo' => $user->response->photo
+                'email' => $user->response->email
             ]);
 
-            return redirect()->to(base_url('/'));
+            return redirect()->to(base_url('/adm'));
         } else {
             return view('/auth/login', ['error' => 'Invalid username or password']);
         }

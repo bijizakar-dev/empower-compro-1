@@ -1,0 +1,1224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title><?= $setting->site_name ?></title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/icon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"  />
+
+  <!-- Main CSS File -->
+  <link href="assets/landing-page/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="<?= base_url('storage/setting/logo/' . $setting->logo) ?>" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Beranda</a></li>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#services">Layanan</a></li>
+          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#pricing">Paket Jasa</a></li>
+          <li><a href="#team">Tim</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="https://wa.me/6285190447515?text=Halo%20kak,%20saya%20ingin%20tanya-tanya%20tentang%20jasa%20videonya" target="_blank">Hubungi Kami</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+   <!-- Hero Section -->
+    <section id="hero" class="hero section position-relative" style="height: 100vh; overflow: hidden;">
+
+  <!-- Video Background -->
+   <video autoplay muted loop playsinline
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+    <source src="assets/img/Konten Kalitalang.MP4" type="video/mp4">
+  </video>
+
+  <!-- Overlay -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+              background: rgba(24, 24, 24, 0); z-index: 2;"></div>
+
+  <!-- Wrapper agar konten ada di tengah layar -->
+   <div class="d-flex align-items-center justify-content-center text-center" style="min-height: 55vh; padding-top: 50px;">
+  <!-- Content -->
+   <div class="container position-relative text-white d-flex flex-column justify-content-center align-items-center" style="z-index: 3;">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-10 col-12">
+        <div class="badge-wrapper mb-3">
+          <div class="d-inline-flex align-items-center rounded-pill border border-light px-3 py-1 text-white">
+            <div class="icon-circle me-2 text-white">
+              <i class="bi bi-bell"></i>
+            </div>
+            <span class="badge-text me-2 text-white">Turn on your notifications</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title mb-4 fs-1 fw-bold text-white">Enjoy The Moment. We Make It Last.</h1>
+        
+        <div class="cta-wrapper">
+          <a href="#about " class="btn btn-primary">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p class="who-we-are">Tentang Kami</p>
+            <h3>Enjoy The Moment. We Make It Last.</h3>
+            <p class="fst-italic">
+              Kami adalah sebuah agensi videografi yang berbasis di daerah Yogyakarta. Kami menawarkan keahlian di banyak bidang videografi dan fotografi dengan workflow yang singkat untuk setiap kebutuhan video anda : 
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Adventure.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Event.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Video Profile.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Dokumenter.</span>
+            </ul>
+            <a href="#services-alt" class="read-more"><span>Tampilkan Lebih Banyak</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+              <!-- Gambar kiri atas -->
+               <div class="col-6">
+                <img src="assets/img/about/1.jpg" class="img-fluid rounded" alt="">
+              </div>
+              <!-- Gambar kanan atas -->
+               <div class="col-6">
+                <img src="assets/img/about/2.jpg" class="img-fluid rounded" alt="">
+              </div>
+              <!-- Gambar kiri bawah -->
+               <div class="col-6">
+                <img src="assets/img/about/3.jpg" class="img-fluid rounded" alt="">
+              </div>
+              <!-- Gambar kanan bawah BARU -->
+               <div class="col-6">
+                <img src="assets/img/about/4.jpg" class="img-fluid rounded" alt="">
+              </div>
+            </div>
+          </div>        
+        </div>
+      </div>
+
+      </div>
+    </section><!-- /About Section -->
+
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="how-we-work section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Bagaimana Kami Bekerja?</h2>
+        <p>Kami bekerja dengan semaksimalnya.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="steps-5">
+          <div class="process-container">
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="content">
+                <span class="step-number">01</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-chat-square-dots-fill"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>Diskusi & Briefing Klien</h3>
+                    <p>Kami memulai dengan memahami kebutuhan visual, tujuan video, target audiens, pesan utama, dan platform distribusi. Semakin detail diskusi, semakin kuat hasil akhirnya.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="content">
+                <span class="step-number">02</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-journal-text"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>Perencanaan Produksi</h3>
+                    <p>Kami menyusun naskah, storyboard, menentukan lokasi, Compro, hingga jadwal syuting. Semua dirancang dengan matang agar proses syuting berjalan efisien dan sesuai ekspektasi.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="content">
+                <span class="step-number">03</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-camera-reels-fill"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>Pengambilan Gambar (Shooting)</h3>
+                    <p>Tim kami turun ke lapangan untuk melakukan proses shooting. Kami menggunakan peralatan profesional untuk menjamin kualitas visual dan audio yang maksimal.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="content">
+                <span class="step-number">04</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-scissors"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>Proses Editing</h3>
+                    <p>Video mentah kami diolah menjadi karya yang utuh mulai dari pemotongan, transisi, sound design, color grading, hingga motion graphic jika dibutuhkan.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+
+            <div class="process-item" data-aos="fade-up" data-aos-delay="600">
+              <div class="content">
+                <span class="step-number">05</span>
+                <div class="card-body">
+                  <div class="step-icon">
+                    <i class="bi bi-check2-circle"></i>
+                  </div>
+                  <div class="step-content">
+                    <h3>Finishing</h3>
+                    <p>Finally, hasilnya siap tayang.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Process Item -->
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /How We Work Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Layanan</h2>
+        <p>Layanan Kami Meliputi:</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row justify-content-center g-5">
+
+          <?php foreach ($services as $index => $row): ?>
+            <div class="col-md-6" data-aos="<?= $index % 2 === 0 ? 'fade-right' : 'fade-left' ?>" data-aos-delay="100">
+                <div class="service-item text-center">
+
+                    <div class="service-icon mb-3">
+                        <i class="<?= $row->icon ?>"></i>
+                    </div>
+
+                    <div class="service-content">
+                        <h3><?= esc($row->title) ?></h3>
+                        <p><?= strip_tags($row->description)?></p>
+                        <a href="#" class="service-link">
+                            <span>Learn More</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <?php endforeach; ?>
+          
+          <!-- End Service Item -->
+        
+        </div>
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Services Alt Section -->
+    <section id="services-alt" class="services-alt section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="content-block">
+              <h6 class="subtitle">Layanan Inovatif Kami</h6>
+              <h2 class="title">Enjoy The Moment. We Make It Last.</h2>
+              <p class="description">
+                Vrise Studio hadir untuk jadi partner terbaik kamu dalam mengabadikan setiap momen berharga. Kami menyediakan layanan foto dan video dengan kualitas tinggi, cocok untuk berbagai kebutuhan seperti pernikahan, prewedding, konten bisnis, hingga dokumentasi event. Buat kami, setiap momen punya cerita unik yang layak untuk ditangkap secara detail dan penuh rasa. Karena itu, kami selalu berusaha menghadirkan hasil visual yang nggak cuma bagus secara teknis, tapi juga mampu menyampaikan emosi dan suasana yang ingin kamu kenang.<br>
+                <br>
+                Kami percaya bahwa proses produksi yang menyenangkan akan menghasilkan karya yang memuaskan. Mulai dari diskusi konsep, proses pengambilan gambar, hingga tahap editing semua kami kerjakan dengan sepenuh hati dan profesionalitas tinggi. Dengan tim yang kreatif dan berpengalaman, kami siap bantu kamu bikin momen jadi lebih bermakna dan abadi dalam bentuk visual yang bisa dikenang selamanya. Jadi, biarkan kami yang bekerja di balik layar, supaya kamu bisa lebih fokus menikmati momennya.
+              </p>
+              <div class="button-wrapper">
+                <a class="btn" href="#services"><span>Telusuri Semua Layanan</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="services-list">
+              <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon">
+                  <i class="bi bi-compass"></i>
+                </div>
+                <div class="service-content">
+                  <h4><a href="">Adventure</a></h4>
+                  <p>Vrise Studio tidak sekadar hadir dalam petualangan anda, kami merekam perjalanan dan momen berharga anda ke dalam frame yang bermakna.</p>
+                </div>
+              </div><!-- End Service Item -->
+
+              <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon">
+                  <i class="bi bi-calendar-event"></i>
+                </div>
+                <div class="service-content">
+                  <h4><a href="">Event</a></h4>
+                  <p>Memastikan setiap momen terekam dengan jelas. Mengabadikan euforia acara anda dengan visual yang kuat  dan berkesan bersama Vrise Studio.</p>
+                </div>
+              </div><!-- End Service Item -->
+
+              <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon">
+                  <i class="bi bi-person-video3"></i>
+                </div>
+                <div class="service-content">
+                  <h4><a href="">Video Profile</a></h4>
+                  <p>Memperkenalkan siapa anda lewat visual yang profesional dan relevan. Kami membantu produksi video profil untuk individu, brand, dan institusi yang ingin tampil meyakinkan, autentik, dan berkelas di hadapan audiens mereka.</p>
+                </div>
+              </div><!-- End Service Item -->
+
+              <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon">
+                  <i class="bi bi-camera-reels"></i>
+                </div>
+                <div class="service-content">
+                  <h4><a href="">Dokumenter</a></h4>
+                  <p>Vrise Studio membantu menyusun dokumenter yang jelas, mudah dipahami, dan relevan.</p>
+                </div>
+              </div><!-- End Service Item -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    
+    <!-- /Services Alt Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <p>Project Kami Meliputi:</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <!-- FILTER DINAMIS -->
+          <div class="portfolio-filters-container" data-aos="fade-up" data-aos-delay="200">
+            <ul class="portfolio-filters isotope-filters">
+              <li data-filter="*" class="filter-active">All Projects</li>
+
+              <?php foreach ($categories as $cat): ?>
+                <?php 
+                  // ubah nama kategori jadi slug untuk class isotope
+                  $slug = 'filter-' . strtolower(str_replace(' ', '', $cat->name));
+                ?>
+                <li data-filter=".<?= $slug ?>"><?= esc($cat->name) ?></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+
+          <!-- PORTFOLIO ITEMS -->
+          <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+            <?php foreach ($portfolios as $p): ?>
+              <?php
+                $catSlug  = 'filter-' . strtolower(str_replace(' ', '', $p->category_name));
+                $galleryId = 'portfolio-gallery-' . $p->id;
+
+                // Thumbnail default
+                $thumb = base_url('storage/portfolio/thumbnail/' . $p->thumbnail);
+
+                // Media
+                $mediaList = $p->media ?? [];
+
+                // Ambil media pertama utk preview
+                $preview = !empty($mediaList)
+                    ? $mediaList[0]->file_url
+                    : $thumb;
+              ?>
+
+              <div class="col-lg-6 col-md-6 portfolio-item isotope-item <?= $catSlug ?>">
+                <div class="portfolio-card">
+
+                  <div class="portfolio-image">
+                    <img src="<?= $thumb ?>" class="img-fluid" alt="" loading="lazy">
+
+                    <div class="portfolio-overlay">
+                      <div class="portfolio-actions">
+
+                        <!-- Tombol preview utama -->
+                        <a href="<?= $preview ?>"
+                          class="glightbox preview-link"
+                          data-gallery="<?= $galleryId ?>">
+                          <i class="bi bi-eye"></i>
+                        </a>
+
+                        <!-- Link ke Instagram / detail -->
+                        <a href="<?= $p->client_name ?: '#' ?>" 
+                          class="details-link" target="_blank">
+                          <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                        <!-- Semua media tambahan (hidden) -->
+                        <?php if (!empty($mediaList)): ?>
+                          <?php foreach ($mediaList as $index => $m): ?>
+                            <?php if ($index > 0): ?>
+                              <a href="<?= $m->file_url ?>"
+                                class="glightbox d-none"
+                                data-gallery="<?= $galleryId ?>"></a>
+                            <?php endif; ?>
+                          <?php endforeach; ?>
+                        <?php endif; ?>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="portfolio-content">
+                    <span class="category"><?= esc($p->category_name) ?></span>
+                    <h3><?= esc($p->title) ?></h3>
+                    <p><?= esc($p->client_name ?: 'Empower Compro') ?></p>
+                  </div>
+
+                </div>
+              </div>
+
+            <?php endforeach; ?>
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Paket Jasa</h2>
+        <p>Paket Jasa Kami Meliputi:</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <?php
+          // Hitung jumlah data
+          $totalItems = count($pricelists);
+          $useCarousel = $totalItems > 4;
+        ?>
+
+        <?php if ($useCarousel): ?>
+          <!-- data > 4: gunakan carousel seperti testimonials -->
+          <div class="pricing-slider swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": false,
+                "speed": 800,
+                "autoplay": false,
+                "slidesPerView": 1,
+                "spaceBetween": 24,
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                },
+                "navigation": {
+                  "nextEl": ".swiper-button-next",
+                  "prevEl": ".swiper-button-prev"
+                },
+                "breakpoints": {
+                  "768": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 24
+                  },
+                  "1200": {
+                    "slidesPerView": 4,
+                    "spaceBetween": 24
+                  }
+                }
+              }
+            </script>
+            <div class="swiper-wrapper">
+              <?php foreach ($pricelists as $i => $item): ?>
+                <?php
+                  $priceK = number_format($item->price / 1000, 0) . ' K';
+                  $description = strip_tags($item->description);
+                  
+                  if (is_array($item->features)) {
+                      $features = $item->features;
+                  } else {
+                      if (str_starts_with(trim($item->features), '[')) {
+                          $features = json_decode($item->features, true);
+                      } else {
+                          $features = preg_split('/\r\n|\r|\n/', trim($item->features));
+                      }
+                  }
+                ?>
+                    
+                <div class="swiper-slide">
+                  <div class="pricing-card h-100 <?= $item->popular ? 'popular' : '' ?>"
+                    data-aos="fade-up"
+                    data-aos-delay="<?= ($i + 1) * 100 ?>">
+                            
+                    <?php if ($item->popular): ?>
+                        <div class="popular-badge">Banyak Diminati</div>
+                    <?php endif; ?>
+
+                    <h3><?= esc($item->package_name) ?></h3>
+                    <p class="start-from">Start From</p>
+
+                    <div class="price">
+                        <span class="currency">Rp.</span>
+                        <span class="amount"><?= $priceK ?></span>
+                        <span class="period">/ paket</span>
+                    </div>
+
+                    <p class="description"><?= esc($description) ?></p>
+
+                    <h4>Sudah Termasuk:</h4>
+                    <ul class="features-list">
+                        <?php foreach ($features as $f): ?>
+                            <?php if (trim($f) !== ''): ?>
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <?= esc(str_replace(['- ', '• '], '', $f)) ?>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+
+                    <a href="#" class="btn <?= $item->popular ? 'btn-light' : 'btn-primary' ?>">
+                        Beli Sekarang!
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+
+              <?php endforeach; ?>
+            </div>
+                    
+            <!-- Navigation buttons -->
+            
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+
+        <?php else: ?>
+          <!-- data <= 4: tampilkan centered grid dengan ukuran asli -->
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
+            <?php foreach ($pricelists as $i => $item): ?>
+              <?php
+                $priceK = number_format($item->price / 1000, 0) . ' K';
+                $description = strip_tags($item->description);
+                
+                if (is_array($item->features)) {
+                    $features = $item->features;
+                } else {
+                    if (str_starts_with(trim($item->features), '[')) {
+                        $features = json_decode($item->features, true);
+                    } else {
+                        $features = preg_split('/\r\n|\r|\n/', trim($item->features));
+                    }
+                }
+              ?>
+              
+              <div class="col-12 col-md-6 col-lg-3 d-flex"
+                data-aos="fade-up"
+                data-aos-delay="<?= ($i + 1) * 100 ?>">
+                  
+                <div class="pricing-card w-100 <?= $item->popular ? 'popular' : '' ?>">
+                    
+                  <?php if ($item->popular): ?>
+                      <div class="popular-badge">Banyak Diminati</div>
+                  <?php endif; ?>
+
+                  <h3><?= esc($item->package_name) ?></h3>
+                  <p class="start-from">Start From</p>
+
+                  <div class="price">
+                      <span class="currency">Rp.</span>
+                      <span class="amount"><?= $priceK ?></span>
+                      <span class="period">/ paket</span>
+                  </div>
+
+                  <p class="description"><?= esc($description) ?></p>
+
+                  <h4>Sudah Termasuk:</h4>
+                  <ul class="features-list">
+                      <?php foreach ($features as $f): ?>
+                          <?php if (trim($f) !== ''): ?>
+                              <li>
+                                  <i class="bi bi-check-circle-fill"></i>
+                                  <?= esc(str_replace(['- ', '• '], '', $f)) ?>
+                              </li>
+                          <?php endif; ?>
+                      <?php endforeach; ?>
+                  </ul>
+
+                  <a href="#" class="btn <?= $item->popular ? 'btn-light' : 'btn-primary' ?>">
+                      Beli Sekarang!
+                      <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+          <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
+            <div class="faq-contact-card">
+              <div class="card-icon">
+                <i class="bi bi-question-circle"></i>
+              </div>
+              <div class="card-content">
+                <h3>Apakah Ada Pertanyaan?</h3>
+                <p>Tenang saja, kami siap bantu kapan pun yang anda butuh!</p>
+                <div class="contact-options">
+                  <a href="mailto:studiovrise@gmail.com" class="contact-option">
+                    <i class="bi bi-envelope"></i>
+                    <span>Email Kami</span>
+                  </a>
+                  <a href="https://wa.me/6285190447515?text=Halo%20kak,%20saya%20ingin%20tanya-tanya%20tentang%20jasa%20videonya" class="contact-option">
+                    <i class="bi bi-chat-dots"></i>
+                    <span>Chat Langsung</span>
+                  </a>
+                  <a href="https://wa.me/6285190447515" class="contact-option">
+                    <i class="bi bi-telephone"></i>
+                    <span>Telepon Kami Dulu, Yuk!</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="faq-accordion">
+              <div class="faq-item faq-active">
+                <div class="faq-header">
+                  <h3>Vrise Studio bisa request konten ngga kak?</h3>
+                  <i class="bi bi-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-content">
+                  <p>
+                    Bisa banget dong kak, kita bakal ngasih saran juga kok! Untuk request konten yang kakak harapkan.
+                  </p>
+                </div>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item" data-aos="zoom-in" data-aos-delay="200">
+                <div class="faq-header">
+                  <h3>Di Vrise Studio ada paket hemat ngga kak?</h3>
+                  <i class="bi bi-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-content">
+                  <p>
+                    Untuk paket hemat bisa langsung diskusi di WA aja kak! Sama tergantung kebutuhan konten kakak, pasti dapat paket hemat kok!
+                  </p>
+                </div>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <h3>Kira-kira proses pengerjaannya berapa lama kak?</h3>
+                  <i class="bi bi-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-content">
+                  <p>
+                    Untuk proses pengerjaannya kita bakal berusaha secepatnya selesai kak!
+                  </p>
+                </div>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <h3>Kalo mau sponsorin Vrise Studio bisa ngga kak?</h3>
+                  <i class="bi bi-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-content">
+                  <p>
+                    Bisa banget dong kak! Kita bakal terbuka lebar untuk orang-orang yang pengen sponsorin kita.
+                  </p>
+                </div>
+              </div><!-- End FAQ Item-->
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <h3>Vrise Studio alamat lengkapnya dimana ya kak?</h3>
+                  <i class="bi bi-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-content">
+                  <p>
+                    Untuk alamat lengkap kami ada di Sinduharjo, Ngaglik, Sleman, Daerah Istimewa Yogyakarta kak!
+                  </p>
+                </div>
+              </div><!-- End FAQ Item-->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    
+    <!-- Team Section -->
+    <section id="team" class="team section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Tim</h2>
+        <p>Anggota Tim Kami.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="row g-4 justify-content-center">
+
+            <?php $delay = 100; ?>
+            <?php foreach ($teams as $t): ?>
+            <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="<?= $delay ?>">
+                <div class="team-card">
+
+                    <div class="team-image">
+                        <?php if ($t->photo): ?>
+                            <img src="<?= base_url('uploads/team/' . $t->photo) ?>" class="img-fluid" alt="<?= esc($t->name) ?>">
+                        <?php else: ?>
+                            <img src="<?= base_url('assets/img/default-user.png') ?>" class="img-fluid" alt="No Image">
+                        <?php endif; ?>
+
+                        <div class="team-overlay">
+
+                            <p><?= $t->bio ? esc($t->bio) : 'No Description.' ?></p>
+
+                            <div class="team-social">
+                                <?php if ($t->instagram_url): ?>
+                                    <a href="<?= esc($t->instagram_url) ?>" target="_blank"><i class="bi bi-instagram"></i></a>
+                                <?php endif; ?>
+
+                                <?php if ($t->linkedin_url): ?>
+                                    <a href="<?= esc($t->linkedin_url) ?>" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                <?php endif; ?>
+
+                                <?php if ($t->twitter_url): ?>
+                                    <a href="<?= esc($t->twitter_url) ?>" target="_blank"><i class="bi bi-tiktok"></i></a>
+                                <?php endif; ?>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="team-content">
+                        <h4><?= esc($t->name) ?></h4>
+                        <span class="position"><?= esc($t->position) ?></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <?php $delay += 100; ?>
+            <?php endforeach; ?>
+          </div>
+
+      </div>
+    </section>
+
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimoni</h2>
+        <p>Feedback dari pelanggan terhormat.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="testimonials-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 800,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": 1,
+              "spaceBetween": 30,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "768": {
+                  "slidesPerView": 2
+                },
+                "1200": {
+                  "slidesPerView": 3
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    "Saya dan pasangan sangat puas dengan hasil video prewedding dari Vrise Studio. Visualnya estetik banget dan vibes-nya dapet semua! Proses pengambilan gambarnya juga santai dan nyaman."
+                  </p>
+                </div>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <div>
+                      <h3>Klien 1</h3>
+                      <h4>No description.</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    "Kami memakai jasa dokumentasi event untuk acara komunitas di Jogja, dan hasilnya luar biasa! Setiap momen penting berhasil ditangkap dengan rapi. Editingnya juga cepat dan profesional."
+                  </p>
+                </div>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <div>
+                      <h3>Klien 2</h3>
+                      <h4>No description.</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    "Butuh video profil buat portofolio, dan hasil kerja dari Vrise Studio benar-benar melebihi ekspektasi. Lighting, angle, sampai storytellingnya rapi banget. Recommended buat content creator yang pengen tampil beda."
+                  </p>
+                </div>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <div>
+                      <h3>Klien 3</h3>
+                      <h4>No description.</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    "Saya memakai jasa Vrise Studio buat bikin video promosi brand clothing. Mereka ngerti banget cara menyesuaikan visual dengan identitas brand kami. Proses kerjanya cepat dan sangat berkualitas!"
+                  </p>
+                </div>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <div>
+                      <h3>Klien 4</h3>
+                      <h4>No description.</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    "Wedding kami menjadi lebih berkesan karena video dari Vrise Studio. Setiap momen terasa megah saat ditonton ulang. Terima kasih sudah bikin dokumentasi pernikahan kami menjadi seindah itu."
+                  </p>
+                </div>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <div>
+                      <h3>Klien 5</h3>
+                      <h4>No description.</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    "Saya kerja bareng Vrise Studio untuk proyek dokumenter sosial. Mereka sangat detail dalam riset dan storytelling, jadi pesannya tersampaikan dengan baik. Bukan cuma videografer, mereka juga partner yang high thinking."
+                  </p>
+                </div>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <div>
+                      <h3>Klien 6</h3>
+                      <h4>No description.</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    <i class="bi bi-quote quote-icon"></i>
+                    "Kerja bareng tim Vrise Studio itu sangat menyenangkan. Mereka paham dengan kebutuhan event besar, sigap di lapangan, dan hasilnya sinematik banget. Klien dan sponsor sangat puas dengan dokumentasi dari mereka."
+                  </p>
+                </div>
+                <div class="testimonial-profile">
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="profile-info">
+                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <div>
+                      <h3>Klien 7</h3>
+                      <h4>No description.</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Kontak</h2>
+        <p>Hubungi kami segera!</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 mb-5">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-card">
+              <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
+              <h3>Alamat</h3>
+              <p><?= nl2br($setting->address) ?></p>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-card">
+              <div class="icon-box"><i class="bi bi-telephone"></i></div>
+              <h3>No. Kontak</h3>
+              <p>
+                Mobile: <?= $setting->contact_phone ?><br>
+                Email: <?= $setting->contact_email ?>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="info-card">
+              <div class="icon-box"><i class="bi bi-clock"></i></div>
+              <h3>Jam Operasional</h3>
+              <p>
+                <?= $open_hours['days'] ?><br>
+                Mulai dari jam: <?= $open_hours['time'] ?>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="form-wrapper" data-aos="fade-up" data-aos-delay="400">
+              <form action="<?= base_url('contact/send') ?>" method="post" role="form" class="php-email-form">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-person"></i></span>
+                      <input type="text" name="name" class="form-control" placeholder="Nama" required="">
+                    </div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                      <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-md-6 form-group">
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-phone"></i></span>
+                      <input type="text" class="form-control" name="phone" placeholder="No. Telp" required="">
+                    </div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-list"></i></span>
+                      <select name="service_id" class="form-control" required="">
+                        <?php foreach ($services as $s): ?>
+                          <option value="<?= $s->id ?>"><?= $s->title ?></option>
+                        <?php endforeach ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group mt-3">
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-chat-dots"></i></span>
+                      <textarea class="form-control" name="message" rows="6" placeholder="Tulis Pesan Disini.." required=""></textarea>
+                    </div>
+                  </div>
+                  <div class="my-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Pesan Anda telah terkirim. Terima kasih!</div>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit">Kirim Pesan</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename"><?= $setting->site_name ?></span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p><?= nl2br($setting->address) ?></p>
+            <p class="mt-3"><strong>Phone:</strong> <span><?= $setting->contact_phone ?></span></p>
+            <p><strong>Email:</strong> <span><?= $setting->contact_email ?></span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="<?= $setting->social_instagram ?>"><i class="bi bi-instagram"></i></a>
+            <a href="<?= $setting->social_youtube ?>"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Halaman Web</h4>
+          <ul>
+            <li><a href="">Beranda</a></li>
+            <li><a href="">Tentang Kami</a></li>
+            <li><a href="">Layanan</a></li>
+            <li><a href="">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Layanan Kami</h4>
+          <ul>
+            <li><a href="">Videografi</a></li>
+            <li><a href="">Fotografi</a></li>
+            <li><a href="">Edit Video</a></li>
+            <li><a href="">Desain Grafis</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Informasi</h4>
+          <ul>
+            <li><a href="">Pertanyaan Umum</a></li>
+            <li><a href="">Syarat & Ketentuan</a></li>
+            <li><a href="">Cara Pemesanan</a></li>
+            <li><a href="">Panduan Pengguna</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Jelajahi Kami</h4>
+          <ul>
+            <li><a href="">Testimoni Klien</a></li>
+            <li><a href="">Blog & Artikel</a></li>
+            <li><a href="">Karier</a></li>
+            <li><a href="">Hubungi Kami</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename"><?= $setting->site_name ?> | </strong> <span>All Rights Reserved.</span></p>
+      <div class="credits">
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/landing-page/js/main.js"></script>
+
+</body>
+
+</html>

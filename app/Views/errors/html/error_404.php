@@ -28,7 +28,7 @@
                                             <?= lang('Errors.sorryCannotFind') ?>
                                         <?php endif; ?>
                                     </p>
-                                    <a class="text-arrow-icon" href="<?= base_url() ?>">
+                                    <a class="text-arrow-icon" href="<?= base_url('/adm') ?>">
                                         <i class="ms-0 me-1" data-feather="arrow-left"></i>
                                         Return to Dashboard
                                     </a>
@@ -42,7 +42,7 @@
                 <footer class="footer-admin mt-auto footer-light">
                     <div class="container-xl px-4">
                         <div class="row">
-                            <div class="col-md-6 small">Copyright &copy; Empower Talent 2024</div>
+                            <div class="col-md-6 small">Copyright &copy; Empower Compro 2024</div>
                             <div class="col-md-6 text-md-end small">
                                 <a href="#!">Privacy Policy</a>
                                 &middot;

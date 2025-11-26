@@ -22,25 +22,13 @@ class Menus extends Seeder
                 'active'    => 1
             ],
             [
-                'name'      => 'Layanan',
-                'path'      => 'service',
-                'icon'      => 'grid',
-                'active'    => 1
-            ],
-            [
-                'name'      => 'Inventory',
-                'path'      => 'inventory',
-                'icon'      => 'package',
-                'active'    => 1
-            ],
-            [
-                'name'      => 'Pengaturan',
+                'name'      => 'Setting',
                 'path'      => 'system',
                 'icon'      => 'tool',
                 'active'    => 1
             ],
             [
-                'name'      => 'Akun',
+                'name'      => 'Account',
                 'path'      => 'user',
                 'icon'      => 'user',
                 'active'    => 1

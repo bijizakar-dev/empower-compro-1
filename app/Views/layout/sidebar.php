@@ -13,8 +13,8 @@ function generateSidebar($menuItems) {
 
     $categories = [
         'Core'              => ['Dashboard'],
-        'Data & Layanan'    => ['Masterdata', 'Layanan', 'Inventory'],
-        'Sistem'            => ['Pengaturan', 'Akun'],
+        'Data & Layanan'    => ['Masterdata', 'Contact Request'],
+        'Sistem'            => ['Setting', 'Account'],
     ];
 
     foreach ($categories as $category => $items) {
@@ -113,7 +113,7 @@ function generateMenuItems($menuItems, $parentId = 'accordionSidenav', $isSubmen
     <div class="sidenav-footer">
         <div class="sidenav-footer-content">
             <div class="sidenav-footer-subtitle">Logged in as:</div>
-            <div class="sidenav-footer-title"><?= session()->get('username'); ?> ( <?= session()->get('role'); ?> )</div>
+            <div class="sidenav-footer-title"><?= session()->get('username'); ?></div>
         </div>
     </div>
 </nav>

@@ -1,7 +1,7 @@
 <?= $this->extend('layout/default') ?>
 
 <?= $this->section('title') ?>
-    <title><?= $title ?> &mdash; Empower Biz</title>
+    <title><?= $title ?> &mdash; Empower Compro</title>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -54,14 +54,9 @@
 
         function reset_form() {
             $('.add_user').val('');
-            $('.show_emp').html('');
             $('.update_user').show();
             $('#password_user').attr('disabled', false);
             $('#password_user').attr('read-only', false);
-            $('#id_employee_user').attr('disabled', false);
-
-            $('#img_emp').removeAttr('src')
-            $('#img_emp').attr('src', '<?= base_url()?>template/assets/img/demo/user-placeholder.svg'); 
         }
 
         function get_list_user() {
@@ -94,10 +89,6 @@
                                         '</div>'+
                                     '</td>'+
                                     '<td>'+v.email+'</td>'+
-                                    '<td>'+
-                                        '<div>'+v.employee_name+' <br> <span style="font-size: 13px"><small> NIP. '+v.employee_nip+'</small></span></div>'+
-                                    '</td>'+
-                                    '<td>'+v.role_name+'</td>'+
                                     '<td><span class="badge '+badgeStatus+'">'+status+'</span></td>'+
                                     '<td>'+
                                         '<button type="button" class="btn btn-datatable btn-icon btn-transparent-dark me-2" onclick="edit_user('+v.id+')" title="Ubah Data"><i data-feather="edit"></i></button> '+    
@@ -230,82 +221,17 @@
                 },
                 success: function(data) {
                     $('#id_user').val(id);
-                    $('#id_employee_user').val(data.data.id_employee);
                     $('#username_user').val(data.data.username);
                     $('#email_user').val(data.data.email);
                     $('#password_user').val(data.data.password);
-                    $('#id_department_user').val(data.data.id_department);
-                    $('#id_role_user').val(data.data.id_role);
-                    $('#id_employee_user').val(data.data.id_employee);
                     $('#active_user').val(data.data.active);
 
-                    show_data_employee(data.data.id_employee);
-
-                    $('#id_employee_user').attr('disabled', true);
                     $('.update_user').hide();
 
                     $('#password_user').attr('disabled', true);
                     $('#password_user').attr('read-only', true);
 
-                    // Set the hidden input value and disable the select
-                    let idEmpVal = $('#id_employee_user').val();
-                    $('#id_employee_user_hidden').val(idEmpVal);
-                    $('#id_employee_user').attr('disabled', true);
-
                     $('.modal-title').html('Edit Data User')
-                    $('#add_modal').modal('show');
-                },
-                error: function(e){
-                    Swal.fire({
-                        title: "Access Failed",
-                        text: "Internal Server Error",
-                        icon: "error"
-                    });
-                },
-                complete: function() {
-                    hideLoading();
-                }
-            });
-        }
-
-        function show_data_employee(id) {
-            if(id == '' || id == null) {
-                return false;
-            }
-
-            $.ajax({
-                type : 'GET',
-                url: '<?= base_url("api/masterdata/employee")?>?id='+id,
-                cache: false,
-                dataType : 'json',
-                beforeSend: function() {
-                    showLoading();
-                },
-                success: function(data) {
-                    console.log(data);
-                    if(data != null) {
-                        let header = '<b>'+ data.data.name + '</b> <br> '+ data.data.nip;
-                        let gender = data.data.gender == 'M' ? 'Laki-laki' : 'Perempuan';
-
-                        $('#header_emp').html(header);
-                        if(data.data.gender == 'M') {
-                            $('#img_emp').removeAttr('src')
-                            $('#img_emp').attr('src', '<?= base_url()?>template/assets/img/illustrations/profiles/profile-2.png');
-                        } else {
-                            $('#img_emp').removeAttr('src')
-                            $('#img_emp').attr('src', '<?= base_url()?>template/assets/img/illustrations/profiles/profile-1.png');
-                        }
-
-                        $('#nip_emp').html(data.data.nip);
-                        $('#name_emp').html(data.data.name);
-                        $('#birth_date_emp').html(data.data.birth_date);
-                        $('#gender_emp').html(gender);
-                        $('#address_emp').html(data.data.address);
-                        $('#education_emp').html(data.data.education);
-                        $('#department_emp').html(data.data.department_name);
-                    }
-                    
-                    $('.modal-title').html('Edit Data')
                     $('#add_modal').modal('show');
                 },
                 error: function(e){
@@ -508,8 +434,6 @@
                             <tr>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <th>Pegawai</th>
-                                <th>Role</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
@@ -518,8 +442,6 @@
                             <tr>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <th>Pegawai</th>
-                                <th>Role</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
@@ -532,7 +454,7 @@
     </main>
 
     <div class="modal fade" id="add_modal">
-        <div class="modal-dialog" role="document" style="--bs-modal-width: 90%">
+        <div class="modal-dialog" role="document" style="--bs-modal-width: 60%">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Data User</h5>
@@ -540,36 +462,14 @@
                 </div>
                 <div class="modal-body">
                     <div class="row" style="padding: 0px 20px 0px 20px">
-                        <div class="col-xl-6">
+                        <div class="col-xl-12">
                             <div class="card mb-4">
-                                <div class="card-header">Detail User</div>
                                 <div class="card-body">
                                     <form id="add_form">
                                         <!-- input Hidden -->
                                         <input type="hidden" class="form-control add_user" id="id_user" name="id">
-                                        <input type="hidden" class="form-control add_user" id="id_employee_user_hidden" name="id_employee">
                                         <!-- input Hidden -->
 
-                                        <div class="row gx-3 mb-3">
-                                            <div class="col-md-6">
-                                                <label class="small mb-1" for="id_employee_user">Nama Pegawai</label>
-                                                <select class="form-select add_user" id="id_employee_user" aria-label="Default select example">
-                                                    <option value="" selected disabled>Pilih Pegawai...</option>
-                                                    <?php foreach ($employee as $key => $value): ?>
-                                                        <option value="<?= esc($key) ?>"><?= esc($value) ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label class="small mb-1" for="id_role_user">Role</label>
-                                                <select class="form-select add_user" id="id_role_user" name="id_role" aria-label="Default select example">
-                                                    <option value="" selected disabled>Pilih Role ...</option>
-                                                    <?php foreach ($role as $key => $value): ?>
-                                                        <option value="<?= esc($key) ?>"><?= esc($value) ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                            </div>
-                                        </div>
                                         <!-- IDENTITAS DIRI -->
                                         <div class="mb-3">
                                             <label class="small mb-1" for="username_user">Username</label>
@@ -601,84 +501,6 @@
                                         </div>
                                         <!-- SETTING -->
                                     </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="card mb-4 mb-xl-0">
-                                <div class="card-header">Data Pegawai</div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-account-profile rounded-circle mb-2 show_emp" id="img_emp" src="<?= base_url()?>/template/assets/img/demo/user-placeholder.svg" alt="" id="img_emp"/>
-                                        <div class="small font-italic text-muted mb-4 show_emp" id="header_emp"><b>Nama Pegawai </b><br/> NIP. - </div>
-                                    </div>
-                                    
-                                    <hr>
-                                    
-                                    <div class="container">
-                                        <div class="row mb-3 align-items-center">
-                                            <div class="col-lg-3 label-container">
-                                                <span class="label-text">NIP</span>
-                                                <span class="label-colon">:</span>
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <span class="show_line_colon show_emp" style="min-width: 100%;" id="nip_emp"></span>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3 align-items-center">
-                                            <div class="col-lg-3 label-container">
-                                                <span class="label-text">Nama</span>
-                                                <span class="label-colon">:</span>
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <span class="show_line_colon show_emp" style="min-width: 100%;" id="name_emp"></span>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3 align-items-center">
-                                            <div class="col-lg-3 label-container">
-                                                <span class="label-text">Tanggal Lahir</span>
-                                                <span class="label-colon">:</span>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <span class="show_line_colon show_emp" style="min-width: 100%;" id="birth_date_emp"></span>
-                                            </div>
-                                            <div class="col-lg-3 label-container">
-                                                <span class="label-text">Kelamin</span>
-                                                <span class="label-colon">:</span>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <span class="show_line_colon show_emp" style="min-width: 100%;" id="gender_emp"></span>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3 align-items-center">
-                                            <div class="col-lg-3 label-container">
-                                                <span class="label-text">Alamat</span>
-                                                <span class="label-colon">:</span>
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <span class="show_line_colon show_emp" style="min-width: 100%;" id="address_emp"></span>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3 align-items-center">
-                                            <div class="col-lg-3 label-container">
-                                                <span class="label-text">Pendidikan</span>
-                                                <span class="label-colon">:</span>
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <span class="show_line_colon show_emp" style="min-width: 100%;" id="education_emp"></span>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3 align-items-center">
-                                            <div class="col-lg-3 label-container">
-                                                <span class="label-text">Departemen</span>
-                                                <span class="label-colon">:</span>
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <span class="show_line_colon show_emp" style="min-width: 100%;" id="department_emp"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
                                 </div>
                             </div>
                         </div>

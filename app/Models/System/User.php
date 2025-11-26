@@ -11,7 +11,7 @@ class User extends Model
     protected $table            = 'users';
     protected $primaryKey       = 'id';
     protected $returnType       = 'object';
-    protected $allowedFields    = ['username', 'email', 'password', 'id_employee', 'id_role', 'token', 'active', 'deleted_at', 'expiry_token'];
+    protected $allowedFields    = ['username', 'email', 'password', 'token', 'active', 'deleted_at', 'expiry_token'];
     protected $useTimestamps    = true;
     protected $useSoftDeletes   = true;
 
@@ -29,18 +29,13 @@ class User extends Model
         if ($search['search'] != '') {
             $q .= "AND u.username LIKE '%".$search['search']."%' ";
         }
-        if ($search['id_role'] != '') {
-            $q .= "AND u.id_role LIKE '%".$search['id_role']."%' ";
-        }
         if ($search['active'] != '') {
             $q .= "AND u.active LIKE '%".$search['active']."%' ";
         }
 
         
-        $select = "SELECT u.* , e.name as employee_name, e.nip as employee_nip ,r.name as role_name ";
+        $select = "SELECT u.* ";
         $sql = " FROM users u 
-                JOIN employees e ON (u.id_employee = e.id)
-                JOIN roles r ON (u.id_role = r.id)
                 WHERE u.deleted_at is null 
                 $q order by u.username asc";
 
@@ -54,10 +49,8 @@ class User extends Model
     }
 
     function get_user($id) {
-        $sql = "SELECT u.* , e.name as employee_name, r.name as role_name 
+        $sql = "SELECT u.*
                 FROM users u 
-                JOIN employees e ON (u.id_employee = e.id)
-                JOIN roles r ON (u.id_role = r.id)
                 WHERE u.deleted_at is null  
                     AND u.id = $id 
                 LIMIT 1";
@@ -88,8 +81,6 @@ class User extends Model
                 "id" => $param['id'],
                 "username" => $param['username'],
                 "email" => $param['email'],
-                "id_employee" => $param['id_employee'],
-                "id_role" => $param['id_role'],
                 "active" => $param['active']
             );
         } else {
@@ -183,11 +174,8 @@ class User extends Model
             $q .= "WHERE username = '".$identity."' ";
         }
 
-        $sql = "SELECT u.*, e.name, e.id_department, e.photo, r.name as name_role, d.name as name_department
+        $sql = "SELECT u.*  
                 FROM users u
-                JOIN roles r ON u.id_role = r.id
-                JOIN employees e ON u.id_employee = e.id
-                JOIN departments d ON e.id_department = d.id
                 $q 
                 AND u.deleted_at IS NULL
                 LIMIT 1";
