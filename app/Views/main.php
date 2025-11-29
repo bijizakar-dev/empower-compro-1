@@ -64,7 +64,7 @@
   <!-- Video Background -->
    <video autoplay muted loop playsinline
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-    <source src="assets/img/Konten Kalitalang.MP4" type="video/mp4">
+    <source src="assets/video/restriCATed_Zone_Animation_by_Aoyume_Production.mp4" type="video/mp4">
   </video>
 
   <!-- Overlay -->
@@ -78,18 +78,20 @@
     <div class="row justify-content-center">
       <div class="col-lg-6 col-md-10 col-12">
         <div class="badge-wrapper mb-3">
-          <div class="d-inline-flex align-items-center rounded-pill border border-light px-3 py-1 text-white">
-            <div class="icon-circle me-2 text-white">
+          <!-- <div class="d-inline-flex align-items-center rounded-pill border border-light px-3 py-1 text-white"> -->
+            <!-- <div class="icon-circle me-2 text-white">
               <i class="bi bi-bell"></i>
-            </div>
-            <span class="badge-text me-2 text-white">Turn on your notifications</span>
-          </div>
+            </div> -->
+            <!-- <span class="badge-text me-2 text-white">Turn on your notifications</span> -->
+          <!-- </div> -->
         </div>
 
-        <h1 class="hero-title mb-4 fs-1 fw-bold text-white">Enjoy The Moment. We Make It Last.</h1>
+        <h1 class="hero-title mb-4 fs-1 fw-bold text-dark bg-white">MAGVIS. Bringing Ideas to Life.</h1>
+        <h3 class="desc-title mb-4 fw-bold text-white text-decoration-underline">Your Creative Industry Partner in Animation, Digital Reality, and Video Production.</h3>
+        
         
         <div class="cta-wrapper">
-          <a href="#about " class="btn btn-primary">Read more</a>
+          <a href="#about " class="btn btn-primary">START YOUR PROJECT</a>
         </div>
       </div>
     </div>
@@ -98,7 +100,6 @@
 
 </section>
 
-
     <!-- About Section -->
     <section id="about" class="about section">
 
@@ -106,46 +107,54 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <p class="who-we-are">Tentang Kami</p>
-            <h3>Enjoy The Moment. We Make It Last.</h3>
-            <p class="fst-italic">
-              Kami adalah sebuah agensi videografi yang berbasis di daerah Yogyakarta. Kami menawarkan keahlian di banyak bidang videografi dan fotografi dengan workflow yang singkat untuk setiap kebutuhan video anda : 
-            </p>
-            <ul>
+          <div class="col-lg-6 content d-flex flex-column" data-aos="fade-up" data-aos-delay="150">
+            <p class="who-we-are mb-auto">Tentang Kami</p>
+            <div class="block-desc">
+              <h3>We Are Magvis. The Visionaries Behind Your Story..</h3>
+              <p class="fst-italic">
+                Kami fokus pada Digitalisasi, Visual Inovatif, 
+                Teknologi Imersif, Modern Game dan Kualitas Kelas Dunia.
+              </p>
+            </div>
+            <!-- <ul>
               <li><i class="bi bi-check-circle"></i> <span>Adventure.</span></li>
               <li><i class="bi bi-check-circle"></i> <span>Event.</span></li>
               <li><i class="bi bi-check-circle"></i> <span>Video Profile.</span></li>
               <li><i class="bi bi-check-circle"></i> <span>Dokumenter.</span>
-            </ul>
-            <a href="#services-alt" class="read-more"><span>Tampilkan Lebih Banyak</span><i class="bi bi-arrow-right"></i></a>
+            </ul> -->
+            <!-- <a href="#services-alt" class="read-more"><span>Tampilkan Lebih Banyak</span><i class="bi bi-arrow-right"></i></a> -->
           </div>
 
           <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
-            <div class="row gy-4">
-              <!-- Gambar kiri atas -->
-               <div class="col-6">
-                <img src="assets/img/about/1.jpg" class="img-fluid rounded" alt="">
-              </div>
-              <!-- Gambar kanan atas -->
-               <div class="col-6">
-                <img src="assets/img/about/2.jpg" class="img-fluid rounded" alt="">
-              </div>
-              <!-- Gambar kiri bawah -->
-               <div class="col-6">
-                <img src="assets/img/about/3.jpg" class="img-fluid rounded" alt="">
-              </div>
-              <!-- Gambar kanan bawah BARU -->
-               <div class="col-6">
-                <img src="assets/img/about/4.jpg" class="img-fluid rounded" alt="">
-              </div>
-            </div>
+            <h3 class="mb-4 fs-2 fw-medium text-center text-body-secondary">
+              <span class="fw-bold text-black">Magvis</span> adalah <span class="fw-bold text-black">Production House</span> yang berfokus menghidupkan ide-ide tak terbatas melalui teknologi dan seni visual. 
+              Kami menggabungkan keahlian dalam 
+              <span class="fw-bold text-black"">Animasi, Video Produksi, Desain, Game, dan Digital Reality (AR/VR)</span> untuk menciptakan pengalaman yang unik dan mengesankan.
+            </h3>
           </div>        
         </div>
       </div>
+    </section>
+    <!-- /About Section -->
 
-      </div>
-    </section><!-- /About Section -->
+    <!-- <div class="row gy-4">
+              <!-- Gambar kiri atas -->
+               <!-- <div class="col-6">
+                <img src="assets/img/about/1.jpg" class="img-fluid rounded" alt="">
+              </div> -->
+              <!-- Gambar kanan atas -->
+               <!-- <div class="col-6">
+                <img src="assets/img/about/2.jpg" class="img-fluid rounded" alt="">
+              </div> -->
+              <!-- Gambar kiri bawah -->
+               <!-- <div class="col-6">
+                <img src="assets/img/about/3.jpg" class="img-fluid rounded" alt="">
+              </div> -->
+              <!-- Gambar kanan bawah BARU -->
+               <!-- <div class="col-6">
+                <img src="assets/img/about/4.jpg" class="img-fluid rounded" alt="">
+              </div> -->
+            <!-- </div> -->
 
     <!-- How We Work Section -->
     <section id="how-we-work" class="how-we-work section">
@@ -153,7 +162,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Bagaimana Kami Bekerja?</h2>
-        <p>Kami bekerja dengan semaksimalnya.</p>
+        <p>Kami mengubah ide menjadi realitas melalui proses yang terstruktur dan kreatif.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -169,8 +178,8 @@
                     <i class="bi bi-chat-square-dots-fill"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Diskusi & Briefing Klien</h3>
-                    <p>Kami memulai dengan memahami kebutuhan visual, tujuan video, target audiens, pesan utama, dan platform distribusi. Semakin detail diskusi, semakin kuat hasil akhirnya.</p>
+                    <h3>Diskusi dengan Klien</h3>
+                    <p>Kami memulai dengan sesi konsultasi mendalam untuk menggali visi, tujuan, target pasar, dan spesifikasi teknis proyek Anda. Pemahaman yang akurat di tahap ini adalah kunci keberhasilan kolaborasi kita.</p>
                   </div>
                 </div>
               </div>
@@ -181,11 +190,11 @@
                 <span class="step-number">02</span>
                 <div class="card-body">
                   <div class="step-icon">
-                    <i class="bi bi-journal-text"></i>
+                    <i class="bi bi-clipboard2-check-fill"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Perencanaan Produksi</h3>
-                    <p>Kami menyusun naskah, storyboard, menentukan lokasi, Compro, hingga jadwal syuting. Semua dirancang dengan matang agar proses syuting berjalan efisien dan sesuai ekspektasi.</p>
+                    <h3>Pra-Produksi (Perencanaan)</h3>
+                    <p>Tim kami menyusun kerangka teknis dan kreatif proyek, termasuk <span class="fst-italic">concept art, storyboard, script, wireframe</span>, penentuan <span class="fst-italic">asset</span>, jadwal kerja, dan alokasi tim. Setiap detail dipersiapkan matang sebelum eksekusi.</p>
                   </div>
                 </div>
               </div>
@@ -196,11 +205,11 @@
                 <span class="step-number">03</span>
                 <div class="card-body">
                   <div class="step-icon">
-                    <i class="bi bi-camera-reels-fill"></i>
+                    <i class="bi bi-pc-display"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Pengambilan Gambar (Shooting)</h3>
-                    <p>Tim kami turun ke lapangan untuk melakukan proses shooting. Kami menggunakan peralatan profesional untuk menjamin kualitas visual dan audio yang maksimal.</p>
+                    <h3>Produksi (Eksekusi Inti)</h3>
+                    <p>Ini adalah tahap eksekusi kreatif. Tim kami terjun langsung, baik itu proses <span class="fst-italic">shooting</span> video, pemodelan 3D, <span class="fst-italic">coding</span> untuk AR/VR, atau desain UI/UX. Kami menjamin kualitas teknis tertinggi sesuai rencana</p>
                   </div>
                 </div>
               </div>
@@ -211,11 +220,11 @@
                 <span class="step-number">04</span>
                 <div class="card-body">
                   <div class="step-icon">
-                    <i class="bi bi-scissors"></i>
+                    <i class="bi bi-sliders"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Proses Editing</h3>
-                    <p>Video mentah kami diolah menjadi karya yang utuh mulai dari pemotongan, transisi, sound design, color grading, hingga motion graphic jika dibutuhkan.</p>
+                    <h3>Pasca-Produksi (Penyempurnaan)</h3>
+                    <p>Hasil mentah diolah menjadi karya jadi. Tahap ini mencakup <span class="fst-italic">editing</span> video, <span class="fst-italic">color grading</span>, VFX, <span class="fst-italic">rendering</span> animasi, <span class="fst-italic">debugging</span> game, atau penyesuaian desain akhir, memastikan output visual dan fungsional yang sempurna.</p>
                   </div>
                 </div>
               </div>
@@ -226,11 +235,11 @@
                 <span class="step-number">05</span>
                 <div class="card-body">
                   <div class="step-icon">
-                    <i class="bi bi-check2-circle"></i>
+                    <i class="bi bi-gift-fill"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Finishing</h3>
-                    <p>Finally, hasilnya siap tayang.</p>
+                    <h3>Finish (Serah Terima Akhir)</h3>
+                    <p>Setelah melalui tahap peninjauan dan revisi akhir oleh klien, produk diserahterimakan dalam format siap pakai dan didistribusikan. Proyek Anda kini siap diluncurkan dan memberikan dampak maksimal.</p>
                   </div>
                 </div>
               </div>

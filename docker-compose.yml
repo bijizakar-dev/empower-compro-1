@@ -1,0 +1,36 @@
+# version: '3.8'
+
+services:
+  # app:
+  #   build: .
+  #   container_name: ci4-app
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - .:/app
+  #   depends_on:
+  #     - db
+  #   networks:
+  #     - ci4net
+
+  db:
+    image: mariadb:10.6
+    container_name: ci4-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: ci4db
+      MYSQL_USER: ciuser
+      MYSQL_PASSWORD: cipassword
+    ports:
+      - "3308:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - ci4net
+
+volumes:
+  dbdata:
+
+networks:
+  ci4net:

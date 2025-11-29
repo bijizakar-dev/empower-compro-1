@@ -812,6 +812,14 @@ section,
   margin-bottom: 1.5rem;
 }
 
+.hero .desc-title {
+  font-size: 1.0rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--heading-color);
+  margin-bottom: 1.5rem;
+}
+
 @media (max-width: 991.98px) {
   .hero .hero-title {
     font-size: 2rem;
