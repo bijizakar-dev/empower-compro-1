@@ -11,28 +11,35 @@ class Menus extends Seeder
         $data = [
             [
                 'name'      => 'Dashboard',
-                'path'      => '/',
+                'path'      => 'adm',
                 'icon'      => 'activity',
                 'active'    => 1
             ],
             [
                 'name'      => 'Masterdata',
-                'path'      => 'masterdata',
+                'path'      => 'adm/masterdata',
                 'icon'      => 'columns',
                 'active'    => 1
             ],
             [
                 'name'      => 'Setting',
-                'path'      => 'system',
+                'path'      => 'adm/setting',
                 'icon'      => 'tool',
                 'active'    => 1
             ],
             [
                 'name'      => 'Account',
-                'path'      => 'user',
+                'path'      => 'adm/account',
                 'icon'      => 'user',
                 'active'    => 1
+            ],
+            [
+                'name'      => 'Contact Request',
+                'path'      => 'adm/contact-request',
+                'icon'      => 'phone',
+                'active'    => 1
             ]
+           
         ];
 
         $this->db->table('menus')->insertBatch($data);

@@ -645,10 +645,28 @@
 
     <!-- Faq Section -->
     <section id="faq" class="faq section">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-5">
+          <!-- Kanan: FAQ Loop -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="faq-accordion">
+
+              <?php $i = 0; foreach ($faqs as $faq): ?>
+                  <div class="faq-item <?= $i == 0 ? 'faq-active' : '' ?>">
+                    <div class="faq-header">
+                      <h3><?= esc($faq['question']) ?></h3>
+                      <i class="bi bi-chevron-down faq-toggle"></i>
+                    </div>
+
+                    <div class="faq-content">
+                      <p><?= esc($faq['answer']) ?></p>
+                    </div>
+                  </div><!-- End FAQ Item-->
+              <?php $i++; endforeach; ?>
+            </div>
+          </div>
+          
+          <!-- Kiri: Contact Card -->
           <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
             <div class="faq-contact-card">
               <div class="card-icon">
@@ -657,92 +675,32 @@
               <div class="card-content">
                 <h3>Apakah Ada Pertanyaan?</h3>
                 <p>Tenang saja, kami siap bantu kapan pun yang anda butuh!</p>
+
                 <div class="contact-options">
-                  <a href="mailto:studiovrise@gmail.com" class="contact-option">
+                  <a href="mailto:<?= esc($setting->contact_email ?? '') ?>" class="contact-option">
                     <i class="bi bi-envelope"></i>
                     <span>Email Kami</span>
                   </a>
-                  <a href="https://wa.me/6285190447515?text=Halo%20kak,%20saya%20ingin%20tanya-tanya%20tentang%20jasa%20videonya" class="contact-option">
+
+                  <a href="https://wa.me/<?= esc($setting->contact_phone ?? '') ?>?text=Halo%20kak,%20saya%20ingin%20tanya%20tentang%20layanannya"
+                    class="contact-option">
                     <i class="bi bi-chat-dots"></i>
                     <span>Chat Langsung</span>
                   </a>
-                  <a href="https://wa.me/6285190447515" class="contact-option">
+
+                  <a href="https://wa.me/<?= esc($setting->contact_phone ?? '') ?>" class="contact-option">
                     <i class="bi bi-telephone"></i>
                     <span>Telepon Kami Dulu, Yuk!</span>
                   </a>
                 </div>
+
               </div>
             </div>
           </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="faq-accordion">
-              <div class="faq-item faq-active">
-                <div class="faq-header">
-                  <h3>Vrise Studio bisa request konten ngga kak?</h3>
-                  <i class="bi bi-chevron-down faq-toggle"></i>
-                </div>
-                <div class="faq-content">
-                  <p>
-                    Bisa banget dong kak, kita bakal ngasih saran juga kok! Untuk request konten yang kakak harapkan.
-                  </p>
-                </div>
-              </div><!-- End FAQ Item-->
-
-              <div class="faq-item" data-aos="zoom-in" data-aos-delay="200">
-                <div class="faq-header">
-                  <h3>Di Vrise Studio ada paket hemat ngga kak?</h3>
-                  <i class="bi bi-chevron-down faq-toggle"></i>
-                </div>
-                <div class="faq-content">
-                  <p>
-                    Untuk paket hemat bisa langsung diskusi di WA aja kak! Sama tergantung kebutuhan konten kakak, pasti dapat paket hemat kok!
-                  </p>
-                </div>
-              </div><!-- End FAQ Item-->
-
-              <div class="faq-item">
-                <div class="faq-header">
-                  <h3>Kira-kira proses pengerjaannya berapa lama kak?</h3>
-                  <i class="bi bi-chevron-down faq-toggle"></i>
-                </div>
-                <div class="faq-content">
-                  <p>
-                    Untuk proses pengerjaannya kita bakal berusaha secepatnya selesai kak!
-                  </p>
-                </div>
-              </div><!-- End FAQ Item-->
-
-              <div class="faq-item">
-                <div class="faq-header">
-                  <h3>Kalo mau sponsorin Vrise Studio bisa ngga kak?</h3>
-                  <i class="bi bi-chevron-down faq-toggle"></i>
-                </div>
-                <div class="faq-content">
-                  <p>
-                    Bisa banget dong kak! Kita bakal terbuka lebar untuk orang-orang yang pengen sponsorin kita.
-                  </p>
-                </div>
-              </div><!-- End FAQ Item-->
-
-              <div class="faq-item">
-                <div class="faq-header">
-                  <h3>Vrise Studio alamat lengkapnya dimana ya kak?</h3>
-                  <i class="bi bi-chevron-down faq-toggle"></i>
-                </div>
-                <div class="faq-content">
-                  <p>
-                    Untuk alamat lengkap kami ada di Sinduharjo, Ngaglik, Sleman, Daerah Istimewa Yogyakarta kak!
-                  </p>
-                </div>
-              </div><!-- End FAQ Item-->
-            </div>
-          </div>
         </div>
-
       </div>
 
-    </section><!-- /Faq Section -->
+  </section><!-- /Faq Section -->
 
     
     <!-- Team Section -->

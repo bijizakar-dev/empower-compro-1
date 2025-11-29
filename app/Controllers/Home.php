@@ -9,6 +9,7 @@ use App\Models\Masterdata\Portfolio;
 use App\Models\Masterdata\PortfolioMedia;
 use App\Models\System\Setting;
 use App\Models\Masterdata\Team;
+use App\Models\Masterdata\Faq;
 
 
 class Home extends BaseController
@@ -27,11 +28,12 @@ class Home extends BaseController
         $mediaModel     = new PortfolioMedia();
         $settingModel   = new Setting();
         $teamModel      = new Team();
-
+        $faqModel       = new Faq();
 
         $services   = $serviceModel->where('active', 1)->orderBy('sort_order', 'ASC')->findAll();
         $pricelists = $priceListModel->findAll();
         $categories = $categoryModel->orderBy('name', 'ASC')->findAll();
+
 
         $setting = $settingModel->first();
 
@@ -51,6 +53,7 @@ class Home extends BaseController
         }
 
         $teams = $teamModel->orderBy('id', 'ASC')->findAll();
+        $faqs  = $faqModel->where('is_active', 1)->orderBy('sort_order', 'ASC')->findAll();
 
         $data = [
             'title'         => 'Empower Compro',
@@ -63,7 +66,8 @@ class Home extends BaseController
                 'days' => 'Setiap Hari',
                 'time' => '07:00 - 22:00 WIB'
             ],
-            'teams'         => $teams
+            'teams'         => $teams,
+            'faqs'          => $faqs
         ];
 
         return view('main', $data);

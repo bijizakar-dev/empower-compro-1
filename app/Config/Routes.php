@@ -92,6 +92,17 @@ $routes->group('adm', ['namespace' => 'App\Controllers\Adm'], function ($routes)
         $routes->post('update/(:num)',  'TeamController::update/$1');
     });
 
+    // Masterdata FAQS 
+    $routes->group('masterdata/faqs', function ($routes) {
+        $routes->get('/',               'FaqController::index');
+        $routes->get('create',          'FaqController::create');
+        $routes->get('edit/(:num)',     'FaqController::edit/$1');
+        $routes->get('delete/(:num)',   'FaqController::delete/$1');
+
+        $routes->post('store',          'FaqController::store');
+        $routes->post('update/(:num)',  'FaqController::update/$1');
+    });
+
     // Layanan Contact Request 
     $routes->group('contact-request', function ($routes) {
         $routes->get('/',                 'ContactRequestController::index',  ['filter' => 'auth']);
