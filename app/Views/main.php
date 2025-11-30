@@ -86,13 +86,24 @@
           <!-- </div> -->
         </div>
 
-        <h1 class="hero-title mb-4 fs-1 fw-bold text-dark bg-white">MAGVIS. Bringing Ideas to Life.</h1>
-        <h3 class="desc-title mb-4 fw-bold text-white text-decoration-underline">Your Creative Industry Partner in Animation, Digital Reality, and Video Production.</h3>
+        <div class="d-flex flex-column align-items-center text-center p-4 bg-white bg-opacity-75 rounded-4">
+    
+          <h1 class="hero-title mb-3 fs-1 fw-bold text-dark">
+              MAGVIS. 
+              <br/><span class="fs-5 fst-italic"">Bringing Ideas to Life.</span>
+          </h1>
+
+          <h3 class="desc-title mb-4 fw-semibold text-dark">
+              Your Creative Industry Partner in Animation, Digital Reality, and Video Production.
+          </h3>
+
+          <div class="cta-wrapper">
+            <a href="#about " class="btn btn-primary">START YOUR PROJECT</a>
+          </div>
+
+      </div>
         
         
-        <div class="cta-wrapper">
-          <a href="#about " class="btn btn-primary">START YOUR PROJECT</a>
-        </div>
       </div>
     </div>
   </div>
@@ -256,8 +267,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Layanan</h2>
-        <p>Layanan Kami Meliputi:</p>
+        <h2>Services</h2>
+        <p>Layanan Inti untuk Ide Tanpa Batas.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -265,26 +276,32 @@
         <div class="row justify-content-center g-5">
 
           <?php foreach ($services as $index => $row): ?>
-            <div class="col-md-6" data-aos="<?= $index % 2 === 0 ? 'fade-right' : 'fade-left' ?>" data-aos-delay="100">
-                <div class="service-item text-center">
-
-                    <div class="service-icon mb-3">
-                        <i class="<?= $row->icon ?>"></i>
-                    </div>
-
-                    <div class="service-content">
-                        <h3><?= esc($row->title) ?></h3>
-                        <p><?= strip_tags($row->description)?></p>
-                        <a href="#" class="service-link">
-                            <span>Learn More</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            <?php endforeach; ?>
           
+          <div class="col-md-6" data-aos="<?= $index % 2 === 0 ? 'fade-right' : 'fade-left' ?>" data-aos-delay="200">
+              <div class="service-item position-relative">
+                  <!-- Coming Soon Label -->
+                  <?php if (strpos($row->title, '(TBA)')): ?>
+                  <div class="position-absolute top-0 end-0 mt-2 me-2 px-3 py-1 small fw-semibold rounded-pill text-white"
+                      style="background: rgba(0, 0, 0, 0.35); backdrop-filter: blur(6px);">
+                      Coming Soon
+                  </div>
+                  <?php endif; ?>
+
+                  <div class="service-icon">
+                     <i class="<?= $row->icon ?>"></i>
+                  </div>
+
+                  <div class="service-content">
+                      <h3><?= esc($row->title) ?></h3>
+                      <p><?= strip_tags($row->description) ?></p>
+                      <a href="" class="service-link">
+                          <span>Learn More</span>
+                          <i class="bi bi-arrow-right"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <?php endforeach; ?>
           <!-- End Service Item -->
         
         </div>
@@ -301,11 +318,13 @@
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="content-block">
               <h6 class="subtitle">Layanan Inovatif Kami</h6>
-              <h2 class="title">Enjoy The Moment. We Make It Last.</h2>
+              <h2 class="title">Wujudkan Imajinasi Menjadi Visual yang Hidup.</h2>
               <p class="description">
-                Vrise Studio hadir untuk jadi partner terbaik kamu dalam mengabadikan setiap momen berharga. Kami menyediakan layanan foto dan video dengan kualitas tinggi, cocok untuk berbagai kebutuhan seperti pernikahan, prewedding, konten bisnis, hingga dokumentasi event. Buat kami, setiap momen punya cerita unik yang layak untuk ditangkap secara detail dan penuh rasa. Karena itu, kami selalu berusaha menghadirkan hasil visual yang nggak cuma bagus secara teknis, tapi juga mampu menyampaikan emosi dan suasana yang ingin kamu kenang.<br>
+                Magvis Studio hadir sebagai mitra kreatif yang membantu kamu menceritakan ide, brand, maupun momen penting melalui visual yang kuat, modern, dan bermakna. Mulai dari animasi 3D, produksi video sinematik, identitas visual, hingga pengalaman imersif berbasis teknologi, kami mengerjakan semuanya dengan pendekatan yang detail dan penuh rasa.<br>
                 <br>
-                Kami percaya bahwa proses produksi yang menyenangkan akan menghasilkan karya yang memuaskan. Mulai dari diskusi konsep, proses pengambilan gambar, hingga tahap editing semua kami kerjakan dengan sepenuh hati dan profesionalitas tinggi. Dengan tim yang kreatif dan berpengalaman, kami siap bantu kamu bikin momen jadi lebih bermakna dan abadi dalam bentuk visual yang bisa dikenang selamanya. Jadi, biarkan kami yang bekerja di balik layar, supaya kamu bisa lebih fokus menikmati momennya.
+                Kami percaya setiap proyek memiliki cerita dan tujuan yang berbeda. Karena itu, proses kami selalu dimulai dari memahami kebutuhanmu—apa pesan yang ingin disampaikan, gaya visual yang diinginkan, dan pengalaman seperti apa yang ingin dihadirkan kepada audiens. Dengan kolaborasi yang menyenangkan dan tim yang berpengalaman, kami memastikan setiap hasil akhirnya bukan hanya indah, tetapi juga efektif menyampaikan nilai dan karakter yang kamu bawa.
+                <br>
+                Apapun idenya, kami siap membantu kamu menghadirkannya ke dunia visual yang lebih hidup, lebih kuat, dan lebih berkesan.
               </p>
               <div class="button-wrapper">
                 <a class="btn" href="#services"><span>Telusuri Semua Layanan</span></a>
@@ -316,21 +335,21 @@
             <div class="services-list">
               <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-icon">
-                  <i class="bi bi-compass"></i>
+                  <i class="bi bi-badge-3d-fill"></i>
                 </div>
                 <div class="service-content">
-                  <h4><a href="">Adventure</a></h4>
-                  <p>Vrise Studio tidak sekadar hadir dalam petualangan anda, kami merekam perjalanan dan momen berharga anda ke dalam frame yang bermakna.</p>
+                  <h4><a href="">Menciptakan Dunia Bergerak</a></h4>
+                  <p>Animasi 3D, Animasi 2D, Motion Graphics, Frame by Frame.</p>
                 </div>
               </div><!-- End Service Item -->
 
               <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-icon">
-                  <i class="bi bi-calendar-event"></i>
+                  <i class="bi bi-film"></i>
                 </div>
                 <div class="service-content">
-                  <h4><a href="">Event</a></h4>
-                  <p>Memastikan setiap momen terekam dengan jelas. Mengabadikan euforia acara anda dengan visual yang kuat  dan berkesan bersama Vrise Studio.</p>
+                  <h4><a href="">Kisah Anda, dalam Kualitas Sinema</a></h4>
+                  <p>Advertisement, Company Profile, Broadcasting, Music Video, Movies, Event Documentation.</p>
                 </div>
               </div><!-- End Service Item -->
 
@@ -339,8 +358,18 @@
                   <i class="bi bi-person-video3"></i>
                 </div>
                 <div class="service-content">
-                  <h4><a href="">Video Profile</a></h4>
-                  <p>Memperkenalkan siapa anda lewat visual yang profesional dan relevan. Kami membantu produksi video profil untuk individu, brand, dan institusi yang ingin tampil meyakinkan, autentik, dan berkelas di hadapan audiens mereka.</p>
+                  <h4><a href="">Identitas Visual yang Kuat</a></h4>
+                  <p>Brand (Product, Logo, Social Media), UI/UX, Illustration.</p>
+                </div>
+              </div><!-- End Service Item -->
+
+              <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon">
+                  <i class="bi bi-badge-vr-fill"></i>
+                </div>
+                <div class="service-content">
+                  <h4><a href="">Pengalaman Imersif Masa Depan</a></h4>
+                  <p>Augmented Reality, Virtual Reality, Interactive Media, Games, 3D Mapping.</p>
                 </div>
               </div><!-- End Service Item -->
 
@@ -349,8 +378,18 @@
                   <i class="bi bi-camera-reels"></i>
                 </div>
                 <div class="service-content">
-                  <h4><a href="">Dokumenter</a></h4>
-                  <p>Vrise Studio membantu menyusun dokumenter yang jelas, mudah dipahami, dan relevan.</p>
+                  <h4><a href="">Momen Abadi, Visual Tajam</a></h4>
+                  <p>Product, Event Documentation, Company Profile, Fashion.</p>
+                </div>
+              </div><!-- End Service Item -->
+
+              <div class="service-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon">
+                  <i class="bi bi-book-half"></i>
+                </div>
+                <div class="service-content">
+                  <h4><a href="">Tumbuh Bersama Magvis</a></h4>
+                  <p>Program Pelatihan Khusus dari Magvis untuk Mengasah Keahlian Kreatif Anda.</p>
                 </div>
               </div><!-- End Service Item -->
             </div>
@@ -367,8 +406,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p>Project Kami Meliputi:</p>
+        <h2>Our Works</h2>
+        <p>Karya-Karya yang Kami Hidupkan.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -410,7 +449,7 @@
                     : $thumb;
               ?>
 
-              <div class="col-lg-6 col-md-6 portfolio-item isotope-item <?= $catSlug ?>">
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?= $catSlug ?>">
                 <div class="portfolio-card">
 
                   <div class="portfolio-image">
@@ -450,7 +489,7 @@
                   <div class="portfolio-content">
                     <span class="category"><?= esc($p->category_name) ?></span>
                     <h3><?= esc($p->title) ?></h3>
-                    <p><?= esc($p->client_name ?: 'Empower Compro') ?></p>
+                    <p><?= esc($p->client_name ?: 'Magvis Client') ?></p>
                   </div>
 
                 </div>
@@ -466,6 +505,13 @@
     </section><!-- /Portfolio Section -->
 
     <!-- Pricing Section -->
+    <?php
+        // Hitung jumlah data
+        $totalItems = count($pricelists);
+        $useCarousel = $totalItems > 4;
+
+        if ($totalItems !== 0) {
+    ?>
     <section id="pricing" class="pricing section light-background">
 
       <!-- Section Title -->
@@ -476,15 +522,11 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <?php
-          // Hitung jumlah data
-          $totalItems = count($pricelists);
-          $useCarousel = $totalItems > 4;
-        ?>
+        
 
         <?php if ($useCarousel): ?>
           <!-- data > 4: gunakan carousel seperti testimonials -->
-          <div class="pricing-slider swiper init-swiper">
+          <div class="pricing-slider swiper init-swiper pt-4" style="margin-top: calc(-1 * var(--bs-gutter-y)); --bs-gutter-x: 1.5rem; --bs-gutter-y: 0;">
             <script type="application/json" class="swiper-config">
               {
                 "loop": false,
@@ -641,7 +683,12 @@
         <?php endif; ?>
       </div>
 
-    </section><!-- /Pricing Section -->
+    </section>
+    <?php } ?>
+
+    <!-- /Pricing Section -->
+
+
 
     <!-- Faq Section -->
     <section id="faq" class="faq section">
@@ -673,8 +720,8 @@
                 <i class="bi bi-question-circle"></i>
               </div>
               <div class="card-content">
-                <h3>Apakah Ada Pertanyaan?</h3>
-                <p>Tenang saja, kami siap bantu kapan pun yang anda butuh!</p>
+                <h3>Let's Talk.</h3>
+                <p>Wujudkan Ide Anda Bersama Magvis.</p>
 
                 <div class="contact-options">
                   <a href="mailto:<?= esc($setting->contact_email ?? '') ?>" class="contact-option">
@@ -708,59 +755,104 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Tim</h2>
-        <p>Anggota Tim Kami.</p>
+        <h2>The Magvis Minds.</h2>
+        <p><b>Meet Our Creative Superstars.</b></p>
+        <p class="mt-2"><i>"Kami adalah tim multidisiplin yang bersemangat, dipimpin oleh para ahli yang berkomitmen untuk mengubah imajinasi Anda menjadi kenyataan visual."</i></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="row g-4 justify-content-center">
+          <?php 
+            $delay = 100;
+            $priority_positions = ['Executive Director', 'CEO', 'Chairman of the Board'];
 
-            <?php $delay = 100; ?>
-            <?php foreach ($teams as $t): ?>
-            <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="<?= $delay ?>">
+            // Pisahkan tim prioritas dan tim lainnya
+            $priority_teams = array_filter($teams, fn($t) => in_array($t->position, $priority_positions));
+            $other_teams = array_filter($teams, fn($t) => !in_array($t->position, $priority_positions));
+          ?>
+
+          <!-- Row 1: Leadership -->
+          <?php if (!empty($priority_teams)): ?>
+            <div class="row g-4 justify-content-center mb-4">
+              <?php foreach ($priority_teams as $t): ?>
+              <div class="col-8 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="<?= $delay ?>">
                 <div class="team-card">
 
-                    <div class="team-image">
-                        <?php if ($t->photo): ?>
-                            <img src="<?= base_url('uploads/team/' . $t->photo) ?>" class="img-fluid" alt="<?= esc($t->name) ?>">
-                        <?php else: ?>
-                            <img src="<?= base_url('assets/img/default-user.png') ?>" class="img-fluid" alt="No Image">
-                        <?php endif; ?>
+                  <div class="team-image">
+                      <?php if ($t->photo): ?>
+                        <img src="<?= base_url('uploads/team/' . $t->photo) ?>" class="img-fluid" alt="<?= esc($t->name) ?>">
+                      <?php else: ?>
+                        <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-5.png" class="img-fluid" alt="No Image">
+                      <?php endif; ?>
 
-                        <div class="team-overlay">
-
-                            <p><?= $t->bio ? esc($t->bio) : 'No Description.' ?></p>
-
-                            <div class="team-social">
-                                <?php if ($t->instagram_url): ?>
-                                    <a href="<?= esc($t->instagram_url) ?>" target="_blank"><i class="bi bi-instagram"></i></a>
-                                <?php endif; ?>
-
-                                <?php if ($t->linkedin_url): ?>
-                                    <a href="<?= esc($t->linkedin_url) ?>" target="_blank"><i class="bi bi-linkedin"></i></a>
-                                <?php endif; ?>
-
-                                <?php if ($t->twitter_url): ?>
-                                    <a href="<?= esc($t->twitter_url) ?>" target="_blank"><i class="bi bi-tiktok"></i></a>
-                                <?php endif; ?>
-                            </div>
-
+                      <div class="team-overlay">
+                        <p><?= $t->bio ? esc($t->bio) : 'No Description.' ?></p>
+                        <div class="team-social">
+                          <?php if ($t->instagram_url): ?>
+                            <a href="<?= esc($t->instagram_url) ?>" target="_blank"><i class="bi bi-instagram"></i></a>
+                          <?php endif; ?>
+                          <?php if ($t->linkedin_url): ?>
+                            <a href="<?= esc($t->linkedin_url) ?>" target="_blank"><i class="bi bi-linkedin"></i></a>
+                          <?php endif; ?>
+                          <?php if ($t->twitter_url): ?>
+                            <a href="<?= esc($t->twitter_url) ?>" target="_blank"><i class="bi bi-tiktok"></i></a>
+                          <?php endif; ?>
                         </div>
-                    </div>
+                      </div>
+                  </div>
 
-                    <div class="team-content">
-                        <h4><?= esc($t->name) ?></h4>
-                        <span class="position"><?= esc($t->position) ?></span>
-                    </div>
-
+                  <div class="team-content">
+                    <h4><?= esc($t->name) ?></h4>
+                    <span class="position"><?= esc($t->position) ?></span>
+                  </div>
                 </div>
+              </div>
+              <?php $delay += 100; ?>
+              <?php endforeach; ?>
             </div>
+          <?php endif; ?>
 
-            <?php $delay += 100; ?>
-            <?php endforeach; ?>
+          <!-- Row 2: Other Team Members -->
+          <?php if (!empty($other_teams)): ?>
+          <div class="row g-4 justify-content-center">
+              <?php foreach ($other_teams as $t): ?>
+              <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="<?= $delay ?>">
+                  <div class="team-card">
+
+                      <div class="team-image">
+                          <?php if ($t->photo): ?>
+                              <img src="<?= base_url('uploads/team/' . $t->photo) ?>" class="img-fluid" alt="<?= esc($t->name) ?>">
+                          <?php else: ?>
+                              <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-5.png" class="img-fluid" alt="No Image">
+                          <?php endif; ?>
+
+                          <div class="team-overlay">
+                              <p><?= $t->bio ? esc($t->bio) : 'No Description.' ?></p>
+                              <div class="team-social">
+                                  <?php if ($t->instagram_url): ?>
+                                      <a href="<?= esc($t->instagram_url) ?>" target="_blank"><i class="bi bi-instagram"></i></a>
+                                  <?php endif; ?>
+                                  <?php if ($t->linkedin_url): ?>
+                                      <a href="<?= esc($t->linkedin_url) ?>" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                  <?php endif; ?>
+                                  <?php if ($t->twitter_url): ?>
+                                      <a href="<?= esc($t->twitter_url) ?>" target="_blank"><i class="bi bi-tiktok"></i></a>
+                                  <?php endif; ?>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="team-content">
+                          <h4><?= esc($t->name) ?></h4>
+                          <span class="position"><?= esc($t->position) ?></span>
+                      </div>
+
+                  </div>
+              </div>
+              <?php $delay += 100; ?>
+              <?php endforeach; ?>
           </div>
-
+          <?php endif; ?>
       </div>
     </section>
 
@@ -807,7 +899,7 @@
                 <div class="testimonial-content">
                   <p>
                     <i class="bi bi-quote quote-icon"></i>
-                    "Saya dan pasangan sangat puas dengan hasil video prewedding dari Vrise Studio. Visualnya estetik banget dan vibes-nya dapet semua! Proses pengambilan gambarnya juga santai dan nyaman."
+                    "Saya dan pasangan sangat puas dengan hasil video prewedding dari Magvis Studio. Visualnya estetik banget dan vibes-nya dapet semua! Proses pengambilan gambarnya juga santai dan nyaman."
                   </p>
                 </div>
                 <div class="testimonial-profile">
@@ -819,7 +911,7 @@
                     <i class="bi bi-star-fill"></i>
                   </div>
                   <div class="profile-info">
-                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
                     <div>
                       <h3>Klien 1</h3>
                       <h4>No description.</h4>
@@ -846,7 +938,7 @@
                     <i class="bi bi-star-fill"></i>
                   </div>
                   <div class="profile-info">
-                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
                     <div>
                       <h3>Klien 2</h3>
                       <h4>No description.</h4>
@@ -861,7 +953,7 @@
                 <div class="testimonial-content">
                   <p>
                     <i class="bi bi-quote quote-icon"></i>
-                    "Butuh video profil buat portofolio, dan hasil kerja dari Vrise Studio benar-benar melebihi ekspektasi. Lighting, angle, sampai storytellingnya rapi banget. Recommended buat content creator yang pengen tampil beda."
+                    "Butuh video profil buat portofolio, dan hasil kerja dari Magvis Studio benar-benar melebihi ekspektasi. Lighting, angle, sampai storytellingnya rapi banget. Recommended buat content creator yang pengen tampil beda."
                   </p>
                 </div>
                 <div class="testimonial-profile">
@@ -873,7 +965,7 @@
                     <i class="bi bi-star-fill"></i>
                   </div>
                   <div class="profile-info">
-                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
                     <div>
                       <h3>Klien 3</h3>
                       <h4>No description.</h4>
@@ -888,7 +980,7 @@
                 <div class="testimonial-content">
                   <p>
                     <i class="bi bi-quote quote-icon"></i>
-                    "Saya memakai jasa Vrise Studio buat bikin video promosi brand clothing. Mereka ngerti banget cara menyesuaikan visual dengan identitas brand kami. Proses kerjanya cepat dan sangat berkualitas!"
+                    "Saya memakai jasa Magvis Studio buat bikin video promosi brand clothing. Mereka ngerti banget cara menyesuaikan visual dengan identitas brand kami. Proses kerjanya cepat dan sangat berkualitas!"
                   </p>
                 </div>
                 <div class="testimonial-profile">
@@ -900,7 +992,7 @@
                     <i class="bi bi-star-fill"></i>
                   </div>
                   <div class="profile-info">
-                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
                     <div>
                       <h3>Klien 4</h3>
                       <h4>No description.</h4>
@@ -915,7 +1007,7 @@
                 <div class="testimonial-content">
                   <p>
                     <i class="bi bi-quote quote-icon"></i>
-                    "Wedding kami menjadi lebih berkesan karena video dari Vrise Studio. Setiap momen terasa megah saat ditonton ulang. Terima kasih sudah bikin dokumentasi pernikahan kami menjadi seindah itu."
+                    "Wedding kami menjadi lebih berkesan karena video dari Magvis Studio. Setiap momen terasa megah saat ditonton ulang. Terima kasih sudah bikin dokumentasi pernikahan kami menjadi seindah itu."
                   </p>
                 </div>
                 <div class="testimonial-profile">
@@ -927,7 +1019,7 @@
                     <i class="bi bi-star-fill"></i>
                   </div>
                   <div class="profile-info">
-                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
                     <div>
                       <h3>Klien 5</h3>
                       <h4>No description.</h4>
@@ -942,7 +1034,7 @@
                 <div class="testimonial-content">
                   <p>
                     <i class="bi bi-quote quote-icon"></i>
-                    "Saya kerja bareng Vrise Studio untuk proyek dokumenter sosial. Mereka sangat detail dalam riset dan storytelling, jadi pesannya tersampaikan dengan baik. Bukan cuma videografer, mereka juga partner yang high thinking."
+                    "Saya kerja bareng Magvis Studio untuk proyek dokumenter sosial. Mereka sangat detail dalam riset dan storytelling, jadi pesannya tersampaikan dengan baik. Bukan cuma videografer, mereka juga partner yang high thinking."
                   </p>
                 </div>
                 <div class="testimonial-profile">
@@ -954,7 +1046,7 @@
                     <i class="bi bi-star-fill"></i>
                   </div>
                   <div class="profile-info">
-                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
                     <div>
                       <h3>Klien 6</h3>
                       <h4>No description.</h4>
@@ -969,7 +1061,7 @@
                 <div class="testimonial-content">
                   <p>
                     <i class="bi bi-quote quote-icon"></i>
-                    "Kerja bareng tim Vrise Studio itu sangat menyenangkan. Mereka paham dengan kebutuhan event besar, sigap di lapangan, dan hasilnya sinematik banget. Klien dan sponsor sangat puas dengan dokumentasi dari mereka."
+                    "Kerja bareng tim Magvis Studio itu sangat menyenangkan. Mereka paham dengan kebutuhan event besar, sigap di lapangan, dan hasilnya sinematik banget. Klien dan sponsor sangat puas dengan dokumentasi dari mereka."
                   </p>
                 </div>
                 <div class="testimonial-profile">
@@ -981,7 +1073,7 @@
                     <i class="bi bi-star-fill"></i>
                   </div>
                   <div class="profile-info">
-                    <img src="assets/img/person/testi.jpg" alt="Profile Image">
+                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
                     <div>
                       <h3>Klien 7</h3>
                       <h4>No description.</h4>
@@ -1001,8 +1093,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Kontak</h2>
-        <p>Hubungi kami segera!</p>
+        <h2>Let's Talk</h2>
+        <p>Wujudkan Ide Anda Bersama Magvis.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -1132,10 +1224,9 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Layanan Kami</h4>
           <ul>
-            <li><a href="">Videografi</a></li>
-            <li><a href="">Fotografi</a></li>
-            <li><a href="">Edit Video</a></li>
-            <li><a href="">Desain Grafis</a></li>
+            <?php foreach ($categories as $cat): ?>
+              <li><a href="#services"><?= esc($cat->name) ?></a></li>
+            <?php endforeach; ?>
           </ul>
         </div>
 

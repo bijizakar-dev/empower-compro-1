@@ -41,7 +41,7 @@ class Home extends BaseController
         $portfolios = $portfolioModel
             ->select('portfolio.*, portfolio_categories.name AS category_name')
             ->join('portfolio_categories', 'portfolio_categories.id = portfolio.category_id')
-            ->orderBy('portfolio.id', 'DESC')
+            ->orderBy('portfolio_categories.id', 'ASC')
             ->findAll();
 
         // Loop untuk mengambil media masing-masing portfolio
