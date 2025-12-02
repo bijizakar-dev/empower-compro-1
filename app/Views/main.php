@@ -86,19 +86,14 @@
           <!-- </div> -->
         </div>
 
-        <div class="d-flex flex-column align-items-center text-center p-4 bg-white bg-opacity-75 rounded-4">
+        <div class="d-flex flex-column align-items-center text-center p-4  bg-opacity-75 rounded-4">
     
-          <h1 class="hero-title mb-3 fs-1 fw-bold text-dark">
-              MAGVIS. 
-              <br/><span class="fs-5 fst-italic"">Bringing Ideas to Life.</span>
+          <h1 class="mb-3 fs-1 fw-bold text-dark">
+            <img src="assets/landing-page/img/png-22.png" class="img-fluid rounded" alt="">
           </h1>
 
-          <h3 class="desc-title mb-4 fw-semibold text-dark">
-              Your Creative Industry Partner in Animation, Digital Reality, and Video Production.
-          </h3>
-
           <div class="cta-wrapper">
-            <a href="#about " class="btn btn-primary">START YOUR PROJECT</a>
+            <a href="#about " class="btn btn-primary">Read More</a>
           </div>
 
       </div>
@@ -294,7 +289,7 @@
                   <div class="service-content">
                       <h3><?= esc($row->title) ?></h3>
                       <p><?= strip_tags($row->description) ?></p>
-                      <a href="" class="service-link">
+                      <a href="#portfolio" class="service-link go-filter" data-category="filter-<?= strtolower(str_replace(' ', '', $row->title)) ?>">
                           <span>Learn More</span>
                           <i class="bi bi-arrow-right"></i>
                       </a>
@@ -775,7 +770,7 @@
           <?php if (!empty($priority_teams)): ?>
             <div class="row g-4 justify-content-center mb-4">
               <?php foreach ($priority_teams as $t): ?>
-              <div class="col-8 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="<?= $delay ?>">
+              <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="<?= $delay ?>">
                 <div class="team-card">
 
                   <div class="team-image">

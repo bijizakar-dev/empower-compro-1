@@ -245,3 +245,33 @@ document.querySelector(".php-email-form").addEventListener("submit", async funct
         form.reset();
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const serviceLinks = document.querySelectorAll(".go-filter");
+
+    serviceLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const category = this.dataset.category; // contoh: filter-anime
+            const filterButton = document.querySelector(
+                `.portfolio-filters li[data-filter=".${category}"]`
+            );
+
+            // Scroll halus ke portfolio
+            const target = document.querySelector("#portfolio");
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+
+            // Delay kecil untuk memastikan isotope sudah ready setelah scroll
+            setTimeout(() => {
+                if (filterButton) {
+                    filterButton.click();
+                }
+            }, 500);
+        });
+    });
+
+});
