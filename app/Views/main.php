@@ -64,7 +64,7 @@
   <!-- Video Background -->
    <video autoplay muted loop playsinline
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-    <source src="assets/video/restriCATed_Zone_Animation_by_Aoyume_Production.mp4" type="video/mp4">
+    <source src="<?= base_url('storage/Showreels_Magvis_2025.mp4'); ?>" type="video/mp4">
   </video>
 
   <!-- Overlay -->
@@ -95,10 +95,7 @@
           <div class="cta-wrapper">
             <a href="#about " class="btn btn-primary">Read More</a>
           </div>
-
-      </div>
-        
-        
+        </div> 
       </div>
     </div>
   </div>
@@ -412,7 +409,7 @@
           <!-- FILTER DINAMIS -->
           <div class="portfolio-filters-container" data-aos="fade-up" data-aos-delay="200">
             <ul class="portfolio-filters isotope-filters">
-              <li data-filter="*" class="filter-active">All Projects</li>
+              
 
               <?php foreach ($categories as $cat): ?>
                 <?php 
@@ -421,6 +418,7 @@
                 ?>
                 <li data-filter=".<?= $slug ?>"><?= esc($cat->name) ?></li>
               <?php endforeach; ?>
+              <li data-filter="*" class="filter-active">All Projects</li>
             </ul>
           </div>
 
@@ -724,16 +722,17 @@
                     <span>Email Kami</span>
                   </a>
 
-                  <a href="https://wa.me/<?= esc($setting->contact_phone ?? '') ?>?text=Halo%20kak,%20saya%20ingin%20tanya%20tentang%20layanannya"
-                    class="contact-option">
+                  <!-- REGEX NOMOR HP -->
+                  <a href="https://wa.me/<?= preg_replace('/[^0-9]+/', '', $setting->contact_phone ?? '') ?>?text=Halo%20kak,%20saya%20ingin%20tanya%20tentang%20layanannya"
+                    class="contact-option" target="_blank">
                     <i class="bi bi-chat-dots"></i>
                     <span>Chat Langsung</span>
                   </a>
-
+<!-- 
                   <a href="https://wa.me/<?= esc($setting->contact_phone ?? '') ?>" class="contact-option">
                     <i class="bi bi-telephone"></i>
                     <span>Telepon Kami Dulu, Yuk!</span>
-                  </a>
+                  </a> -->
                 </div>
 
               </div>
@@ -889,34 +888,32 @@
             }
           </script>
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    "Saya dan pasangan sangat puas dengan hasil video prewedding dari Magvis Studio. Visualnya estetik banget dan vibes-nya dapet semua! Proses pengambilan gambarnya juga santai dan nyaman."
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
-                    <div>
-                      <h3>Klien 1</h3>
-                      <h4>No description.</h4>
+            <?php for($i = 1; $i <= 5; $i++): ?>
+              <div class="swiper-slide">
+                <div class="testimonial-wrapper">
+                  <div class="testimonial-card container">
+                    <div class="row align-items-center g-4">
+                      <div class="text-center">
+                        <div class="testimonial-img">
+                          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400" alt="Testimonial" />
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="stars mb-2">★★★★★</div>
+                        <p class="fs-6 fw-bold">
+                          I have waited my entire life for a design tool like this – nearly my entire life. With SlothUI, less is truly more. Period.
+                        </p>
+                        <p class="mb-0">— <strong>Vermillion D. White</strong></p>
+                        <small class="text-muted">CEO, planetX.ai</small>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div><!-- End testimonial item -->
+              </div><!-- End testimonial item -->
+            <?php endfor; ?>
+           
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-card">
                 <div class="testimonial-content">
                   <p>
@@ -941,9 +938,10 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-card">
                 <div class="testimonial-content">
                   <p>
@@ -968,9 +966,10 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-card">
                 <div class="testimonial-content">
                   <p>
@@ -995,9 +994,10 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-card">
                 <div class="testimonial-content">
                   <p>
@@ -1022,9 +1022,10 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-card">
                 <div class="testimonial-content">
                   <p>
@@ -1049,7 +1050,8 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-card">
@@ -1109,19 +1111,17 @@
               <div class="icon-box"><i class="bi bi-telephone"></i></div>
               <h3>No. Kontak</h3>
               <p>
-                Mobile: <?= $setting->contact_phone ?><br>
-                Email: <?= $setting->contact_email ?>
+                <?= $setting->contact_phone ?><br>
               </p>
             </div>
           </div>
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="info-card">
-              <div class="icon-box"><i class="bi bi-clock"></i></div>
-              <h3>Jam Operasional</h3>
+              <div class="icon-box"><i class="bi bi-mailbox"></i></div>
+              <h3>Email</h3>
               <p>
-                <?= $open_hours['days'] ?><br>
-                Mulai dari jam: <?= $open_hours['time'] ?>
+                <?= $setting->contact_email ?>
               </p>
             </div>
           </div>
@@ -1191,7 +1191,7 @@
 
     <div class="container footer-top">
       <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
+        <div class="col-lg-4 col-md-6 footer-about me-auto">
           <a href="index.html" class="logo d-flex align-items-center">
             <span class="sitename"><?= $setting->site_name ?></span>
           </a>
@@ -1212,7 +1212,9 @@
             <li><a href="">Beranda</a></li>
             <li><a href="">Tentang Kami</a></li>
             <li><a href="">Layanan</a></li>
-            <li><a href="">Kebijakan Privasi</a></li>
+            <li><a href="">Hubungi Kami</a></li>
+            <li><a href="">Testimoni Klien</a></li>
+            <li><a href="">Pertanyaan Umum</a></li>
           </ul>
         </div>
 
@@ -1225,25 +1227,12 @@
           </ul>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
+        <!-- <div class="col-lg-2 col-md-3 footer-links">
           <h4>Informasi</h4>
           <ul>
-            <li><a href="">Pertanyaan Umum</a></li>
-            <li><a href="">Syarat & Ketentuan</a></li>
-            <li><a href="">Cara Pemesanan</a></li>
-            <li><a href="">Panduan Pengguna</a></li>
+            
           </ul>
-        </div>
-        
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Jelajahi Kami</h4>
-          <ul>
-            <li><a href="">Testimoni Klien</a></li>
-            <li><a href="">Blog & Artikel</a></li>
-            <li><a href="">Karier</a></li>
-            <li><a href="">Hubungi Kami</a></li>
-          </ul>
-        </div>
+        </div> -->
       </div>
     </div>
 
