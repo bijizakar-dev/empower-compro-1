@@ -34,7 +34,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="#about" class="logo d-flex align-items-center me-auto me-xl-0">
         <img src="<?= base_url('storage/setting/logo/' . $setting->logo) ?>" alt="">
       </a>
 
@@ -116,7 +116,7 @@
           <div class="col-lg-6 content d-flex flex-column" data-aos="fade-up" data-aos-delay="150">
             <p class="who-we-are mb-auto">Tentang Kami</p>
             <div class="block-desc">
-              <h3>We Are Magvis. The Visionaries Behind Your Story..</h3>
+              <h3>We Are Magvis. The Visionaries Behind Your Story.</h3>
               <p class="fst-italic">
                 Kami fokus pada Digitalisasi, Visual Inovatif, 
                 Teknologi Imersif, Modern Game dan Kualitas Kelas Dunia.
@@ -132,7 +132,7 @@
           </div>
 
           <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="mb-4 fs-2 fw-medium text-center text-body-secondary">
+            <h3 class="mb-4 fs-3 fw-medium text-center text-body-secondary">
               <span class="fw-bold text-black">Magvis</span> adalah <span class="fw-bold text-black">Production House</span> yang berfokus menghidupkan ide-ide tak terbatas melalui teknologi dan seni visual. 
               Kami menggabungkan keahlian dalam 
               <span class="fw-bold text-black"">Animasi, Video Produksi, Desain, Game, dan Digital Reality (AR/VR)</span> untuk menciptakan pengalaman yang unik dan mengesankan.
