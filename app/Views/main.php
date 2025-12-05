@@ -64,7 +64,7 @@
   <!-- Video Background -->
    <video autoplay muted loop playsinline
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-    <source src="<?= base_url('storage/Showreels_Magvis_2025.mp4'); ?>" type="video/mp4">
+    <source src="<?= base_url('storage/Comp_Showreels_Magvis_2025_Fix.mp4'); ?>" type="video/mp4">
   </video>
 
   <!-- Overlay -->
