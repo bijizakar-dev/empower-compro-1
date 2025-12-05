@@ -901,7 +901,7 @@
                       <div class="col-12">
                         <div class="stars mb-2">★★★★★</div>
                         <p class="fs-6 fw-bold">
-                          I have waited my entire life for a design tool like this – nearly my entire life. With SlothUI, less is truly more. Period.
+                          "Kerja bareng tim Magvis Studio itu sangat menyenangkan. Mereka paham dengan kebutuhan event besar, sigap di lapangan, dan hasilnya sinematik banget. Klien dan sponsor sangat puas dengan dokumentasi dari mereka."
                         </p>
                         <p class="mb-0">— <strong>Vermillion D. White</strong></p>
                         <small class="text-muted">CEO, planetX.ai</small>
@@ -1053,12 +1053,12 @@
             </div> -->
             <!-- End testimonial item -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-card">
                 <div class="testimonial-content">
                   <p>
                     <i class="bi bi-quote quote-icon"></i>
-                    "Kerja bareng tim Magvis Studio itu sangat menyenangkan. Mereka paham dengan kebutuhan event besar, sigap di lapangan, dan hasilnya sinematik banget. Klien dan sponsor sangat puas dengan dokumentasi dari mereka."
+                    
                   </p>
                 </div>
                 <div class="testimonial-profile">
@@ -1078,7 +1078,8 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+            <!-- End testimonial item -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
