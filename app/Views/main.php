@@ -35,7 +35,7 @@
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
       <a href="#about" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="<?= base_url('storage/setting/logo/' . $setting->logo) ?>" alt="">
+        <img src="assets/landing-page/img/<?= $setting->logo; ?>" alt="">
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -64,7 +64,7 @@
   <!-- Video Background -->
    <video autoplay muted loop playsinline
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-    <source src="<?= base_url('storage/Comp_Showreels_Magvis_2025_Fix.mp4'); ?>" type="video/mp4">
+    <source src="assets/video/Comp_Showreels_Magvis_2025_Fix.mp4" type="video/mp4">
   </video>
 
   <!-- Overlay -->

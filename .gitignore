@@ -159,3 +159,4 @@ ssl/
 tmp/
 www
 env
+public/assets/video
