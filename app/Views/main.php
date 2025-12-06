@@ -44,9 +44,8 @@
           <li><a href="#about">Tentang Kami</a></li>
           <li><a href="#services">Layanan</a></li>
           <li><a href="#portfolio">Projects</a></li>
-          <li><a href="#pricing">Paket Jasa</a></li>
-          <li><a href="#team">Tim</a></li>
           <li><a href="#contact">Kontak</a></li>
+          <li><a href="#team">Tim</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -1210,12 +1209,14 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Halaman Web</h4>
           <ul>
-            <li><a href="">Beranda</a></li>
-            <li><a href="">Tentang Kami</a></li>
-            <li><a href="">Layanan</a></li>
-            <li><a href="">Hubungi Kami</a></li>
-            <li><a href="">Testimoni Klien</a></li>
-            <li><a href="">Pertanyaan Umum</a></li>
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#faq">Pertanyaan Umum</a></li>
+            <li><a href="#testimonials">Testimoni Klien</a></li>
+
+            <li><a href="#contact">Hubungi Kami</a></li>
+
           </ul>
         </div>
 
