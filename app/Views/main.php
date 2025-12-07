@@ -88,11 +88,11 @@
         <div class="d-flex flex-column align-items-center text-center p-4  bg-opacity-75 rounded-4">
     
           <h1 class="mb-3 fs-1 fw-bold text-dark">
-            <img src="assets/landing-page/img/png-22.png" class="img-fluid rounded" alt="">
+            <img src="assets/landing-page/img/png-22.png" class="img-fluid rounded" alt="" width="55%">
           </h1>
 
           <div class="cta-wrapper">
-            <a href="#about " class="btn btn-primary">Read More</a>
+            <a href="#about " class="btn btn-primary btn-xs">Read More</a>
           </div>
         </div> 
       </div>
@@ -124,7 +124,15 @@
               <li><i class="bi bi-check-circle"></i> <span>Video Profile.</span></li>
               <li><i class="bi bi-check-circle"></i> <span>Dokumenter.</span>
             </ul> -->
-            <!-- <a href="#services-alt" class="read-more"><span>Tampilkan Lebih Banyak</span><i class="bi bi-arrow-right"></i></a> -->
+            
+            <div class="row gy-4">
+              <div class="d-flex flex-column align-items-center text-center p-4 bg-opacity-75 rounded-4">
+                <div class="cta-wrapper">
+                  <a href="https://drive.google.com/file/d/14o_ccbqq6rUdz04v2ISfmhobUwo-eSsZ/preview" class="glightbox btn btn-about-us btn-xs "><span>Showreel</span> </a>
+                  <a href="https://drive.google.com/file/d/16NQTW9dn4cczv-ehjar8463oVl1g9uEH/preview" class="glightbox btn btn-about-us btn-xs "><span>Introduction</span> </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">

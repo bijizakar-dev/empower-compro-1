@@ -3036,6 +3036,23 @@ section,
   letter-spacing: 2px;
 }
 
+.btn-about-us {
+  padding: 0.75rem 1.75rem;
+  font-weight: 500;
+  transition: inherit;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.btn-about-us:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: var(--contrast-color);
+}
+
 /* .testimonial-text {
   font-size: 26px;
   font-weight: 600;
