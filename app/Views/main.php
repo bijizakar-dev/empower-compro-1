@@ -5,9 +5,22 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title><?= $setting->site_name ?></title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+
+  <title><?= esc($setting->site_name) ?></title>
+
+  <meta name="description" content="We Are Magvis. The Visionaries Behind Your Story.">
+  <meta name="keywords" content="Production House">
+
+  <!-- Favicon -->
+  <link rel="icon" href="<?= base_url('storage/setting/logo/' . $setting->logo) ?>" type="image/png">
+
+  <!-- Open Graph (for WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:title" content="<?= esc($setting->site_name) ?>">
+  <meta property="og:description" content="We Are Magvis. The Visionaries Behind Your Story.">
+  <meta property="og:image" content="<?= base_url('storage/setting/logo/' . $setting->logo) ?>">
+  <meta property="og:url" content="<?= current_url() ?>">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="<?= esc($setting->site_name) ?>">
 
   <!-- Favicons -->
   <link href="assets/img/icon.png" rel="icon">
@@ -35,7 +48,7 @@
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
       <a href="#about" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/landing-page/img/<?= $setting->logo; ?>" alt="">
+        <img src="<?= base_url('storage/setting/logo/' . $setting->logo) ?>" alt="">
       </a>
 
       <nav id="navmenu" class="navmenu">
