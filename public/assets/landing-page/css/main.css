@@ -240,7 +240,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
+    color: white;
     padding: 18px 15px;
     font-size: 15px;
     font-family: var(--nav-font);
@@ -250,6 +250,11 @@ h6 {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+  }
+
+  .scrolled .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
   }
 
   .navmenu a i,
@@ -846,8 +851,8 @@ section,
 }
 
 .hero .cta-wrapper .btn-primary {
-  padding: 0.75rem 1.75rem;
-  font-weight: 500;
+  padding: 0.45rem 1.0rem;
+  font-weight: 0.8rem;
   transition: all 0.3s ease;
   background-color: var(--accent-color);
   border-color: var(--accent-color);

@@ -70,50 +70,48 @@
 
   <main class="main">
 
-   <!-- Hero Section -->
+    <!-- Hero Section -->
     <section id="hero" class="hero section position-relative" style="height: 100vh; overflow: hidden;">
+      <!-- Video Background -->
+      <video autoplay muted loop playsinline
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+        <source src="assets/video/Comp_Showreels_Magvis_2025_Fix.mp4" type="video/mp4">
+      </video>
 
-  <!-- Video Background -->
-   <video autoplay muted loop playsinline
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-    <source src="assets/video/Comp_Showreels_Magvis_2025_Fix.mp4" type="video/mp4">
-  </video>
+      <!-- Overlay -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                  background: rgba(24, 24, 24, 0); z-index: 2;"></div>
 
-  <!-- Overlay -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-              background: rgba(24, 24, 24, 0); z-index: 2;"></div>
+      <!-- Wrapper agar konten ada di tengah layar -->
+      <div class="d-flex align-items-center justify-content-center text-center" style="min-height: 55vh; padding-top: 50px;">
+          <!-- Content -->
+          <div class="container position-relative text-white d-flex flex-column justify-content-center align-items-center" style="z-index: 3;">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10 col-12">
+              <div class="badge-wrapper mb-3">
+                <!-- <div class="d-inline-flex align-items-center rounded-pill border border-light px-3 py-1 text-white"> -->
+                  <!-- <div class="icon-circle me-2 text-white">
+                    <i class="bi bi-bell"></i>
+                  </div> -->
+                  <!-- <span class="badge-text me-2 text-white">Turn on your notifications</span> -->
+                <!-- </div> -->
+              </div>
 
-  <!-- Wrapper agar konten ada di tengah layar -->
-   <div class="d-flex align-items-center justify-content-center text-center" style="min-height: 55vh; padding-top: 50px;">
-  <!-- Content -->
-   <div class="container position-relative text-white d-flex flex-column justify-content-center align-items-center" style="z-index: 3;">
-    <div class="row justify-content-center">
-      <div class="col-lg-6 col-md-10 col-12">
-        <div class="badge-wrapper mb-3">
-          <!-- <div class="d-inline-flex align-items-center rounded-pill border border-light px-3 py-1 text-white"> -->
-            <!-- <div class="icon-circle me-2 text-white">
-              <i class="bi bi-bell"></i>
-            </div> -->
-            <!-- <span class="badge-text me-2 text-white">Turn on your notifications</span> -->
-          <!-- </div> -->
-        </div>
+              <div class="d-flex flex-column align-items-center text-center p-4  bg-opacity-75 rounded-4">
+          
+                <h1 class="mb-3 fs-1 fw-bold text-dark">
+                  <img src="assets/landing-page/img/png-22.png" class="img-fluid rounded" alt="" width="55%">
+                </h1>
 
-        <div class="d-flex flex-column align-items-center text-center p-4  bg-opacity-75 rounded-4">
-    
-          <h1 class="mb-3 fs-1 fw-bold text-dark">
-            <img src="assets/landing-page/img/png-22.png" class="img-fluid rounded" alt="" width="55%">
-          </h1>
-
-          <div class="cta-wrapper">
-            <a href="#about " class="btn btn-primary btn-xs">Read More</a>
+                <div class="cta-wrapper">
+                  <a href="#about " class="btn btn-primary btn-xs">Read More</a>
+                </div>
+              </div> 
+            </div>
           </div>
-        </div> 
+          </div>
       </div>
-    </div>
-  </div>
-</div>
-
-</section>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about section">
