@@ -53,8 +53,8 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Beranda</a></li>
-          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#hero" class="active"><?= lang('App.menu_home'); ?><</a></li>
+          <li><a href="#about"><?= lang('App.menu_about'); ?></a></li>
           <li><a href="#services">Layanan</a></li>
           <li><a href="#portfolio">Projects</a></li>
           <li><a href="#team">Tim</a></li>
@@ -69,7 +69,6 @@
   </header>
 
   <main class="main">
-
     <!-- Hero Section -->
     <section id="hero" class="hero section position-relative" style="height: 100vh; overflow: hidden;">
       <!-- Video Background -->

@@ -54,6 +54,7 @@ class Home extends BaseController
 
         $teams = $teamModel->orderBy('id', 'ASC')->findAll();
         $faqs  = $faqModel->where('is_active', 1)->orderBy('sort_order', 'ASC')->findAll();
+        $locale = service('request')->getLocale();
 
         $data = [
             'title'         => 'Empower Compro',
@@ -67,7 +68,8 @@ class Home extends BaseController
                 'time' => '07:00 - 22:00 WIB'
             ],
             'teams'         => $teams,
-            'faqs'          => $faqs
+            'faqs'          => $faqs,
+            'locale' => $locale,
         ];
 
         return view('main', $data);
