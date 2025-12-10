@@ -1384,6 +1384,10 @@ section,
   margin-bottom: 1.8rem;
   font-size: 1rem;
   line-height: 1.7;
+  margin: 0;
+  text-indent: 2rem;
+  text-align: justify;
+}
 }
 
 .services-alt .content-block .button-wrapper {
@@ -3064,3 +3068,13 @@ section,
   line-height: 1.4;
   color: #202020;
 } */
+
+.lang-switcher a {
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.lang-switcher a:hover {
+  text-decoration: underline;
+}
+

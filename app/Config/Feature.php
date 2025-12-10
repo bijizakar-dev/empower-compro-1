@@ -26,11 +26,11 @@ class Feature extends BaseConfig
      * If false, `limit(0)` returns no records. (the behavior of 3.1.9 or later in version 3.x.)
      */
     public bool $limitZeroAsAll = true;
-    
+
     /**
      * When true, the request's locale string is compared against App::$supportedLocales
      * and App::$defaultLocale; if it doesn't match one of those, a 406 error is returned.
      * When false, invalid locales fall back to the default locale instead.
      */
-    public bool $strictLocaleNegotiation = false;
+    public bool $strictLocaleNegotiation = true;
 }

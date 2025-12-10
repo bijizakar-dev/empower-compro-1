@@ -53,17 +53,31 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active"><?= lang('App.menu_home'); ?><</a></li>
+          <li><a href="#hero" class="active"><?= lang('App.menu_home'); ?></a></li>
           <li><a href="#about"><?= lang('App.menu_about'); ?></a></li>
-          <li><a href="#services">Layanan</a></li>
-          <li><a href="#portfolio">Projects</a></li>
-          <li><a href="#team">Tim</a></li>
-          <li><a href="#contact">Kontak</a></li>
+          <li><a href="#services"><?= lang('App.menu_services'); ?></a></li>
+          <li><a href="#portfolio"><?= lang('App.menu_projects'); ?></a></li>
+          <li><a href="#team"><?= lang('App.menu_teams'); ?></a></li>
+          <li><a href="#contact"><?= lang('App.menu_contact'); ?></a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="https://wa.me/6285190447515?text=Halo%20kak,%20saya%20ingin%20tanya-tanya%20tentang%20jasa%20videonya" target="_blank">Hubungi Kami</a>
+      <a class="btn-getstarted ms-auto me-3" 
+      href="https://wa.me/6285190447515?text=Halo%20kak,%20saya%20ingin%20tanya-tanya%20tentang%20jasa%20videonya" target="_blank">
+      <?= lang('App.contact_us'); ?>
+      </a>
+      <div class="lang-switcher d-flex align-items-center ms-3 me-1 bg-white rounded-pill px-3 py-1">
+        <a href="<?= base_url('id'); ?>"
+          class="mx-1 <?= $locale === 'id' ? 'fw-bold text-primary' : 'text-muted'; ?>">
+          ID
+        </a>
+        <span class="text-muted">|</span>
+        <a href="<?= base_url('en'); ?>"
+          class="mx-1 <?= $locale === 'en' ? 'fw-bold text-primary' : 'text-muted'; ?>">
+          EN
+        </a>
+      </div>
 
     </div>
   </header>
@@ -103,7 +117,9 @@
                 </h1>
 
                 <div class="cta-wrapper">
-                  <a href="#about " class="btn btn-primary btn-xs">Read More</a>
+                  <a href="#about " class="btn btn-primary btn-xs">
+                    <?= lang('App.read_more'); ?>
+                  </a>
                 </div>
               </div> 
             </div>
@@ -120,12 +136,11 @@
         <div class="row gy-4">
 
           <div class="col-lg-6 content d-flex flex-column" data-aos="fade-up" data-aos-delay="150">
-            <p class="who-we-are mb-auto">Tentang Kami</p>
+            <p class="who-we-are mb-auto"><?= lang('App.about_us_title'); ?></p>
             <div class="block-desc">
-              <h3>We Are Magvis. The Visionaries Behind Your Story.</h3>
+              <h3><?= lang('App.about_us_desc'); ?></h3>
               <p class="fst-italic">
-                Kami fokus pada Digitalisasi, Visual Inovatif, 
-                Teknologi Imersif, Modern Game dan Kualitas Kelas Dunia.
+                <?= lang('App.about_us_desc2'); ?>
               </p>
             </div>
             <!-- <ul>
@@ -138,8 +153,8 @@
             <div class="row gy-4">
               <div class="d-flex flex-column align-items-center text-center p-4 bg-opacity-75 rounded-4">
                 <div class="cta-wrapper">
-                  <a href="https://drive.google.com/file/d/14o_ccbqq6rUdz04v2ISfmhobUwo-eSsZ/preview" class="glightbox btn btn-about-us btn-xs "><span>Showreel</span> </a>
-                  <a href="https://drive.google.com/file/d/16NQTW9dn4cczv-ehjar8463oVl1g9uEH/preview" class="glightbox btn btn-about-us btn-xs "><span>Introduction</span> </a>
+                  <a href="https://drive.google.com/file/d/14o_ccbqq6rUdz04v2ISfmhobUwo-eSsZ/preview" class="glightbox btn btn-about-us btn-xs "><span><?= lang('App.about_us_btn1'); ?></span> </a>
+                  <a href="https://drive.google.com/file/d/16NQTW9dn4cczv-ehjar8463oVl1g9uEH/preview" class="glightbox btn btn-about-us btn-xs "><span><?= lang('App.about_us_btn2'); ?></span> </a>
                 </div>
               </div>
             </div>
@@ -147,9 +162,10 @@
 
           <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
             <h3 class="mb-4 fs-3 fw-medium text-center text-body-secondary">
-              <span class="fw-bold text-black">Magvis</span> adalah <span class="fw-bold text-black">Production House</span> yang berfokus menghidupkan ide-ide tak terbatas melalui teknologi dan seni visual. 
+              <?= lang('App.about_us_desc3'); ?>
+            <!-- <span class="fw-bold text-black">Magvis</span> adalah <span class="fw-bold text-black">Production House</span> yang berfokus menghidupkan ide-ide tak terbatas melalui teknologi dan seni visual. 
               Kami menggabungkan keahlian dalam 
-              <span class="fw-bold text-black"">Animasi, Video Produksi, Desain, Game, dan Digital Reality (AR/VR)</span> untuk menciptakan pengalaman yang unik dan mengesankan.
+              <span class="fw-bold text-black"">Animasi, Video Produksi, Desain, Game, dan Digital Reality (AR/VR)</span> untuk menciptakan pengalaman yang unik dan mengesankan. -->
             </h3>
           </div>        
         </div>
@@ -181,8 +197,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Bagaimana Kami Bekerja?</h2>
-        <p>Kami mengubah ide menjadi realitas melalui proses yang terstruktur dan kreatif.</p>
+        <h2><?= lang('App.how_we_work_title'); ?></h2>
+        <p><?= lang('App.how_we_work_subtitle'); ?></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -198,8 +214,8 @@
                     <i class="bi bi-chat-square-dots-fill"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Diskusi dengan Klien</h3>
-                    <p>Kami memulai dengan sesi konsultasi mendalam untuk menggali visi, tujuan, target pasar, dan spesifikasi teknis proyek Anda. Pemahaman yang akurat di tahap ini adalah kunci keberhasilan kolaborasi kita.</p>
+                    <h3><?= lang('App.how_we_work_step_01_title'); ?></h3>
+                    <p><?= lang('App.how_we_work_step_01_desc'); ?></p>
                   </div>
                 </div>
               </div>
@@ -213,8 +229,8 @@
                     <i class="bi bi-clipboard2-check-fill"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Pra-Produksi (Perencanaan)</h3>
-                    <p>Tim kami menyusun kerangka teknis dan kreatif proyek, termasuk <span class="fst-italic">concept art, storyboard, script, wireframe</span>, penentuan <span class="fst-italic">asset</span>, jadwal kerja, dan alokasi tim. Setiap detail dipersiapkan matang sebelum eksekusi.</p>
+                    <h3><?= lang('App.how_we_work_step_02_title'); ?></h3>
+                    <p><?= lang('App.how_we_work_step_02_desc'); ?></p>
                   </div>
                 </div>
               </div>
@@ -228,8 +244,8 @@
                     <i class="bi bi-pc-display"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Produksi (Eksekusi Inti)</h3>
-                    <p>Ini adalah tahap eksekusi kreatif. Tim kami terjun langsung, baik itu proses <span class="fst-italic">shooting</span> video, pemodelan 3D, <span class="fst-italic">coding</span> untuk AR/VR, atau desain UI/UX. Kami menjamin kualitas teknis tertinggi sesuai rencana</p>
+                    <h3><?= lang('App.how_we_work_step_03_title'); ?></h3>
+                    <p><?= lang('App.how_we_work_step_03_desc'); ?></p>
                   </div>
                 </div>
               </div>
@@ -243,8 +259,8 @@
                     <i class="bi bi-sliders"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Pasca-Produksi (Penyempurnaan)</h3>
-                    <p>Hasil mentah diolah menjadi karya jadi. Tahap ini mencakup <span class="fst-italic">editing</span> video, <span class="fst-italic">color grading</span>, VFX, <span class="fst-italic">rendering</span> animasi, <span class="fst-italic">debugging</span> game, atau penyesuaian desain akhir, memastikan output visual dan fungsional yang sempurna.</p>
+                    <h3><?= lang('App.how_we_work_step_04_title'); ?></h3>
+                    <p><?= lang('App.how_we_work_step_04_desc'); ?></p>
                   </div>
                 </div>
               </div>
@@ -258,8 +274,8 @@
                     <i class="bi bi-gift-fill"></i>
                   </div>
                   <div class="step-content">
-                    <h3>Finish (Serah Terima Akhir)</h3>
-                    <p>Setelah melalui tahap peninjauan dan revisi akhir oleh klien, produk diserahterimakan dalam format siap pakai dan didistribusikan. Proyek Anda kini siap diluncurkan dan memberikan dampak maksimal.</p>
+                    <h3><?= lang('App.how_we_work_step_05_title'); ?></h3>
+                    <p><?= lang('App.how_we_work_step_05_desc'); ?></p>
                   </div>
                 </div>
               </div>
@@ -276,8 +292,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Layanan Inti untuk Ide Tanpa Batas.</p>
+        <h2><?= lang('App.services_title'); ?></h2>
+        <p><?= lang('App.services_desc'); ?></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -326,17 +342,22 @@
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="content-block">
-              <h6 class="subtitle">Layanan Inovatif Kami</h6>
-              <h2 class="title">Wujudkan Imajinasi Menjadi Visual yang Hidup.</h2>
+              <h6 class="subtitle"><?= lang('App.our_services_title'); ?></h6>
+              <h2 class="title"><?= lang('App.our_services_subtitle'); ?></h2>
               <p class="description">
-                Magvis Studio hadir sebagai mitra kreatif yang membantu kamu menceritakan ide, brand, maupun momen penting melalui visual yang kuat, modern, dan bermakna. Mulai dari animasi 3D, produksi video sinematik, identitas visual, hingga pengalaman imersif berbasis teknologi, kami mengerjakan semuanya dengan pendekatan yang detail dan penuh rasa.<br>
+                <?= lang('App.our_services_intro_1'); ?>
+                <?= lang('App.our_services_intro_2'); ?>
+                <?= lang('App.our_services_intro_3'); ?>
                 <br>
-                Kami percaya setiap proyek memiliki cerita dan tujuan yang berbeda. Karena itu, proses kami selalu dimulai dari memahami kebutuhanmu—apa pesan yang ingin disampaikan, gaya visual yang diinginkan, dan pengalaman seperti apa yang ingin dihadirkan kepada audiens. Dengan kolaborasi yang menyenangkan dan tim yang berpengalaman, kami memastikan setiap hasil akhirnya bukan hanya indah, tetapi juga efektif menyampaikan nilai dan karakter yang kamu bawa.
                 <br>
-                Apapun idenya, kami siap membantu kamu menghadirkannya ke dunia visual yang lebih hidup, lebih kuat, dan lebih berkesan.
+              </p>
+              <p class="description">
+                <?= lang('App.our_services_intro_4'); ?>
+                <?= lang('App.our_services_intro_5'); ?>
+                <br>
               </p>
               <div class="button-wrapper">
-                <a class="btn" href="#services"><span>Telusuri Semua Layanan</span></a>
+                <a class="btn" href="#services"><span><?= lang('App.our_services_explore'); ?></span</span></a>
               </div>
             </div>
           </div>
@@ -347,8 +368,8 @@
                   <i class="bi bi-badge-3d-fill"></i>
                 </div>
                 <div class="service-content">
-                  <h4><a href="">Menciptakan Dunia Bergerak</a></h4>
-                  <p>Animasi 3D, Animasi 2D, Motion Graphics, Frame by Frame.</p>
+                  <h4><a href=""><?= lang('App.service_motion_title'); ?></a></h4>
+                  <p><?= lang('App.service_motion_desc'); ?></p>
                 </div>
               </div><!-- End Service Item -->
 
@@ -357,8 +378,8 @@
                   <i class="bi bi-film"></i>
                 </div>
                 <div class="service-content">
-                  <h4><a href="">Kisah Anda, dalam Kualitas Sinema</a></h4>
-                  <p>Advertisement, Company Profile, Broadcasting, Music Video, Movies, Event Documentation.</p>
+                  <h4><a href=""><?= lang('App.service_cinematic_title'); ?></a></h4>
+                  <p><?= lang('App.service_cinematic_desc'); ?></p>
                 </div>
               </div><!-- End Service Item -->
 
@@ -367,8 +388,8 @@
                   <i class="bi bi-person-video3"></i>
                 </div>
                 <div class="service-content">
-                  <h4><a href="">Identitas Visual yang Kuat</a></h4>
-                  <p>Brand (Product, Logo, Social Media), UI/UX, Illustration.</p>
+                  <h4><a href=""><?= lang('App.service_branding_title'); ?></a></h4>
+                  <p><?= lang('App.service_branding_desc'); ?></p>
                 </div>
               </div><!-- End Service Item -->
 
@@ -377,8 +398,8 @@
                   <i class="bi bi-badge-vr-fill"></i>
                 </div>
                 <div class="service-content">
-                  <h4><a href="">Pengalaman Imersif Masa Depan</a></h4>
-                  <p>Augmented Reality, Virtual Reality, Interactive Media, Games, 3D Mapping.</p>
+                  <h4><a href=""><?= lang('App.service_immersive_title'); ?></a></h4>
+                  <p><?= lang('App.service_immersive_desc'); ?></p>
                 </div>
               </div><!-- End Service Item -->
 
@@ -387,8 +408,8 @@
                   <i class="bi bi-camera-reels"></i>
                 </div>
                 <div class="service-content">
-                  <h4><a href="">Momen Abadi, Visual Tajam</a></h4>
-                  <p>Product, Event Documentation, Company Profile, Fashion.</p>
+                  <h4><a href=""><?= lang('App.service_photography_title'); ?></a></h4>
+                  <p><?= lang('App.service_photography_desc'); ?></p>
                 </div>
               </div><!-- End Service Item -->
 
@@ -397,8 +418,8 @@
                   <i class="bi bi-book-half"></i>
                 </div>
                 <div class="service-content">
-                  <h4><a href="">Tumbuh Bersama Magvis</a></h4>
-                  <p>Program Pelatihan Khusus dari Magvis untuk Mengasah Keahlian Kreatif Anda.</p>
+                  <h4><a href=""><?= lang('App.service_training_title'); ?></a></h4>
+                  <p><?= lang('App.service_training_desc'); ?></p>
                 </div>
               </div><!-- End Service Item -->
             </div>
@@ -415,8 +436,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Our Works</h2>
-        <p>Karya-Karya yang Kami Hidupkan.</p>
+        <h2><?= lang('App.our_works_title'); ?></h2>
+        <p><?= lang('App.our_works_subtitle'); ?></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -730,20 +751,20 @@
                 <i class="bi bi-question-circle"></i>
               </div>
               <div class="card-content">
-                <h3>Let's Talk.</h3>
-                <p>Wujudkan Ide Anda Bersama Magvis.</p>
+                <h3><?= lang('App.faq_title'); ?></h3>
+                <p><?= lang('App.faq_subtitle'); ?></p>
 
                 <div class="contact-options">
                   <a href="mailto:<?= esc($setting->contact_email ?? '') ?>" class="contact-option">
                     <i class="bi bi-envelope"></i>
-                    <span>Email Kami</span>
+                    <span><?= lang('App.faq_email'); ?></span>
                   </a>
 
                   <!-- REGEX NOMOR HP -->
                   <a href="https://wa.me/<?= preg_replace('/[^0-9]+/', '', $setting->contact_phone ?? '') ?>?text=Halo%20kak,%20saya%20ingin%20tanya%20tentang%20layanannya"
                     class="contact-option" target="_blank">
                     <i class="bi bi-chat-dots"></i>
-                    <span>Chat Langsung</span>
+                    <span><?= lang('App.faq_chat'); ?></span>
                   </a>
 <!-- 
                   <a href="https://wa.me/<?= esc($setting->contact_phone ?? '') ?>" class="contact-option">
@@ -766,9 +787,9 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>The Magvis Minds.</h2>
-        <p><b>Meet Our Creative Superstars.</b></p>
-        <p class="mt-2"><i>"Kami adalah tim multidisiplin yang bersemangat, dipimpin oleh para ahli yang berkomitmen untuk mengubah imajinasi Anda menjadi kenyataan visual."</i></p>
+        <h2><?= lang('App.team_title'); ?></h2>
+        <p><b><?= lang('App.team_subtitle'); ?></b></p>
+        <p class="mt-2"><i>"<?= lang('App.team_desc'); ?>"</i></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -873,8 +894,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Testimoni</h2>
-        <p>Feedback dari pelanggan terhormat.</p>
+        <h2><?= lang('App.testimonial_title'); ?></h2>
+        <p><?= lang('App.testimonial_subtitle'); ?></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -1108,8 +1129,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Let's Talk</h2>
-        <p>Wujudkan Ide Anda Bersama Magvis.</p>
+        <h2><?= lang('App.talk_title') ?></h2>
+        <p><?= lang('App.talk_subtitle') ?></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -1119,7 +1140,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="info-card">
               <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
-              <h3>Alamat</h3>
+              <h3><?= lang('App.talk_address') ?></h3>
               <p><?= nl2br($setting->address) ?></p>
             </div>
           </div>
@@ -1127,7 +1148,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="info-card">
               <div class="icon-box"><i class="bi bi-telephone"></i></div>
-              <h3>No. Kontak</h3>
+              <h3><?= lang('App.phone') ?></h3>
               <p>
                 <?= $setting->contact_phone ?><br>
               </p>
@@ -1137,7 +1158,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="info-card">
               <div class="icon-box"><i class="bi bi-mailbox"></i></div>
-              <h3>Email</h3>
+              <h3><?= lang('App.email') ?></h3>
               <p>
                 <?= $setting->contact_email ?>
               </p>
@@ -1146,7 +1167,7 @@
 
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-lg-12">
             <div class="form-wrapper" data-aos="fade-up" data-aos-delay="400">
               <form action="<?= base_url('contact/send') ?>" method="post" role="form" class="php-email-form">
@@ -1199,7 +1220,7 @@
               </form>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section><!-- /Contact Section -->
 
@@ -1225,21 +1246,21 @@
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Halaman Web</h4>
+          <h4><?= lang('App.footer_title1') ?></h4>
           <ul>
-            <li><a href="#hero">Beranda</a></li>
-            <li><a href="#about">Tentang Kami</a></li>
-            <li><a href="#services">Layanan</a></li>
-            <li><a href="#faq">Pertanyaan Umum</a></li>
-            <li><a href="#testimonials">Testimoni Klien</a></li>
+            <li><a href="#hero"><?= lang('App.footer_home') ?></a></li>
+            <li><a href="#about"><?= lang('App.footer_about') ?></a></li>
+            <li><a href="#services"><?= lang('App.footer_services') ?></a></li>
+            <li><a href="#faq"><?= lang('App.footer_faq') ?> </a></li>
+            <li><a href="#testimonials"><?= lang('App.footer_testimonial') ?></a></li>
 
-            <li><a href="#contact">Hubungi Kami</a></li>
+            <li><a href="#contact"><?= lang('App.footer_contact') ?></a></li>
 
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Layanan Kami</h4>
+          <h4><?= lang('App.footer_contact') ?></h4>
           <ul>
             <?php foreach ($categories as $cat): ?>
               <li><a href="#services"><?= esc($cat->name) ?></a></li>
