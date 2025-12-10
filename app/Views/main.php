@@ -1148,7 +1148,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="info-card">
               <div class="icon-box"><i class="bi bi-telephone"></i></div>
-              <h3><?= lang('App.phone') ?></h3>
+              <h3><?= lang('App.talk_phone') ?></h3>
               <p>
                 <?= $setting->contact_phone ?><br>
               </p>
@@ -1158,7 +1158,7 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="info-card">
               <div class="icon-box"><i class="bi bi-mailbox"></i></div>
-              <h3><?= lang('App.email') ?></h3>
+              <h3><?= lang('App.talk_email') ?></h3>
               <p>
                 <?= $setting->contact_email ?>
               </p>
