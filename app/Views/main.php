@@ -117,7 +117,7 @@
                 </h1>
 
                 <div class="cta-wrapper">
-                  <a href="#about " class="btn btn-primary btn-xs">
+                  <a href="#about " class="btn btn-primary btn-xs p-2 px-3">
                     <?= lang('App.read_more'); ?>
                   </a>
                 </div>
