@@ -88,16 +88,30 @@
                         <div class="invalid-feedback"><?= $validation->getError('social_youtube') ?></div>
                     </div>
 
-                    <!-- Logo Upload -->
+                    <!-- Logo Dark Upload -->
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">Logo Website</label>
-                        <input type="file" name="logo" class="form-control <?= ($validation->getError('logo') ? 'is-invalid' : '') ?>">
-                        <div class="invalid-feedback"><?= $validation->getError('logo') ?></div>
+                        <label class="form-label">Logo Dark Website</label>
+                        <input type="file" name="logo-dark" class="form-control <?= ($validation->getError('logo-dark') ? 'is-invalid' : '') ?>">
+                        <div class="invalid-feedback"><?= $validation->getError('logo-dark') ?></div>
 
-                        <?php if (!empty($setting->logo)) : ?>
+                        <?php if (!empty($setting->logo_dark)) : ?>
                             <div class="mt-3">
                                 <label class="form-label">Preview Logo</label><br>
-                                <img src="<?= base_url('storage/setting/logo/' . $setting->logo) ?>"
+                                <img src="<?= base_url('storage/setting/logo/' . $setting->logo_dark) ?>"
+                                    class="img-thumbnail" width="180">
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <!-- Logo Light Upload -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Logo Light Website</label>
+                        <input type="file" name="logo-light" class="form-control <?= ($validation->getError('logo-light') ? 'is-invalid' : '') ?>">
+                        <div class="invalid-feedback"><?= $validation->getError('logo-light') ?></div>
+
+                        <?php if (!empty($setting->logo_dark)) : ?>
+                            <div class="mt-3">
+                                <label class="form-label">Preview Logo</label><br>
+                                <img src="<?= base_url('storage/setting/logo/' . $setting->logo_light) ?>"
                                     class="img-thumbnail" width="180">
                             </div>
                         <?php endif; ?>

@@ -15,7 +15,8 @@ class Setting extends Model
 
     protected $allowedFields    = [
         'site_name',
-        'logo',
+        'logo_dark',
+        'logo_light',
         'contact_email',
         'contact_phone',
         'address',

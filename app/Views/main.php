@@ -12,12 +12,12 @@
   <meta name="keywords" content="Production House">
 
   <!-- Favicon -->
-  <link rel="icon" href="<?= base_url('storage/setting/logo/' . $setting->logo) ?>" type="image/png">
+  <link rel="icon" href="<?= base_url('storage/setting/logo/' . $setting->logo_dark) ?>" type="image/png">
 
   <!-- Open Graph (for WhatsApp, Facebook, LinkedIn) -->
   <meta property="og:title" content="<?= esc($setting->site_name) ?>">
   <meta property="og:description" content="We Are Magvis. The Visionaries Behind Your Story.">
-  <meta property="og:image" content="<?= base_url('storage/setting/logo/' . $setting->logo) ?>">
+  <meta property="og:image" content="<?= base_url('storage/setting/logo/' . $setting->logo_dark) ?>">
   <meta property="og:url" content="<?= current_url() ?>">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="<?= esc($setting->site_name) ?>">
@@ -48,7 +48,13 @@
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
       <a href="#about" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="<?= base_url('storage/setting/logo/' . $setting->logo) ?>" alt="">
+        <img
+          id="main-logo" 
+          src="<?= base_url('storage/setting/logo/' . $setting->logo_light) ?>" 
+          data-dark="<?= base_url('storage/setting/logo/' . $setting->logo_dark) ?>" 
+          data-light="<?=base_url('storage/setting/logo/' . $setting->logo_light) ?>"
+          alt="MAGVIS Logo"
+        >
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -113,7 +119,7 @@
               <div class="d-flex flex-column align-items-center text-center p-4  bg-opacity-75 rounded-4">
           
                 <h1 class="mb-3 fs-1 fw-bold text-dark">
-                  <img src="assets/landing-page/img/png-22.png" class="img-fluid rounded" alt="" width="55%">
+                  <img src="assets/landing-page/img/png-22.png" class="img-fluid rounded" alt="" width="70%">
                 </h1>
 
                 <div class="cta-wrapper">

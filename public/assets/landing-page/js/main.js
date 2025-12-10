@@ -15,8 +15,18 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
+    const logo = document.getElementById("main-logo");
+
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+    console.log("GOT HERE!");
+    
+    if (window.scrollY > 100 ) {
+      selectBody.classList.add('scrolled')
+      logo.src = logo.getAttribute("data-dark");
+    }else {
+      selectBody.classList.remove('scrolled');
+      logo.src = logo.getAttribute("data-light");
+    }
   }
 
   document.addEventListener('scroll', toggleScrolled);

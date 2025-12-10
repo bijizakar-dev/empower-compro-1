@@ -22,7 +22,8 @@ class Setting extends BaseController
             $setting = (object)[
                 "id" => "",
                 "site_name" => "",
-                "logo" => "",
+                "logo_dark" => "",
+                "logo_light" => "",
                 "contact_email" => "",
                 "contact_phone" => "",
                 "address" => "",
@@ -52,7 +53,8 @@ class Setting extends BaseController
             'social_facebook' => 'permit_empty|valid_url',
             'social_instagram' => 'permit_empty|valid_url',
             'social_youtube' => 'permit_empty|valid_url',
-            'logo' => 'permit_empty|is_image[logo]|max_size[logo,2048]|mime_in[logo,image/jpg,image/jpeg,image/png]',
+            'logo_dark' => 'permit_empty|is_image[logo]|max_size[logo,2048]|mime_in[logo,image/jpg,image/jpeg,image/png]',
+            'logo_light' => 'permit_empty|is_image[logo]|max_size[logo,2048]|mime_in[logo,image/jpg,image/jpeg,image/png]',
         ];
 
         if (!$this->validate($rules)) {
@@ -73,9 +75,9 @@ class Setting extends BaseController
         ];
 
         // Upload logo
-        $fileLogo = $this->request->getFile('logo');
+        $fileLogoDark = $this->request->getFile('logo-dark');
 
-        if ($fileLogo && $fileLogo->isValid() && !$fileLogo->hasMoved()) {
+        if ($fileLogoDark && $fileLogoDark->isValid() && !$fileLogoDark->hasMoved()) {
 
             // Folder penyimpanan
             $path = WRITEPATH . 'uploads/setting/logo';
@@ -84,22 +86,50 @@ class Setting extends BaseController
                 mkdir($path, 0777, true);
             }
 
-            $newName = $fileLogo->getRandomName();
-            $fileLogo->move($path, $newName);
+            $newName = $fileLogoDark->getRandomName();
+            $fileLogoDark->move($path, $newName);
 
             // Ambil setting lama
             $old = $this->settingModel->first();
 
             // Hapus logo lama
-            if ($old && !empty($old->logo)) {
-                $oldPath = $path . '/' . $old->logo;
+            if ($old && !empty($old->logo_dark)) {
+                $oldPath = $path . '/' . $old->logo_dark;
                 if (file_exists($oldPath)) {
                     unlink($oldPath);
                 }
             }
 
-            $data['logo'] = $newName;
+            $data['logo_dark'] = $newName;
         }
+
+        $fileLogoLight = $this->request->getFile('logo-light');
+
+        if ($fileLogoLight && $fileLogoLight->isValid() && !$fileLogoLight->hasMoved()) {
+
+            // Folder penyimpanan
+            $path = WRITEPATH . 'uploads/setting/logo';
+
+            if (!is_dir($path)) {
+                mkdir($path, 0777, true);
+            }
+
+            $newName = $fileLogoLight->getRandomName();
+            $fileLogoLight->move($path, $newName);
+
+            // Ambil setting lama
+            $old = $this->settingModel->first();
+
+            // Hapus logo lama
+            if ($old && !empty($old->logo_light)) {
+                $oldPath = $path . '/' . $old->logo_light;
+                if (file_exists($oldPath)) {
+                    unlink($oldPath);
+                }
+            }
+
+            $data['logo_light'] = $newName;
+        }  
 
         // Insert / Update
         if (empty($id)) {
