@@ -35,6 +35,13 @@
                 <form action="<?= base_url('adm/masterdata/service/update/' . $service->id) ?>" method="post">
 
                     <div class="mb-3">
+                        <label class="form-label">Bahasa</label>
+                        <select class="form-select" name="lang">
+                            <option value="id" <?= $service->lang == 'id' ? 'selected' : '' ?>>Indonesia (ID)</option>
+                            <option value="en" <?= $service->lang == 'en' ? 'selected' : '' ?>>English (EN)</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Judul</label>
                         <input type="text" name="title" class="form-control" 
                                value="<?= esc($service->title) ?>">

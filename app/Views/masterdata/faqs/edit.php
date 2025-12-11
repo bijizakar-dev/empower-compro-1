@@ -40,6 +40,13 @@
 
                 <form action="<?= base_url('adm/masterdata/faqs/update/' . $faq['id']) ?>" method="POST">
 
+                    <div class="mb-3">
+                        <label class="form-label">Bahasa</label>
+                        <select class="form-select" name="lang">
+                            <option value="id" <?= $faq['lang'] == 'id' ? 'selected' : '' ?>>Indonesia (ID)</option>
+                            <option value="en" <?= $faq['lang'] == 'en' ? 'selected' : '' ?>>English (EN)</option>
+                        </select>
+                    </div>
                     <!-- Pertanyaan -->
                     <div class="mb-3">
                         <label class="form-label">Pertanyaan</label>

@@ -18,7 +18,9 @@ class FaqController extends BaseController
     {
         $data = [
             'title' => 'Master FAQ',
-            'faqs'  => $this->faqModel->orderBy('sort_order','ASC')->findAll(),
+            'faqs_id'  => $this->faqModel->where('lang', 'id')->orderBy('sort_order','ASC')->findAll(),
+            'faqs_en'  => $this->faqModel->where('lang', 'en')->orderBy('sort_order','ASC')->findAll(),
+
         ];
         return view('masterdata/faqs/index', $data);
     }

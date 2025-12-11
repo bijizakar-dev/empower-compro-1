@@ -35,6 +35,14 @@
                 <form action="<?= base_url('adm/masterdata/service/store') ?>" method="post">
 
                     <div class="mb-3">
+                        <label class="form-label">Bahasa</label>
+                        <select class="form-select" name="lang">
+                            <option value="id">Indonesia (ID)</option>
+                            <option value="en">English (EN)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
                         <label class="form-label">Judul</label>
                         <input type="text" name="title" class="form-control" 
                                value="<?= old('title') ?>">

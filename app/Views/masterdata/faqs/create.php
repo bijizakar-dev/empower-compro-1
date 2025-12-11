@@ -39,7 +39,13 @@
             <div class="card-body">
 
                 <form action="<?= base_url('adm/masterdata/faqs/store') ?>" method="POST">
-
+                    <div class="mb-3">
+                        <label class="form-label">Bahasa</label>
+                        <select class="form-select" name="lang">
+                            <option value="id">Indonesia (ID)</option>
+                            <option value="en">English (EN)</option>
+                        </select>
+                    </div>
                     <!-- Pertanyaan -->
                     <div class="mb-3">
                         <label class="form-label">Pertanyaan</label>

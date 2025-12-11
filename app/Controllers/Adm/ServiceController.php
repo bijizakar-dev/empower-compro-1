@@ -34,7 +34,12 @@ class ServiceController extends BaseController
     {
         $data = [
             'title'    => 'Services',
-            'services' => $this->serviceModel->orderBy('sort_order', 'ASC')->findAll(),
+            'services_id' => $this->serviceModel
+                ->where('lang', 'id')
+                ->orderBy('sort_order', 'ASC')->findAll(),
+            'services_en' => $this->serviceModel
+                ->where('lang', 'en')
+                ->orderBy('sort_order', 'ASC')->findAll(),    
         ];
 
         return view('masterdata/services/index', $data);
@@ -82,6 +87,7 @@ class ServiceController extends BaseController
             'icon'        => $icon,
             'sort_order'  => $this->request->getPost('sort_order'),
             'active'      => $this->request->getPost('active'),
+            'lang'      => $this->request->getPost('lang'),
         ]);
 
         return redirect()
@@ -146,6 +152,7 @@ class ServiceController extends BaseController
             'icon'        => $icon,
             'sort_order'  => $this->request->getPost('sort_order'),
             'active'      => $this->request->getPost('active'),
+            'lang'      => $this->request->getPost('lang'),
         ]);
 
         return redirect()

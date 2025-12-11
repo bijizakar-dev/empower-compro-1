@@ -51,9 +51,9 @@
             <div class="card-body">
 
                 <div class="container-fluid px-4">
+                    <h2>ID</h2>
                     <div class="row">
-
-                        <?php foreach ($services as $row): ?>
+                        <?php foreach ($services_id as $row): ?>
                         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up">
                             <div class="card shadow-sm h-100 service-item p-3">
 
@@ -91,7 +91,47 @@
                             </div>
                         </div>
                         <?php endforeach; ?>
+                    </div>
+                    <h2 class="mt-3">EN</h2>
+                    <div class="row">
+                        <?php foreach ($services_en as $row): ?>
+                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up">
+                            <div class="card shadow-sm h-100 service-item p-3">
 
+                                <div class="service-icon text-center mb-3">
+                                    <i class="<?= $row->icon ?> fs-1 text-secondary"></i>
+                                </div>
+
+                                <div class="service-content text-center">
+                                    <h4 class="fw-bold"><?= esc($row->title) ?></h4>
+
+                                    <p class="text-muted small">
+                                        <?= character_limiter(strip_tags($row->description), 120) ?>
+                                    </p>
+
+                                    <div class="mb-2">
+                                        <span class="badge <?= $row->active ? 'bg-green-soft text-green' : 'bg-red-soft text-red' ?>">
+                                            <?= $row->active ? 'Aktif' : 'Nonaktif' ?>
+                                        </span>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <a href="<?= base_url('adm/masterdata/service/edit/' . $row->id) ?>" 
+                                        class="btn btn-sm btn-primary me-1">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+
+                                        <a href="#" 
+                                            data-url="<?= base_url('adm/masterdata/service/delete/' . $row->id) ?>"
+                                            class="btn btn-sm btn-danger btn-delete">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 

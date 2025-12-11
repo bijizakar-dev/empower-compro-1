@@ -53,7 +53,41 @@
                         </thead>
 
                         <tbody>
-                            <?php foreach ($faqs as $f): ?>
+                            <tr class="table-active">
+                                <td colspan="5"><strong>Bahasa Indonesia (ID)</strong></td>
+                            </tr>
+                            <?php foreach ($faqs_id as $f): ?>
+                            <tr>
+                                <td><?= esc($f['sort_order']) ?></td>
+                                <td><?= esc($f['question']) ?></td>
+                                <td><?= esc($f['answer']) ?></td>
+                                <td>
+                                    <?= $f['is_active'] ? 
+                                        '<span class="badge bg-success">Aktif</span>' :
+                                        '<span class="badge bg-secondary">Nonaktif</span>' ?>
+                                </td>
+                                <td>
+                                    <div class="text-center d-flex gap-2 justify-content-center">
+
+                                        <a href="<?= base_url('adm/masterdata/faqs/edit/' . $f['id']) ?>" 
+                                           class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+
+                                        <a href="#" 
+                                           data-url="<?= base_url('adm/masterdata/faqs/delete/' . $f['id']) ?>"
+                                           class="btn btn-sm btn-danger btn-delete">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php endforeach ?>
+                            <tr colspan="5" class="table-active">
+                                <td colspan="5"><strong>Bahasa Inggris (EN)</strong></td>
+                            </tr>
+                            <?php foreach ($faqs_en as $f): ?>
                             <tr>
                                 <td><?= esc($f['sort_order']) ?></td>
                                 <td><?= esc($f['question']) ?></td>
