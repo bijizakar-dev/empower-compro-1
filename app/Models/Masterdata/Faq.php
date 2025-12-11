@@ -11,6 +11,7 @@ class Faq extends Model
     protected $useTimestamps    = true;
 
     protected $allowedFields = [
+        'lang',
         'question',
         'answer',
         'sort_order',

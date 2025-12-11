@@ -14,6 +14,7 @@ class Service extends Model
     protected $useSoftDeletes   = true;
 
     protected $allowedFields    = [
+        'lang',
         'title',
         'description',
         'icon',

@@ -20,6 +20,7 @@ class Home extends BaseController
     }
 
     public function getMain() {
+        $locale = service('request')->getLocale();
 
         $serviceModel   = new Service();
         $priceListModel = new PriceList();
@@ -30,7 +31,9 @@ class Home extends BaseController
         $teamModel      = new Team();
         $faqModel       = new Faq();
 
-        $services   = $serviceModel->where('active', 1)->orderBy('sort_order', 'ASC')->findAll();
+        $services   = $serviceModel->where('active', 1)
+            ->where('lang', $locale)
+            ->orderBy('sort_order', 'ASC')->findAll();
         $pricelists = $priceListModel->findAll();
         $categories = $categoryModel->orderBy('name', 'ASC')->findAll();
 
@@ -53,8 +56,10 @@ class Home extends BaseController
         }
 
         $teams = $teamModel->orderBy('id', 'ASC')->findAll();
-        $faqs  = $faqModel->where('is_active', 1)->orderBy('sort_order', 'ASC')->findAll();
-        $locale = service('request')->getLocale();
+        $faqs  = $faqModel->where('is_active', 1)
+            ->where('lang', $locale)
+            ->orderBy('sort_order', 'ASC')->findAll();
+        
 
         $data = [
             'title'         => 'Empower Compro',

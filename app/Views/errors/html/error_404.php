@@ -28,7 +28,7 @@
                                             <?= lang('Errors.sorryCannotFind') ?>
                                         <?php endif; ?>
                                     </p>
-                                    <a class="text-arrow-icon" href="<?= base_url('/adm') ?>">
+                                    <a class="text-arrow-icon" href="<?= base_url('/id') ?>">
                                         <i class="ms-0 me-1" data-feather="arrow-left"></i>
                                         Return to Dashboard
                                     </a>

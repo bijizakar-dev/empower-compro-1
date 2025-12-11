@@ -18,14 +18,9 @@ $routes->setAutoRoute(false); // ← AUTO ROUTES DIMATIKAN
 // MAIN ROUTES
 // ---------------------------------------------------------
 // $routes->get('/', 'Home::getMain');
-$routes->get('/', function () {
-    return redirect()->to('/id');
-});
-// Group berdasarkan locale
-$routes->group('{locale}', function ($routes) {
-    // sesuaikan dengan halaman yang kamu punya
+$routes->get('(id|en)', 'Home::getMain');
+$routes->group('(id|en)', function ($routes) {
     $routes->get('/', 'Home::getMain');
-    // dst: tambahkan route lain yang dipakai di company profile
 });
 
 $routes->get('adm', 'Home::getDashboardAdmin', ['filter' => 'auth']);
