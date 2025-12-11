@@ -12,12 +12,12 @@
   <meta name="keywords" content="Production House">
 
   <!-- Favicon -->
-  <link rel="icon" href="<?= base_url('storage/setting/logo/' . $setting->logo_dark) ?>" type="image/png">
+  <link rel="icon" href="<?= base_url('storage/setting/logo/' . $setting->logo_dark ?? "") ?>" type="image/png">
 
   <!-- Open Graph (for WhatsApp, Facebook, LinkedIn) -->
   <meta property="og:title" content="<?= esc($setting->site_name) ?>">
   <meta property="og:description" content="We Are Magvis. The Visionaries Behind Your Story.">
-  <meta property="og:image" content="<?= base_url('storage/setting/logo/' . $setting->logo_dark) ?>">
+  <meta property="og:image" content="<?= base_url('storage/setting/logo/' . $setting->logo_dark ?? "") ?>">
   <meta property="og:url" content="<?= current_url() ?>">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="<?= esc($setting->site_name) ?>">
@@ -40,6 +40,141 @@
 
   <!-- Main CSS File -->
   <link href="assets/landing-page/css/main.css" rel="stylesheet">
+  <style>
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 80px;
+      right: 30px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .whatsapp-bubble {
+      background-color: #25d366;
+      color: #FFF;
+      padding: 14px 22px;
+      border-radius: 27px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(22px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .whatsapp-float:hover .whatsapp-bubble {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    .whatsapp-icon {
+      width: 70px;
+      height: 70px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-float:hover .whatsapp-icon {
+      background-color: #128c7e;
+      transform: scale(1.1);
+      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Animasi pulse untuk menarik perhatian */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    .whatsapp-icon {
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float:hover .whatsapp-icon {
+      animation: none;
+    }
+
+    .header .navmenu.mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Responsive untuk tablet */
+    @media screen and (max-width: 992px) {
+      .whatsapp-float {
+        bottom: 90px;
+        right: 25px;
+      }
+      
+      .whatsapp-bubble {
+        font-size: 13px;
+        padding: 10px 16px;
+      }
+      
+      .whatsapp-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+      }
+    }
+
+    /* Responsive untuk mobile */
+    @media screen and (max-width: 768px) {
+      .whatsapp-float {
+        bottom: 80px;
+        right: 20px;
+      }
+      
+      .whatsapp-bubble {
+        display: none; /* Sembunyikan bubble chat di mobile */
+      }
+      
+      .whatsapp-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+      }
+    }
+
+    /* Adjust Scroll Top Button agar tidak nabrak */
+    #scroll-top {
+      bottom: 20px;
+      right: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      #scroll-top {
+        bottom: 15px;
+        right: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -47,6 +182,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
+      <!-- Logo - Kiri -->
       <a href="#about" class="logo d-flex align-items-center me-auto me-xl-0">
         <img
           id="main-logo" 
@@ -57,7 +193,8 @@
         >
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <!-- Navigation Menu - Tengah -->
+      <nav id="navmenu" class="navmenu mx-auto">
         <ul>
           <li><a href="#hero" class="active"><?= lang('App.menu_home'); ?></a></li>
           <li><a href="#about"><?= lang('App.menu_about'); ?></a></li>
@@ -69,20 +206,24 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted ms-auto me-3" 
-      href="https://wa.me/6285190447515?text=Halo%20kak,%20saya%20ingin%20tanya-tanya%20tentang%20jasa%20videonya" target="_blank">
-      <?= lang('App.contact_us'); ?>
-      </a>
-      <div class="lang-switcher d-flex align-items-center ms-3 me-1 bg-white rounded-pill px-3 py-1">
-        <a href="<?= base_url('id'); ?>"
-          class="mx-1 <?= $locale === 'id' ? 'fw-bold text-primary' : 'text-muted'; ?>">
-          ID
+      <!-- Right Section - Kanan -->
+      <div class="d-flex align-items-center gap-2">
+        <a class="btn-getstarted" 
+        href="https://wa.me/6285190447515?text=Halo%20kak,%20saya%20ingin%20tanya-tanya%20tentang%20jasa%20videonya" target="_blank">
+        <?= lang('App.contact_us'); ?>
         </a>
-        <span class="text-muted">|</span>
-        <a href="<?= base_url('en'); ?>"
-          class="mx-1 <?= $locale === 'en' ? 'fw-bold text-primary' : 'text-muted'; ?>">
-          EN
-        </a>
+        
+        <div class="lang-switcher d-flex align-items-center bg-white rounded-pill px-1 py-1">
+          <a href="<?= base_url('id'); ?>"
+            class="mx-1 <?= $locale === 'id' ? 'fw-bold text-primary' : 'text-muted'; ?>">
+            ID
+          </a>
+          <span class="text-muted">|</span>
+          <a href="<?= base_url('en'); ?>"
+            class="mx-1 <?= $locale === 'en' ? 'fw-bold text-primary' : 'text-muted'; ?>">
+            EN
+          </a>
+        </div>
       </div>
 
     </div>
@@ -1291,6 +1432,18 @@
   </footer>
 
   <!-- Scroll Top -->
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/<?= $setting->contact_phone ?>?text=Halo%20kak,%20saya%20ingin%20tanya-tanya%20tentang%20layanan%20Magvis" 
+    class="whatsapp-float" 
+    target="_blank"
+    aria-label="Chat WhatsApp">
+    <div class="whatsapp-bubble">
+      <span>Chat dengan kami</span>
+    </div>
+    <div class="whatsapp-icon">
+      <i class="bi bi-whatsapp"></i>
+    </div>
+  </a>
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
