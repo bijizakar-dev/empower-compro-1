@@ -285,8 +285,8 @@
           <div class="col-lg-6 content d-flex flex-column" data-aos="fade-up" data-aos-delay="150">
             <p class="who-we-are mb-auto"><?= lang('App.about_us_title'); ?></p>
             <div class="block-desc">
-              <h3><?= lang('App.about_us_desc'); ?></h3>
-              <p class="fst-italic">
+              <h3 class="fs-1"><?= lang('App.about_us_desc'); ?></h3>
+              <p class="fst-italic fs-5">
                 <?= lang('App.about_us_desc2'); ?>
               </p>
             </div>
@@ -307,8 +307,8 @@
             </div>
           </div>
 
-          <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="mb-4 fs-3 fw-medium text-center text-body-secondary">
+          <div class="col-lg-6 about-images pt-4" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="mb-4 fs-4 fw-medium text-center text-body-secondary">
               <?= lang('App.about_us_desc3'); ?>
             <!-- <span class="fw-bold text-black">Magvis</span> adalah <span class="fw-bold text-black">Production House</span> yang berfokus menghidupkan ide-ide tak terbatas melalui teknologi dan seni visual. 
               Kami menggabungkan keahlian dalam 

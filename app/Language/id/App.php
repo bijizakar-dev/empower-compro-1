@@ -76,7 +76,7 @@ return [
     'service_training_title' => 'Tumbuh Bersama Magvis',
     'service_training_desc' => 'Program Pelatihan Khusus dari Magvis untuk Mengasah Keahlian Kreatif Anda.',
 
-    'our_works_title' => 'Karya Kami',
+    'our_works_title' => 'Portofolio',
     'our_works_subtitle' => 'Karya-Karya yang Kami Hidupkan.',
 
     'faq_title' => 'Let\'s Talk.',
