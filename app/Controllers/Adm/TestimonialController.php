@@ -98,7 +98,7 @@ class TestimonialController extends BaseController
 
         $data = $this->testimonialModel->find($id);
         if (! $data) {
-            return redirect()->to('/adm/masterdata/testimonial')->with('error', 'Testimonial tidak ditemukan.');
+            return redirect()->to('/adm/masterdata/testimonials')->with('error', 'Testimonial tidak ditemukan.');
         }
 
         // Upload foto baru?
