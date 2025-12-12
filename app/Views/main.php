@@ -603,7 +603,7 @@
                   // ubah nama kategori jadi slug untuk class isotope
                   $slug = 'filter-' .  strtolower(str_replace([" ", "&"], '', $cat->name));
                 ?>
-                <li <?php if ($index == 0) { ?>class="filter-active"<?php } ?> data-filter=".<?= $slug ?>"><?= esc(strtolower(str_replace([" ", "&"], '', $cat->name))) ?></li>
+                <li <?php if ($index == 0) { ?>class="filter-active"<?php } ?> data-filter=".<?= $slug ?>"><?= esc($cat->name) ?></li>
               <?php endforeach; ?>
               <li data-filter="*">All Projects</li>
             </ul>
@@ -614,7 +614,7 @@
 
             <?php foreach ($portfolios as $p): ?>
               <?php
-                $catSlug  = 'filter-' . strtolower(str_replace(' ', '', $p->category_name));
+                $catSlug  = 'filter-' . strtolower(str_replace([" ", "&"], '', $p->category_name));
                 $galleryId = 'portfolio-gallery-' . $p->id;
 
                 // Thumbnail default
