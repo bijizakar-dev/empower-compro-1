@@ -64,7 +64,8 @@ class PortfolioController extends BaseController
             'description' => 'permit_empty',
             'client_name' => 'permit_empty|max_length[150]',
             'project_date' => 'permit_empty|valid_date',
-            'thumbnail'   => 'uploaded[thumbnail]|is_image[thumbnail]|max_size[thumbnail,5120]'
+            'thumbnail'   => 'uploaded[thumbnail]|is_image[thumbnail]|max_size[thumbnail,5120]',
+            'link_url'    => 'permit_empty'
         ];
 
         if (!$this->validate($rules)) {
@@ -85,7 +86,8 @@ class PortfolioController extends BaseController
             'description' => $this->request->getPost('description'),
             'client_name' => $this->request->getPost('client_name'),
             'project_date'=> $this->request->getPost('project_date') ?: null,
-            'thumbnail'   => $thumbName
+            'thumbnail'   => $thumbName,
+            'link_url'    => $this->request->getPost('link_url') ?: null,
         ];
 
         $id = $this->portfolioModel->insert($data);
@@ -154,7 +156,8 @@ class PortfolioController extends BaseController
             'description' => 'permit_empty',
             'client_name' => 'permit_empty|max_length[150]',
             'project_date'=> 'permit_empty|valid_date',
-            'thumbnail'   => 'permit_empty|is_image[thumbnail]|max_size[thumbnail,5120]'
+            'thumbnail'   => 'permit_empty|is_image[thumbnail]|max_size[thumbnail,5120]',
+            'link_url'    => 'permit_empty'
         ];
 
         if (!$this->validate($rules)) {
@@ -181,7 +184,8 @@ class PortfolioController extends BaseController
             'description' => $this->request->getPost('description'),
             'client_name' => $this->request->getPost('client_name'),
             'project_date'=> $this->request->getPost('project_date') ?: null,
-            'thumbnail'   => $thumbName
+            'thumbnail'   => $thumbName,
+            'link_url'    => $this->request->getPost('link_url') ?: null,
         ]);
 
         // handle additional media uploads

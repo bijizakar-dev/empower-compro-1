@@ -644,10 +644,12 @@
                         </a>
 
                         <!-- Link ke Instagram / detail -->
-                        <a href="<?= $p->client_name ?: '#' ?>" 
-                          class="details-link" target="_blank">
-                          <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <?php if (!empty($p->link_url)): ?>
+                          <a href="<?= $p->link_url ?: '#' ?>" 
+                            class="details-link" target="_blank">
+                            <i class="bi bi-arrow-right"></i>
+                          </a>
+                        <?php endif; ?>
 
                         <!-- Semua media tambahan (hidden) -->
                         <?php if (!empty($mediaList)): ?>
@@ -1073,29 +1075,33 @@
             }
           </script>
           <div class="swiper-wrapper">
-            <?php for($i = 1; $i <= 5; $i++): ?>
+            <?php foreach ($testimonial as $testi): ?>
               <div class="swiper-slide">
                 <div class="testimonial-wrapper">
-                  <div class="testimonial-card container">
+                  <div class="testimonial-card container" style="min-height: 50vh; max-height: 50vh;">
                     <div class="row align-items-center g-4">
                       <div class="text-center">
                         <div class="testimonial-img">
-                          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400" alt="Testimonial" />
+                          <img src="<?= base_url('storage/testimonials/' . $testi->photo) ?>" alt="Testimonial" style="width: 120px; height: 120px;"  />
                         </div>
                       </div>
                       <div class="col-12">
-                        <div class="stars mb-2">★★★★★</div>
+                        <div class="stars mb-2">
+                          <?php for ($i = 0; $i < $testi->rating; $i++): ?>
+                              *
+                          <?php endfor; ?>
+                        </div>
                         <p class="fs-6 fw-bold">
-                          "Kerja bareng tim Magvis Studio itu sangat menyenangkan. Mereka paham dengan kebutuhan event besar, sigap di lapangan, dan hasilnya sinematik banget. Klien dan sponsor sangat puas dengan dokumentasi dari mereka."
+                          <?= esc($testi->message) ?>
                         </p>
-                        <p class="mb-0">— <strong>Vermillion D. White</strong></p>
-                        <small class="text-muted">CEO, planetX.ai</small>
+                        <p class="mb-0">— <strong><?= esc($testi->author_name) ?></strong></p>
+                        <small class="text-muted"><?= esc($testi->author_title) ?></small>
                       </div>
                     </div>
                   </div>
                 </div>
               </div><!-- End testimonial item -->
-            <?php endfor; ?>
+            <?php endforeach; ?>
            
 
             <!-- <div class="swiper-slide">

@@ -10,7 +10,7 @@ use App\Models\Masterdata\PortfolioMedia;
 use App\Models\System\Setting;
 use App\Models\Masterdata\Team;
 use App\Models\Masterdata\Faq;
-
+use App\Models\Masterdata\Testimonial;
 
 class Home extends BaseController
 {
@@ -30,6 +30,7 @@ class Home extends BaseController
         $settingModel   = new Setting();
         $teamModel      = new Team();
         $faqModel       = new Faq();
+        $testiModel     = new Testimonial();
 
         $services   = $serviceModel->where('active', 1)
             ->where('lang', $locale)
@@ -60,6 +61,7 @@ class Home extends BaseController
             ->where('lang', $locale)
             ->orderBy('sort_order', 'ASC')->findAll();
         
+        $testi = $testiModel->where('is_active', 1)->findAll();
 
         $data = [
             'title'         => 'Empower Compro',
@@ -74,7 +76,8 @@ class Home extends BaseController
             ],
             'teams'         => $teams,
             'faqs'          => $faqs,
-            'locale' => $locale,
+            'locale'        => $locale,
+            'testimonial'   => $testi,
         ];
 
         return view('main', $data);

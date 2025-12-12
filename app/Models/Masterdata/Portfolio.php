@@ -12,7 +12,7 @@ class Portfolio extends Model
 
     protected $allowedFields = [
         'category_id', 'title', 'description', 'client_name',
-        'project_date', 'thumbnail'
+        'project_date', 'thumbnail', 'link_url'
     ];
 
     protected $useTimestamps = true;

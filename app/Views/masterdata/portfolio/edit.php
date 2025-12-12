@@ -80,6 +80,13 @@
                             </div>
 
                             <div class="mb-3">
+                                <label class="form-label">Link URL Project</label>
+                                <input type="text" name="link_url"
+                                       class="form-control"
+                                       value="<?= esc($portfolio->link_url) ?>">
+                            </div>
+
+                            <div class="mb-3">
                                 <label class="form-label">Upload Media (boleh banyak)</label>
                                 <input type="file" name="media_files[]" multiple class="form-control">
                                 <small class="text-muted">Anda dapat menambah banyak media sekaligus.</small>

@@ -58,7 +58,12 @@
                                 <input type="date" name="project_date" class="form-control" value="<?= old('project_date') ?>">
                             </div>
 
-                                <div class="mb-3">
+                            <div class="mb-3">
+                                <label class="form-label">Link URL Project</label>
+                                <input type="date" name="link_url" class="form-control" value="<?= old('link_url') ?>">
+                            </div>
+
+                            <div class="mb-3">
                                 <label class="form-label">Upload Media (Multiple)</label>
                                 <input type="file" name="media_files[]" multiple class="form-control">
                                 <small class="text-muted">Bisa upload gambar (jpg/png) atau video (mp4). Maks 5MB per file.</small>

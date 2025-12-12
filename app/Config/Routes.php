@@ -18,6 +18,11 @@ $routes->setAutoRoute(false); // ← AUTO ROUTES DIMATIKAN
 // MAIN ROUTES
 // ---------------------------------------------------------
 // $routes->get('/', 'Home::getMain');
+$routes->get('/', function () {
+    return redirect()->to('/id');
+});
+
+// Group berdasarkan locale
 $routes->get('(id|en)', 'Home::getMain');
 $routes->group('(id|en)', function ($routes) {
     $routes->get('/', 'Home::getMain');
@@ -106,6 +111,17 @@ $routes->group('adm', ['namespace' => 'App\Controllers\Adm'], function ($routes)
 
         $routes->post('store',          'FaqController::store');
         $routes->post('update/(:num)',  'FaqController::update/$1');
+    });
+
+    // Masterdata Testi 
+    $routes->group('masterdata/testimonials', function ($routes) {
+        $routes->get('/',               'TestimonialController::index');
+        $routes->get('create',          'TestimonialController::create');
+        $routes->get('edit/(:num)',     'TestimonialController::edit/$1');
+        $routes->get('delete/(:num)',   'TestimonialController::delete/$1');
+
+        $routes->post('store',          'TestimonialController::store');
+        $routes->post('update/(:num)',  'TestimonialController::update/$1');
     });
 
     // Layanan Contact Request 
