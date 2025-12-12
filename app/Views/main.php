@@ -875,7 +875,12 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-5">
           <!-- Kanan: FAQ Loop -->
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4" data-aos="zoom-out" data-aos-delay="200">
+            <div class="faq-image">
+              <img class="img-fluid rounded img-thumbnail" src="assets/landing-page/img/faq_image.png" alt="Faq Image">
+            </div>
+          </div>
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
             <div class="faq-accordion">
 
               <?php $i = 0; foreach ($faqs as $faq): ?>
@@ -894,7 +899,7 @@
           </div>
           
           <!-- Kiri: Contact Card -->
-          <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
+          <!-- <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
             <div class="faq-contact-card">
               <div class="card-icon">
                 <i class="bi bi-question-circle"></i>
@@ -907,24 +912,19 @@
                   <a href="mailto:<?= esc($setting->contact_email ?? '') ?>" class="contact-option">
                     <i class="bi bi-envelope"></i>
                     <span><?= lang('App.faq_email'); ?></span>
-                  </a>
+                  </a> -->
 
                   <!-- REGEX NOMOR HP -->
-                  <a href="https://wa.me/<?= preg_replace('/[^0-9]+/', '', $setting->contact_phone ?? '') ?>?text=Halo%20kak,%20saya%20ingin%20tanya%20tentang%20layanannya"
+                  <!-- <a href="https://wa.me/<?= preg_replace('/[^0-9]+/', '', $setting->contact_phone ?? '') ?>?text=Halo%20kak,%20saya%20ingin%20tanya%20tentang%20layanannya"
                     class="contact-option" target="_blank">
                     <i class="bi bi-chat-dots"></i>
                     <span><?= lang('App.faq_chat'); ?></span>
                   </a>
-<!-- 
-                  <a href="https://wa.me/<?= esc($setting->contact_phone ?? '') ?>" class="contact-option">
-                    <i class="bi bi-telephone"></i>
-                    <span>Telepon Kami Dulu, Yuk!</span>
-                  </a> -->
                 </div>
 
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -1276,106 +1276,6 @@
         </div>
       </div>
     </section><!-- /Testimonials Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2><?= lang('App.talk_title') ?></h2>
-        <p><?= lang('App.talk_subtitle') ?></p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 mb-5">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="info-card">
-              <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
-              <h3><?= lang('App.talk_address') ?></h3>
-              <p><?= nl2br($setting->address) ?></p>
-            </div>
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="info-card">
-              <div class="icon-box"><i class="bi bi-telephone"></i></div>
-              <h3><?= lang('App.talk_phone') ?></h3>
-              <p>
-                <?= $setting->contact_phone ?><br>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="info-card">
-              <div class="icon-box"><i class="bi bi-mailbox"></i></div>
-              <h3><?= lang('App.talk_email') ?></h3>
-              <p>
-                <?= $setting->contact_email ?>
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- <div class="row">
-          <div class="col-lg-12">
-            <div class="form-wrapper" data-aos="fade-up" data-aos-delay="400">
-              <form action="<?= base_url('contact/send') ?>" method="post" role="form" class="php-email-form">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-person"></i></span>
-                      <input type="text" name="name" class="form-control" placeholder="Nama" required="">
-                    </div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                      <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                    </div>
-                  </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-6 form-group">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-phone"></i></span>
-                      <input type="text" class="form-control" name="phone" placeholder="No. Telp" required="">
-                    </div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-list"></i></span>
-                      <select name="service_id" class="form-control" required="">
-                        <?php foreach ($services as $s): ?>
-                          <option value="<?= $s->id ?>"><?= $s->title ?></option>
-                        <?php endforeach ?>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group mt-3">
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-chat-dots"></i></span>
-                      <textarea class="form-control" name="message" rows="6" placeholder="Tulis Pesan Disini.." required=""></textarea>
-                    </div>
-                  </div>
-                  <div class="my-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Pesan Anda telah terkirim. Terima kasih!</div>
-                  </div>
-                  <div class="text-center">
-                    <button type="submit">Kirim Pesan</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div> -->
-      </div>
-    </section><!-- /Contact Section -->
 
   </main>
 
