@@ -20,6 +20,13 @@ class Home extends BaseController
     }
 
     public function getMain() {
+        $locale = service('uri')->getSegment(1);
+
+        if (!in_array($locale, ['id', 'en'])) {
+            $locale = 'en'; 
+        }
+
+        service('request')->setLocale($locale);
         $locale = service('request')->getLocale();
 
         $serviceModel   = new Service();
