@@ -209,7 +209,7 @@
       <!-- Right Section - Kanan -->
       <div class="d-flex align-items-center gap-2">
         <a class="btn-getstarted" 
-        href="https://wa.me/6285190447515?text=Halo%20kak,%20saya%20ingin%20tanya-tanya%20tentang%20jasa%20videonya" target="_blank">
+        href="https://wa.me/<?= $setting->contact_phone ?>?text=Halo%20kak,%20saya%20ingin%20tanya-tanya%20tentang%20layanan%20Magvis" target="_blank">
         <?= lang('App.contact_us'); ?>
         </a>
         
@@ -308,7 +308,7 @@
           </div>
 
           <div class="col-lg-6 about-images pt-4" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="mb-4 fs-4 fw-medium text-center text-body-secondary">
+            <h3 class="mb-4 fs-4 fw-medium text-center ">
               <?= lang('App.about_us_desc3'); ?>
             <!-- <span class="fw-bold text-black">Magvis</span> adalah <span class="fw-bold text-black">Production House</span> yang berfokus menghidupkan ide-ide tak terbatas melalui teknologi dan seni visual. 
               Kami menggabungkan keahlian dalam 
@@ -466,7 +466,7 @@
                   <div class="service-content">
                       <h3><?= esc($row->title) ?></h3>
                       <p><?= strip_tags($row->description) ?></p>
-                      <a href="#portfolio" class="service-link go-filter" data-category="filter-<?= strtolower(str_replace(' ', '', $row->title)) ?>">
+                      <a href="#portfolio" class="service-link go-filter" data-category="filter-<?= strtolower(str_replace([" ", "&"], '', $row->title)) ?>">
                           <span>Learn More</span>
                           <i class="bi bi-arrow-right"></i>
                       </a>
@@ -482,7 +482,7 @@
     </section><!-- /Services Section -->
 
     <!-- Services Alt Section -->
-    <section id="services-alt" class="services-alt section">
+    <section id="services-alt" class="services-alt section light-background">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -503,8 +503,8 @@
                 <?= lang('App.our_services_intro_5'); ?>
                 <br>
               </p>
-              <div class="button-wrapper">
-                <a class="btn" href="#services"><span><?= lang('App.our_services_explore'); ?></span</span></a>
+              <div class="button-wrapper mt-3">
+                <a class="btn" href="#services"><span><?= lang('App.our_services_explore'); ?></span></a>
               </div>
             </div>
           </div>
@@ -603,6 +603,7 @@
                   // ubah nama kategori jadi slug untuk class isotope
                   $slug = 'filter-' .  strtolower(str_replace([" ", "&"], '', $cat->name));
                 ?>
+                <!-- <li data-filter=".<?= $slug ?>"><?= esc($cat->name) ?></li> -->
                 <li data-filter=".<?= $slug ?>"><?= esc($cat->name) ?></li>
               <?php endforeach; ?>
               
@@ -873,6 +874,12 @@
 
 
     <!-- Faq Section -->
+    <?php
+      // Hitung jumlah data
+      $totalItemFaq = count($faqs);
+
+      if ($totalItemFaq !== 0) {
+    ?>
     <section id="faq" class="faq section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-5">
@@ -930,7 +937,8 @@
         </div>
       </div>
 
-  </section><!-- /Faq Section -->
+    </section><!-- /Faq Section -->
+    <?php } ?>
 
     
     <!-- Team Section -->
@@ -1368,6 +1376,37 @@
 
   <!-- Main JS File -->
   <script src="assets/landing-page/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const serviceLinks = document.querySelectorAll(".go-filter");
+
+        serviceLinks.forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const category = this.dataset.category; // contoh: filter-anime
+                const filterButton = document.querySelector(
+                    `.portfolio-filters li[data-filter=".${category}"]`
+                );
+
+                // Scroll halus ke portfolio
+                const target = document.querySelector("#portfolio");
+                if (target) {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+
+                // Delay kecil untuk memastikan isotope sudah ready setelah scroll
+                setTimeout(() => {
+                    if (filterButton) {
+                        filterButton.click();
+                    }
+                }, 500);
+            });
+        });
+
+    });
+  </script>
 
 </body>
 

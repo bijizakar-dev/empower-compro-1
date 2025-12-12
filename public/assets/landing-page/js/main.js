@@ -260,11 +260,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const serviceLinks = document.querySelectorAll(".go-filter");
 
+    console.log(serviceLinks)
     serviceLinks.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
 
             const category = this.dataset.category; // contoh: filter-anime
+            console.log("cate : ", category);
+
             const filterButton = document.querySelector(
                 `.portfolio-filters li[data-filter=".${category}"]`
             );
