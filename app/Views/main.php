@@ -596,14 +596,14 @@
             <ul class="portfolio-filters isotope-filters">
               
 
-              <li data-filter="*">All Projects</li>
+              <li data-filter="*" class="filter-active">All Projects</li>
               <?php foreach ($categories as $index => $cat): ?>
                 <?php 
     
                   // ubah nama kategori jadi slug untuk class isotope
                   $slug = 'filter-' .  strtolower(str_replace([" ", "&"], '', $cat->name));
                 ?>
-                <li <?php if ($index == 0) { ?>class="filter-active"<?php } ?> data-filter=".<?= $slug ?>"><?= esc($cat->name) ?></li>
+                <li data-filter=".<?= $slug ?>"><?= esc($cat->name) ?></li>
               <?php endforeach; ?>
               
             </ul>
