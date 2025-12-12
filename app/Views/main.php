@@ -596,10 +596,12 @@
             <ul class="portfolio-filters isotope-filters">
               
 
+            
               <?php foreach ($categories as $index => $cat): ?>
                 <?php 
+    
                   // ubah nama kategori jadi slug untuk class isotope
-                  $slug = 'filter-' . strtolower(str_replace(' ', '', $cat->name));
+                  $slug = 'filter-' .  strtolower(str_replace([" ", "&"], '', $cat->name));
                 ?>
                 <li <?php if ($index == 0) { ?>class="filter-active"<?php } ?> data-filter=".<?= $slug ?>"><?= esc($cat->name) ?></li>
               <?php endforeach; ?>
@@ -990,12 +992,12 @@
               </div>
               <?php $delay += 100; ?>
               <?php endforeach; ?>
-            </div>
+            <!-- </div> -->
           <?php endif; ?>
 
           <!-- Row 2: Other Team Members -->
           <?php if (!empty($other_teams)): ?>
-          <div class="row g-4 justify-content-center">
+          <!-- <div class="row g-4 justify-content-center"> -->
               <?php foreach ($other_teams as $t): ?>
               <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="<?= $delay ?>">
                   <div class="team-card">
