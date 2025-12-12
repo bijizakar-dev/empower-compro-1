@@ -596,7 +596,7 @@
             <ul class="portfolio-filters isotope-filters">
               
 
-            
+              <li data-filter="*">All Projects</li>
               <?php foreach ($categories as $index => $cat): ?>
                 <?php 
     
@@ -605,7 +605,7 @@
                 ?>
                 <li <?php if ($index == 0) { ?>class="filter-active"<?php } ?> data-filter=".<?= $slug ?>"><?= esc($cat->name) ?></li>
               <?php endforeach; ?>
-              <li data-filter="*">All Projects</li>
+              
             </ul>
           </div>
 
