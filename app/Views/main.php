@@ -249,12 +249,6 @@
           <div class="row justify-content-center">
             <div class="col-lg-6 col-md-10 col-12">
               <div class="badge-wrapper mb-3">
-                <!-- <div class="d-inline-flex align-items-center rounded-pill border border-light px-3 py-1 text-white"> -->
-                  <!-- <div class="icon-circle me-2 text-white">
-                    <i class="bi bi-bell"></i>
-                  </div> -->
-                  <!-- <span class="badge-text me-2 text-white">Turn on your notifications</span> -->
-                <!-- </div> -->
               </div>
 
               <div class="d-flex flex-column align-items-center text-center p-4  bg-opacity-75 rounded-4">
@@ -290,12 +284,6 @@
                 <?= lang('App.about_us_desc2'); ?>
               </p>
             </div>
-            <!-- <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Adventure.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Event.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Video Profile.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Dokumenter.</span>
-            </ul> -->
             
             <div class="row gy-4">
               <div class="d-flex flex-column align-items-center text-center p-4 bg-opacity-75 rounded-4">
@@ -320,24 +308,6 @@
     </section>
     <!-- /About Section -->
 
-    <!-- <div class="row gy-4">
-              <!-- Gambar kiri atas -->
-               <!-- <div class="col-6">
-                <img src="assets/img/about/1.jpg" class="img-fluid rounded" alt="">
-              </div> -->
-              <!-- Gambar kanan atas -->
-               <!-- <div class="col-6">
-                <img src="assets/img/about/2.jpg" class="img-fluid rounded" alt="">
-              </div> -->
-              <!-- Gambar kiri bawah -->
-               <!-- <div class="col-6">
-                <img src="assets/img/about/3.jpg" class="img-fluid rounded" alt="">
-              </div> -->
-              <!-- Gambar kanan bawah BARU -->
-               <!-- <div class="col-6">
-                <img src="assets/img/about/4.jpg" class="img-fluid rounded" alt="">
-              </div> -->
-            <!-- </div> -->
 
     <!-- How We Work Section -->
     <section id="how-we-work" class="how-we-work section">
@@ -1088,11 +1058,11 @@
             <?php foreach ($testimonial as $testi): ?>
               <div class="swiper-slide">
                 <div class="testimonial-wrapper">
-                  <div class="testimonial-card container" style="min-height: 50vh; max-height: 50vh;">
+                  <div class="testimonial-card container" style="min-height: 50vh;">
                     <div class="row align-items-center g-4">
                       <div class="text-center">
                         <div class="testimonial-img">
-                          <img src="<?= base_url('storage/testimonials/' . $testi->photo) ?>" alt="Testimonial" style="width: 120px; height: 120px;"  />
+                          <img src="<?= base_url('storage/testimonials/' . $testi->photo) ?>" alt="Testimonial" style="width: 100px; height: 100px;"  />
                         </div>
                       </div>
                       <div class="col-12">
@@ -1113,174 +1083,6 @@
               </div><!-- End testimonial item -->
             <?php endforeach; ?>
            
-
-            <!-- <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    "Kami memakai jasa dokumentasi event untuk acara komunitas di Jogja, dan hasilnya luar biasa! Setiap momen penting berhasil ditangkap dengan rapi. Editingnya juga cepat dan profesional."
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
-                    <div>
-                      <h3>Klien 2</h3>
-                      <h4>No description.</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- End testimonial item -->
-
-            <!-- <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    "Butuh video profil buat portofolio, dan hasil kerja dari Magvis Studio benar-benar melebihi ekspektasi. Lighting, angle, sampai storytellingnya rapi banget. Recommended buat content creator yang pengen tampil beda."
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
-                    <div>
-                      <h3>Klien 3</h3>
-                      <h4>No description.</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- End testimonial item -->
-
-            <!-- <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    "Saya memakai jasa Magvis Studio buat bikin video promosi brand clothing. Mereka ngerti banget cara menyesuaikan visual dengan identitas brand kami. Proses kerjanya cepat dan sangat berkualitas!"
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
-                    <div>
-                      <h3>Klien 4</h3>
-                      <h4>No description.</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- End testimonial item -->
-
-            <!-- <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    "Wedding kami menjadi lebih berkesan karena video dari Magvis Studio. Setiap momen terasa megah saat ditonton ulang. Terima kasih sudah bikin dokumentasi pernikahan kami menjadi seindah itu."
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
-                    <div>
-                      <h3>Klien 5</h3>
-                      <h4>No description.</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- End testimonial item -->
-
-            <!-- <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    "Saya kerja bareng Magvis Studio untuk proyek dokumenter sosial. Mereka sangat detail dalam riset dan storytelling, jadi pesannya tersampaikan dengan baik. Bukan cuma videografer, mereka juga partner yang high thinking."
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
-                    <div>
-                      <h3>Klien 6</h3>
-                      <h4>No description.</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- End testimonial item -->
-
-            <!-- <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon"></i>
-                    
-                  </p>
-                </div>
-                <div class="testimonial-profile">
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="profile-info">
-                    <img src="<?=base_url()?>/template/assets/img/illustrations/profiles/profile-1.png" alt="Profile Image">
-                    <div>
-                      <h3>Klien 7</h3>
-                      <h4>No description.</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- End testimonial item -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -1331,12 +1133,6 @@
           </ul>
         </div>
 
-        <!-- <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Informasi</h4>
-          <ul>
-            
-          </ul>
-        </div> -->
       </div>
     </div>
 
