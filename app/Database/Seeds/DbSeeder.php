@@ -10,5 +10,6 @@ class DbSeeder extends Seeder
     {
         $this->call('Menus');
         $this->call('ItemsMenu');
+        $this->call('User');
     }
 }
