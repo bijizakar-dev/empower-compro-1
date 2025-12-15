@@ -19,12 +19,12 @@ $routes->setAutoRoute(false); // ← AUTO ROUTES DIMATIKAN
 // ---------------------------------------------------------
 // $routes->get('/', 'Home::getMain');
 $routes->get('/', function () {
-    return redirect()->to('/id');
+    return redirect()->to('/en');
 });
 
 // Group berdasarkan locale
-$routes->get('(id|en)', 'Home::getMain');
-$routes->group('(id|en)', function ($routes) {
+$routes->get('(en|id)', 'Home::getMain');
+$routes->group('(en|id)', function ($routes) {
     $routes->get('/', 'Home::getMain');
 });
 

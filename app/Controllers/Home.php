@@ -22,7 +22,7 @@ class Home extends BaseController
     public function getMain() {
         $locale = service('uri')->getSegment(1);
 
-        if (!in_array($locale, ['id', 'en'])) {
+        if (!in_array($locale, ['en', 'id'])) {
             $locale = 'en'; 
         }
 
